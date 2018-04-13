@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="datatable,学习," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="自定义输出结果我的需求：我们都知道datatable查询数据后都是按照列一列一列的返回的，但是有时候我们虽然用到了datatable的表，却不需要按列展示数据，我所要实现的是在查询数据的时候按列从数据库中查询多个列的数据，但是展示在页面上的时候把很多列的数据显示在一列中，像下面图片这样：  我需要做的就是按列从数据库中查询标题、作者、URL、正文等内容，再自己组装成上面的样式。下面是代码，我修改了">
+<meta name="keywords" content="datatable,学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="datatable的一些自定义配置">
+<meta property="og:url" content="http://yoursite.com/2017/02/28/datatable的一些自定义配置/index.html">
+<meta property="og:site_name" content="qxiaomay">
+<meta property="og:description" content="自定义输出结果我的需求：我们都知道datatable查询数据后都是按照列一列一列的返回的，但是有时候我们虽然用到了datatable的表，却不需要按列展示数据，我所要实现的是在查询数据的时候按列从数据库中查询多个列的数据，但是展示在页面上的时候把很多列的数据显示在一列中，像下面图片这样：  我需要做的就是按列从数据库中查询标题、作者、URL、正文等内容，再自己组装成上面的样式。下面是代码，我修改了">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://img.blog.csdn.net/20170303105401318?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170303105541133?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-03-03T03:31:01.235Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="datatable的一些自定义配置">
+<meta name="twitter:description" content="自定义输出结果我的需求：我们都知道datatable查询数据后都是按照列一列一列的返回的，但是有时候我们虽然用到了datatable的表，却不需要按列展示数据，我所要实现的是在查询数据的时候按列从数据库中查询多个列的数据，但是展示在页面上的时候把很多列的数据显示在一列中，像下面图片这样：  我需要做的就是按列从数据库中查询标题、作者、URL、正文等内容，再自己组装成上面的样式。下面是代码，我修改了">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170303105401318?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/28/datatable的一些自定义配置/"/>
+
+
+
+
+
+  <title>datatable的一些自定义配置 | qxiaomay</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">qxiaomay</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人生已经如此的艰难，有些事情就不要拆穿</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/28/datatable的一些自定义配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qxiaomay">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="qxiaomay">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">datatable的一些自定义配置</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-28T22:00:00+08:00">
+                2017-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="自定义输出结果"><a href="#自定义输出结果" class="headerlink" title="自定义输出结果"></a>自定义输出结果</h2><h4 id="我的需求："><a href="#我的需求：" class="headerlink" title="我的需求："></a>我的需求：</h4><p>我们都知道datatable查询数据后都是按照列一列一列的返回的，但是有时候我们虽然用到了datatable的表，却不需要按列展示数据，我所要实现的是在查询数据的时候按列从数据库中查询多个列的数据，但是展示在页面上的时候把很多列的数据显示在一列中，像下面图片这样：</p>
+<p><img src="http://img.blog.csdn.net/20170303105401318?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>我需要做的就是按列从数据库中查询标题、作者、URL、正文等内容，再自己组装成上面的样式。<br>下面是代码，我修改了ssp.class.php的输出结果</p>
+<h4 id="实现代码："><a href="#实现代码：" class="headerlink" title="实现代码："></a>实现代码：</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Create the data output array for the DataTables rows</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  <span class="doctag">@param</span>  array $columns Column information array</span></span><br><span class="line"><span class="comment"> *  <span class="doctag">@param</span>  array $data    Data from the SQL get</span></span><br><span class="line"><span class="comment"> *  <span class="doctag">@return</span> array          Formatted data in a row based format</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">data_output</span><span class="params">( $columns, $data )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	$out = <span class="keyword">array</span>();</span><br><span class="line">	$space = <span class="string">'&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'</span>;</span><br><span class="line">	$br = <span class="string">'&lt;br&gt;'</span>;</span><br><span class="line">	<span class="comment">//遍历从服务器取回来的数据</span></span><br><span class="line">	<span class="keyword">for</span> ( $i=<span class="number">0</span>, $ien=count($data) ; $i&lt;$ien ; $i++ ) &#123;</span><br><span class="line">		$row = <span class="keyword">array</span>();</span><br><span class="line">		<span class="comment">//遍历列</span></span><br><span class="line">		<span class="keyword">for</span> ( $j=<span class="number">0</span>, $jen=count($columns) ; $j&lt;$jen ; $j++ ) &#123;</span><br><span class="line">			$column = $columns[$j];</span><br><span class="line"></span><br><span class="line">			<span class="comment">// Is there a formatter?</span></span><br><span class="line">			<span class="keyword">if</span> ( <span class="keyword">isset</span>( $column[<span class="string">'formatter'</span>] ) ) &#123;</span><br><span class="line">				$row[ $column[<span class="string">'dt'</span>] ] = $column[<span class="string">'formatter'</span>]( $data[$i][ $column[<span class="string">'db'</span>] ], $data[$i] );</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//$row[ $columns[0]['dt'] ]表示第一列，后面以此类推</span></span><br><span class="line">			<span class="comment">//$data[$i][ $columns[0]['db'] ]表示取回来的第一列的数据，后面以此类推</span></span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				$row[ $columns[<span class="number">0</span>][<span class="string">'dt'</span>] ] = <span class="string">"&lt;tr&gt;&lt;td&gt;&lt;h3 class='h5 font-w600 push-10'&gt;&lt;a class='link-effect' href='javascript:showDetail("</span>.$data[$i][ $columns[<span class="number">0</span>][<span class="string">'db'</span>] ].<span class="string">");'&gt;"</span>.$data[$i][ $columns[<span class="number">1</span>][<span class="string">'db'</span>] ].<span class="string">"&lt;/a&gt;&lt;/h3&gt;"</span>.<span class="string">"&lt;div class='result_info article_info font-s12'&gt;发布时间 : "</span>.$data[$i][ $columns[<span class="number">2</span>][<span class="string">'db'</span>] ].$space.<span class="string">"作者 : &lt;a href='' target='_blank'&gt;"</span>.$data[$i][ $columns[<span class="number">3</span>][<span class="string">'db'</span>] ].$space.<span class="string">"来源 : "</span>.$data[$i][ $columns[<span class="number">4</span>][<span class="string">'db'</span>] ].$space.<span class="string">"&lt;a href='"</span>.$data[$i][ $columns[<span class="number">5</span>][<span class="string">'db'</span>] ].<span class="string">"'  target='_blank'&gt;查看原网页&lt;/a&gt;&lt;/div&gt;&lt;br&gt;&lt;div id='txt_num' class='font-s13 text-muted hidden-xs' style='width: 100%; display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;'&gt;"</span>.$data[$i][ $columns[<span class="number">6</span>][<span class="string">'db'</span>] ].<span class="string">"&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;"</span>.$br;</span><br><span class="line">				<span class="comment">//我只需要第一列，所以后面的设置不显示即可</span></span><br><span class="line">				$row[ $columns[<span class="number">1</span>][<span class="string">'dt'</span>] ] = <span class="string">"&lt;td style='display:none'&gt;&lt;/td&gt;"</span>;</span><br><span class="line">				$row[ $columns[<span class="number">2</span>][<span class="string">'dt'</span>] ] = <span class="string">"&lt;td style='display:none'&gt;&lt;/td&gt;"</span>;</span><br><span class="line">				$row[ $columns[<span class="number">3</span>][<span class="string">'dt'</span>] ] = <span class="string">"&lt;td style='display:none'&gt;&lt;/td&gt;"</span>;</span><br><span class="line">				$row[ $columns[<span class="number">4</span>][<span class="string">'dt'</span>] ] = <span class="string">"&lt;td style='display:none'&gt;&lt;/td&gt;"</span>;</span><br><span class="line">				$row[ $columns[<span class="number">5</span>][<span class="string">'dt'</span>] ] = <span class="string">"&lt;td style='display:none'&gt;&lt;/td&gt;"</span>;</span><br><span class="line">				$row[ $columns[<span class="number">6</span>][<span class="string">'dt'</span>] ] = <span class="string">"&lt;td style='display:none'&gt;&lt;/td&gt;"</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		$out[] = $row;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> $out;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="排序-amp-跳转至指定页面"><a href="#排序-amp-跳转至指定页面" class="headerlink" title="排序&amp;跳转至指定页面"></a>排序&amp;跳转至指定页面</h2><h4 id="我的需求：-1"><a href="#我的需求：-1" class="headerlink" title="我的需求："></a>我的需求：</h4><p>datatable数据表本身就自带了排序功能的，只要点击相应的列的列头就可以对该列排序，但是我早已破坏了它该有的列结构，改成了我想要的只显示一列的样子。所以我在table外面添加几个排序的按钮，像下面图片这样：</p>
+<p><img src="http://img.blog.csdn.net/20170303105541133?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>点击相应的链接就会返回相应的排序结果。</p>
+<p>实现原理就是给排序按钮绑定一个点击事件，再传入排序的参数。为什么可以这样呢？我只有一列数据了还是可以根据列排序？因为我在输出的结果是多个列的拼接，所以那些列的数据都是存在的，服务器在查询数据的时候发布时间的数据是在第1列，评论数量的数据是在第2列，所以我根据列的编号就能对该列的数据排序。</p>
+<p>列的参数传入后，在datatable初始化的时候一定要配置”sort”参数，他有两个参数，一是要排序的列号即我用<code>sort()</code>函数传的；二就是倒序还是正序的选项。</p>
+<h4 id="实现代码：-1"><a href="#实现代码：-1" class="headerlink" title="实现代码："></a>实现代码：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//sort函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortBy</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> s = s;</span><br><span class="line">	getAlldata(tableToUse,sort=s,order=<span class="string">'desc'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//.</span></span><br><span class="line"><span class="comment">//.</span></span><br><span class="line"><span class="comment">//.</span></span><br><span class="line"><span class="comment">//datatable的初始化函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAlldata</span>(<span class="params">table,sort=<span class="number">0</span>,order=<span class="string">'desc'</span></span>) </span>&#123;</span><br><span class="line">	$(<span class="string">"#example"</span>).dataTable().fnDestroy();</span><br><span class="line">	$(<span class="string">'#example'</span>).DataTable( &#123;</span><br><span class="line">		<span class="string">"searchHighlight"</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="string">"deferRender"</span>: <span class="literal">true</span>, <span class="comment">//当处理大数据时，延迟渲染数据，有效提高Datatables处理能力   </span></span><br><span class="line">		<span class="string">"processing"</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="string">"serverSide"</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="string">"iDisplayLength"</span>: <span class="number">5</span>,<span class="comment">//单页显示条数</span></span><br><span class="line">		<span class="string">"lengthMenu"</span>: [<span class="number">5</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">50</span>],<span class="comment">//每页显示的条数选项</span></span><br><span class="line">		<span class="string">"ajax"</span>: &#123;</span><br><span class="line">       		url: <span class="string">'info/ajax_server/'</span>+table,</span><br><span class="line">   		&#125;,</span><br><span class="line">   		<span class="string">"order"</span>:[[sort,order]],<span class="comment">//排序</span></span><br><span class="line">   		<span class="comment">//添加跳转至指定页面的功能</span></span><br><span class="line">   		<span class="string">'fnDrawCallback'</span>: <span class="function"><span class="keyword">function</span>(<span class="params">table</span>) </span>&#123;    </span><br><span class="line">		    $(<span class="string">"#example_paginate"</span>).append(<span class="string">"&lt;div style='display:inline-block;float:right;margin-top:15px;'&gt;  跳转到第 &lt;input type='text' id='changePage' class='input-text' style='width:40px;height:22px'&gt; 页 &lt;a class='btn btn-default shiny btn-sm' href='javascript:void(0);' id='dataTable-btn' style='text-align:center'&gt;确认&lt;/a&gt;&lt;/div&gt;"</span>);   </span><br><span class="line">		    <span class="keyword">var</span> oTable = $(<span class="string">"#example"</span>).dataTable();    </span><br><span class="line">		    $(<span class="string">'#dataTable-btn'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;    </span><br><span class="line">		        <span class="keyword">if</span>($(<span class="string">"#changePage"</span>).val() &amp;&amp; $(<span class="string">"#changePage"</span>).val() &gt; <span class="number">0</span>) &#123;    </span><br><span class="line">		            <span class="keyword">var</span> redirectpage = $(<span class="string">"#changePage"</span>).val() - <span class="number">1</span>;    </span><br><span class="line">		        &#125; <span class="keyword">else</span> &#123;    </span><br><span class="line">		            <span class="keyword">var</span> redirectpage = <span class="number">0</span>;    </span><br><span class="line">		        &#125;    </span><br><span class="line">		        oTable.fnPageChange(redirectpage);    </span><br><span class="line">		    &#125;); </span><br><span class="line">		&#125;</span><br><span class="line">	&#125; );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/datatable/" rel="tag"># datatable</a>
+          
+            <a href="/tags/学习/" rel="tag"># 学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/28/从D3到echarts到gephi,我到底经历了什么/" rel="next" title="从D3到echarts到gephi,我到底经历了什么?">
+                <i class="fa fa-chevron-left"></i> 从D3到echarts到gephi,我到底经历了什么?
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/07/Elasticsearch使用指南--查询/" rel="prev" title="Elasticsearch使用指南--查询">
+                Elasticsearch使用指南--查询 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">qxiaomay</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义输出结果"><span class="nav-number">1.</span> <span class="nav-text">自定义输出结果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#我的需求："><span class="nav-number">1.0.1.</span> <span class="nav-text">我的需求：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现代码："><span class="nav-number">1.0.2.</span> <span class="nav-text">实现代码：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序-amp-跳转至指定页面"><span class="nav-number">2.</span> <span class="nav-text">排序&amp;跳转至指定页面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#我的需求：-1"><span class="nav-number">2.0.1.</span> <span class="nav-text">我的需求：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现代码：-1"><span class="nav-number">2.0.2.</span> <span class="nav-text">实现代码：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">qxiaomay</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

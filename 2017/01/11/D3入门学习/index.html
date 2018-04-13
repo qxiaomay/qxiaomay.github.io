@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="D3," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="D3是一个数据可视化工具，都说挺好。但是我个人这两天的体验来看，D3想要入门不是太简单，至少至少都要有HTML和JavaScript基础才行，对JavaScript的DOM要求也有点高。其实网上也能找到很多学习资源。下面是我搜集的一些教程： D3呢就是一个js库，使用它主要是用来做数据可视化的，官网上有很多酷炫的例子。D3的官网 我最近学习的教程：慕课网：使用D3制作图表极客学院：D3.js入门教">
+<meta name="keywords" content="D3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="D3入门学习">
+<meta property="og:url" content="http://yoursite.com/2017/01/11/D3入门学习/index.html">
+<meta property="og:site_name" content="qxiaomay">
+<meta property="og:description" content="D3是一个数据可视化工具，都说挺好。但是我个人这两天的体验来看，D3想要入门不是太简单，至少至少都要有HTML和JavaScript基础才行，对JavaScript的DOM要求也有点高。其实网上也能找到很多学习资源。下面是我搜集的一些教程： D3呢就是一个js库，使用它主要是用来做数据可视化的，官网上有很多酷炫的例子。D3的官网 我最近学习的教程：慕课网：使用D3制作图表极客学院：D3.js入门教">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://img.blog.csdn.net/20170111195859515?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170111204709209?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170111204813671?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170111205417275?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170111210733063?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://wiki.jikexueyuan.com/project/d3wiki/images/enterexit-2.png">
+<meta property="og:image" content="http://img.blog.csdn.net/20170111212256929?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170111213600310?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170111213949499?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-01-12T02:12:14.459Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="D3入门学习">
+<meta name="twitter:description" content="D3是一个数据可视化工具，都说挺好。但是我个人这两天的体验来看，D3想要入门不是太简单，至少至少都要有HTML和JavaScript基础才行，对JavaScript的DOM要求也有点高。其实网上也能找到很多学习资源。下面是我搜集的一些教程： D3呢就是一个js库，使用它主要是用来做数据可视化的，官网上有很多酷炫的例子。D3的官网 我最近学习的教程：慕课网：使用D3制作图表极客学院：D3.js入门教">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170111195859515?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/11/D3入门学习/"/>
+
+
+
+
+
+  <title>D3入门学习 | qxiaomay</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">qxiaomay</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人生已经如此的艰难，有些事情就不要拆穿</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/11/D3入门学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qxiaomay">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="qxiaomay">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">D3入门学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-11T21:49:18+08:00">
+                2017-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>D3是一个数据可视化工具，都说挺好。但是我个人这两天的体验来看，D3想要入门不是太简单，至少至少都要有HTML和JavaScript基础才行，对JavaScript的DOM要求也有点高。<br>其实网上也能找到很多学习资源。下面是我搜集的一些教程：<br><img src="http://img.blog.csdn.net/20170111195859515?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>D3呢就是一个js库，使用它主要是用来做数据可视化的，官网上有很多酷炫的例子。<br><a href="https://d3js.org/" target="_blank" rel="noopener">D3的官网</a></p>
+<p>我最近学习的教程：<br>慕课网：<a href="http://www.imooc.com/learn/103" target="_blank" rel="noopener">使用D3制作图表</a><br>极客学院：<a href="http://wiki.jikexueyuan.com/project/d3wiki/" target="_blank" rel="noopener">D3.js入门教程</a></p>
+<p>这两个教程对于初学者还是比较友好的，我前两天对D3还是一无所知，现在已经可以get到用D3画线图，面积图，柱状图，饼状图的方法了。</p>
+<hr>
+<p>下面是我对画这几种图表的笔记：</p>
+<h2 id="线性图表"><a href="#线性图表" class="headerlink" title="线性图表"></a>线性图表</h2><p>线性图表应该是最简单的图表了，我们从小学起就会画了，它可以用来描述两个变量之间的对应关系。<br><img src="http://img.blog.csdn.net/20170111204709209?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>在绘制线性图表之前先在HTML文档中添加一个container容器，不要忘了引入D3的库文件。</p>
+<blockquote>
+<p>index.html<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>D3-test-1<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/style.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://d3js.org/d3.v3.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>index.js<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> width = <span class="number">500</span>,</span><br><span class="line">height = <span class="number">250</span>,</span><br><span class="line">margin = &#123;left:<span class="number">50</span>, top:<span class="number">30</span>, right:<span class="number">20</span>, bottom:<span class="number">20</span>&#125;,</span><br><span class="line">g_width = width - margin.left - margin.right,</span><br><span class="line">g_height = height - margin.top - margin.bottom;</span><br><span class="line"><span class="comment">//svg</span></span><br><span class="line"><span class="keyword">var</span> svg = d3.<span class="keyword">select</span>(<span class="string">"#container"</span>)	<span class="comment">//选择container容器</span></span><br><span class="line">.<span class="built_in">append</span>(<span class="string">"svg"</span>)	<span class="comment">//添加svg元素</span></span><br><span class="line"><span class="comment">//定义宽高</span></span><br><span class="line">.attr(<span class="string">"width"</span>,width)	</span><br><span class="line">.attr(<span class="string">"height"</span>,height);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> g = d3.<span class="keyword">select</span>(<span class="string">"svg"</span>)</span><br><span class="line">.<span class="built_in">append</span>(<span class="string">"g"</span>)</span><br><span class="line">.attr(<span class="string">"transform"</span>,<span class="string">"translate("</span>+margin.left+<span class="string">","</span>+margin.top+<span class="string">")"</span>);<span class="comment">//g元素偏移</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//数据</span></span><br><span class="line"><span class="keyword">var</span> data = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 缩放函数，X轴线性缩放</span></span><br><span class="line"><span class="keyword">var</span> scale_x = d3.scale.linear()</span><br><span class="line">.domain([<span class="number">0</span>,data.length<span class="number">-1</span>])	<span class="comment">// 输入范围</span></span><br><span class="line">.<span class="keyword">range</span>([<span class="number">0</span>,g_width]);	<span class="comment">//输出范围</span></span><br><span class="line"><span class="comment">//Y轴缩放函数</span></span><br><span class="line"><span class="keyword">var</span> scale_y = d3.scale.linear()</span><br><span class="line">.domain([<span class="number">0</span>,d3.max(data)])</span><br><span class="line">.<span class="keyword">range</span>([g_height,<span class="number">0</span>]);<span class="comment">//倒着写是为了让纵坐标在显示的时候是从下往上增大的（因为浏览器的左边原点在左上而数学习惯是在左下）  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//绘制函数，line_generator是我们指定的绘制函数</span></span><br><span class="line"><span class="keyword">var</span> line_generator = d3.svg.line()</span><br><span class="line">.x(function(d,i) &#123; <span class="keyword">return</span> scale_x(i);&#125;)<span class="comment">//X轴的点用数据的下标来表示</span></span><br><span class="line">.y(function(d) &#123; <span class="keyword">return</span> scale_y(d);&#125;)</span><br><span class="line">.interpolate(<span class="string">"cardinal"</span>);<span class="comment">//指定拟合方式，如果没有它，图是折线形式的，有了它就很圆润了</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//添加path路径，就可以绘图啦</span></span><br><span class="line">d3.<span class="keyword">select</span>(<span class="string">"g"</span>)</span><br><span class="line">.<span class="built_in">append</span>(<span class="string">"path"</span>)</span><br><span class="line">.attr(<span class="string">"d"</span>,line_generator(data));</span><br><span class="line"></span><br><span class="line"><span class="comment">//绘制X轴和Y轴</span></span><br><span class="line"><span class="keyword">var</span> x_axis = d3.svg.axis().scale(scale_x),</span><br><span class="line">y_axis = d3.svg.axis().scale(scale_y).orient(<span class="string">"left"</span>);	<span class="comment">//orient("left")确定左边方向</span></span><br><span class="line"></span><br><span class="line">g.<span class="built_in">append</span>(<span class="string">"g"</span>)</span><br><span class="line">.call(x_axis)</span><br><span class="line">.attr(<span class="string">"transform"</span>,<span class="string">"translate(0,"</span>+g_height+<span class="string">")"</span>);	<span class="comment">//偏移</span></span><br><span class="line"></span><br><span class="line">g.<span class="built_in">append</span>(<span class="string">"g"</span>)</span><br><span class="line">.call(y_axis)</span><br><span class="line"><span class="comment">//添加文字元素</span></span><br><span class="line">.<span class="built_in">append</span>(<span class="string">"text"</span>)</span><br><span class="line">.text(<span class="string">"Price($)"</span>)</span><br><span class="line">.attr(<span class="string">"transform"</span>,<span class="string">"rotate(-90)"</span>)	<span class="comment">//Y轴旋转-90°</span></span><br><span class="line">.attr(<span class="string">"text-anchor"</span>,<span class="string">"end"</span>)</span><br><span class="line">.attr(<span class="string">"dy"</span>,<span class="string">"1em"</span>);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>js文件我都写了详细的注释。<br>style样式文件用来定义container容器，path路径以及坐标轴的一些样式。</p>
+<blockquote>
+<p>style.css<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#container</span> &#123;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#ccc</span>;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">250px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">path</span> &#123;</span><br><span class="line">	<span class="attribute">fill</span>: none;</span><br><span class="line">	<span class="attribute">stroke</span>: <span class="number">#468284</span>;</span><br><span class="line">	<span class="attribute">stroke-width</span>: <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.domain</span>, <span class="selector-class">.tick</span> <span class="selector-tag">line</span> &#123;</span><br><span class="line">	<span class="attribute">stroke</span>: gray;</span><br><span class="line">	<span class="attribute">stroke-width</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>我觉得比较重要的就是选择元素<code>select()</code>和插入元素<code>append()</code> 操作，还有缩放函数的方法和定义X轴、Y轴的方法。这些都是基础又基础的东西！</p>
+<hr>
+<h2 id="面积图表"><a href="#面积图表" class="headerlink" title="面积图表"></a>面积图表</h2><p>面积图表是在线性图表的基础上绘制的<br><img src="http://img.blog.csdn.net/20170111204813671?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>将绘制函数改为<code>area()</code>函数：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//绘制函数,面积图用D3的area()函数绘制</span></span><br><span class="line"><span class="keyword">var</span> area_generator = d3.svg.area()</span><br><span class="line">.x(<span class="function"><span class="keyword">function</span><span class="params">(d,i)</span> </span>&#123; <span class="keyword">return</span> scale_x(i);&#125;)</span><br><span class="line">.y0(g_height)</span><br><span class="line">.y1(<span class="function"><span class="keyword">function</span><span class="params">(d)</span> </span>&#123; <span class="keyword">return</span> scale_y(d);&#125;)</span><br><span class="line">.interpolate(<span class="string">"cardinal"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>这个时候图表已经成为一个闭合的图形了：<br><img src="http://img.blog.csdn.net/20170111205417275?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>在绘制图形后在添加一个填充样式<code>.style(&quot;fill&quot;,&quot;#468284&quot;)</code>:<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">d3</span><span class="selector-class">.select</span>(<span class="string">"g"</span>)</span><br><span class="line"><span class="selector-class">.append</span>(<span class="string">"path"</span>)</span><br><span class="line"><span class="selector-class">.attr</span>(<span class="string">"d"</span>,area_generator(data))</span><br><span class="line"><span class="selector-class">.style</span>(<span class="string">"fill"</span>,<span class="string">"#468284"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>一个面积图表就完成了。</p>
+<hr>
+<h2 id="柱状图表"><a href="#柱状图表" class="headerlink" title="柱状图表"></a>柱状图表</h2><p><img src="http://img.blog.csdn.net/20170111210733063?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>柱状图的要点是添加矩形元素。这里跟上面线性图表的代码风格不太一样，是因为我觉得这个demo更直观，更清晰。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span>  </span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span>  </span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>完整的柱形图<span class="tag">&lt;/<span class="name">title</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span> </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-class">.axis</span> <span class="selector-tag">path</span>,</span></span><br><span class="line"><span class="css">	<span class="selector-class">.axis</span> <span class="selector-tag">line</span>&#123;</span></span><br><span class="line"><span class="undefined">		fill: none;</span></span><br><span class="line"><span class="undefined">		stroke: black;</span></span><br><span class="line"><span class="undefined">		shape-rendering: crispEdges;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-class">.axis</span> <span class="selector-tag">text</span> &#123;</span></span><br><span class="line"><span class="undefined">		font-family: sans-serif;</span></span><br><span class="line"><span class="undefined">		font-size: 11px;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-class">.MyRect</span> &#123;</span></span><br><span class="line"><span class="undefined">		fill: steelblue;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-class">.MyText</span> &#123;</span></span><br><span class="line"><span class="undefined">		fill: white;</span></span><br><span class="line"><span class="undefined">		text-anchor: middle;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>  </span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://d3js.org/d3.v3.min.js"</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="comment">//画布大小</span></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> width = <span class="number">400</span>;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> height = <span class="number">400</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="comment">//在 body 里添加一个 SVG 画布	</span></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> svg = d3.select(<span class="string">"body"</span>)</span></span><br><span class="line"><span class="actionscript">	.append(<span class="string">"svg"</span>)</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"width"</span>, width)</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"height"</span>, height);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="comment">//画布周边的空白</span></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> padding = &#123;left:<span class="number">30</span>, right:<span class="number">30</span>, top:<span class="number">20</span>, bottom:<span class="number">20</span>&#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="comment">//定义一个数组</span></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> dataset = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">33</span>, <span class="number">24</span>, <span class="number">12</span>, <span class="number">5</span>];</span></span><br><span class="line"><span class="undefined">	</span></span><br><span class="line"><span class="actionscript">	<span class="comment">//x轴的比例尺</span></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> xScale = d3.scale.ordinal()</span></span><br><span class="line"><span class="undefined">	.domain(d3.range(dataset.length))</span></span><br><span class="line"><span class="undefined">	.rangeRoundBands([0, width - padding.left - padding.right]);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="comment">//y轴的比例尺</span></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> yScale = d3.scale.linear()</span></span><br><span class="line"><span class="undefined">	.domain([0,d3.max(dataset)])</span></span><br><span class="line"><span class="undefined">	.range([height - padding.top - padding.bottom, 0]);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="comment">//定义x轴</span></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> xAxis = d3.svg.axis()</span></span><br><span class="line"><span class="undefined">	.scale(xScale)</span></span><br><span class="line"><span class="actionscript">	.orient(<span class="string">"bottom"</span>);</span></span><br><span class="line"><span class="undefined">	</span></span><br><span class="line"><span class="actionscript">	<span class="comment">//定义y轴</span></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> yAxis = d3.svg.axis()</span></span><br><span class="line"><span class="undefined">	.scale(yScale)</span></span><br><span class="line"><span class="actionscript">	.orient(<span class="string">"left"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="comment">//矩形之间的空白</span></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> rectPadding = <span class="number">4</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="comment">//添加矩形元素</span></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> rects = svg.selectAll(<span class="string">".MyRect"</span>)</span></span><br><span class="line"><span class="undefined">	.data(dataset)</span></span><br><span class="line"><span class="undefined">	.enter()</span></span><br><span class="line"><span class="actionscript">	.append(<span class="string">"rect"</span>)</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"class"</span>,<span class="string">"MyRect"</span>)</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"transform"</span>,<span class="string">"translate("</span> + padding.left + <span class="string">","</span> + padding.top + <span class="string">")"</span>)</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"x"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d,i)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">		<span class="keyword">return</span> xScale(i) + rectPadding/<span class="number">2</span>;</span></span><br><span class="line"><span class="undefined">	&#125; )</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"y"</span>,<span class="function"><span class="keyword">function</span><span class="params">(d)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">		<span class="keyword">return</span> yScale(d);</span></span><br><span class="line"><span class="undefined">	&#125;)</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"width"</span>, xScale.rangeBand() - rectPadding )</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"height"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">		<span class="keyword">return</span> height - padding.top - padding.bottom - yScale(d);</span></span><br><span class="line"><span class="undefined">	&#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="comment">//添加文字元素</span></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> texts = svg.selectAll(<span class="string">".MyText"</span>)</span></span><br><span class="line"><span class="undefined">	.data(dataset)</span></span><br><span class="line"><span class="undefined">	.enter()</span></span><br><span class="line"><span class="actionscript">	.append(<span class="string">"text"</span>)</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"class"</span>,<span class="string">"MyText"</span>)</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"transform"</span>,<span class="string">"translate("</span> + padding.left + <span class="string">","</span> + padding.top + <span class="string">")"</span>)</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"x"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d,i)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">		<span class="keyword">return</span> xScale(i) + rectPadding/<span class="number">2</span>;</span></span><br><span class="line"><span class="undefined">	&#125; )</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"y"</span>,<span class="function"><span class="keyword">function</span><span class="params">(d)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">		<span class="keyword">return</span> yScale(d);</span></span><br><span class="line"><span class="undefined">	&#125;)</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"dx"</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">		<span class="keyword">return</span> (xScale.rangeBand() - rectPadding)/<span class="number">2</span>;</span></span><br><span class="line"><span class="undefined">	&#125;)</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"dy"</span>,<span class="function"><span class="keyword">function</span><span class="params">(d)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">		<span class="keyword">return</span> <span class="number">20</span>;</span></span><br><span class="line"><span class="undefined">	&#125;)</span></span><br><span class="line"><span class="actionscript">	.text(<span class="function"><span class="keyword">function</span><span class="params">(d)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">		<span class="keyword">return</span> d;</span></span><br><span class="line"><span class="undefined">	&#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="comment">//添加x轴</span></span></span><br><span class="line"><span class="actionscript">	svg.append(<span class="string">"g"</span>)</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"class"</span>,<span class="string">"axis"</span>)</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"transform"</span>,<span class="string">"translate("</span> + padding.left + <span class="string">","</span> + (height - padding.bottom) + <span class="string">")"</span>)</span></span><br><span class="line"><span class="undefined">	.call(xAxis); </span></span><br><span class="line"><span class="undefined">	</span></span><br><span class="line"><span class="actionscript">	<span class="comment">//添加y轴</span></span></span><br><span class="line"><span class="actionscript">	svg.append(<span class="string">"g"</span>)</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"class"</span>,<span class="string">"axis"</span>)</span></span><br><span class="line"><span class="actionscript">	.attr(<span class="string">"transform"</span>,<span class="string">"translate("</span> + padding.left + <span class="string">","</span> + padding.top + <span class="string">")"</span>)</span></span><br><span class="line"><span class="undefined">	.call(yAxis);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>要特别注意的地方是理解<code>enter()</code> 的用法，在极客学院的教程上是这样讲的：</p>
+<blockquote>
+<p><strong>有数据，而没有足够图形元素的时候，使用此方法可以添加足够的元素。</strong><br>如果数组为 [3, 6, 9, 12, 15]，将此数组绑定到三个 p 元素的选择集上。可以想象，会有两个数据没有元素与之对应，这时候 D3 会建立两个空的元素与数据对应，这一部分就称为 Enter。而有元素与数据对应的部分称为 Update。如果数组为 [3]，则会有两个元素没有数据绑定，那么没有数据绑定的部分被称为 Exit。示意图如下所示。</p>
+</blockquote>
+<p><img src="http://wiki.jikexueyuan.com/project/d3wiki/images/enterexit-2.png" alt="这里写图片描述"></p>
+<h2 id="外部数据文件的读取"><a href="#外部数据文件的读取" class="headerlink" title="外部数据文件的读取"></a>外部数据文件的读取</h2><p>慕课网的教程讲到了外部数据文件的读取，我觉得挺有用的<br>值得注意的一点是浏览器读取本地文件，它有一个跨域请求的问题，会报如下的错误：<br><img src="http://img.blog.csdn.net/20170111212256929?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>解决办法是使用server提供的一种访问机制，用Python启用服务器，你要是想运行呢，首先你要安装python，下面是python2.到3以下版本执行的命令</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer <span class="number">8888</span> <span class="meta">&amp;</span></span><br></pre></td></tr></table></figure>
+<p>3以上用下面的命令</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m http<span class="selector-class">.server</span> <span class="number">8888</span> &amp;</span><br></pre></td></tr></table></figure>
+<p>启用服务是在当前图表文件内运行的，启用服务后在浏览器中输入<code>localhost:8888</code> 就可以访问自己写的图表了<br>我们要读取的数据文件名为<code>data.csv</code><br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">year,population</span><br><span class="line"><span class="number">1953</span>,<span class="number">5.94</span></span><br><span class="line"><span class="number">1964</span>,<span class="number">6.95</span></span><br><span class="line"><span class="number">1982</span>,<span class="number">10.08</span></span><br><span class="line"><span class="number">1990</span>,<span class="number">11.34</span></span><br><span class="line"><span class="number">2000</span>,<span class="number">12.66</span></span><br><span class="line"><span class="number">2010</span>,<span class="number">13.40</span></span><br></pre></td></tr></table></figure></p>
+<p>6次人口普查的数据，这里用到了D3的<code>d3.csv(url[,accessor][,callback])</code>函数，以下面的函数为例，第一个参数是必选的，是我们要读取的csv文件的路径；第二个参数是数据的处理，定义一个type函数将字符串转换为数值的形式；第三个参数用一个函数调用的方式使用数据，把最终的数据放到data数组当中。<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">d3.csv(<span class="string">"data.csv"</span>,<span class="keyword">type</span>,<span class="function"><span class="keyword">function</span><span class="params">(data)</span></span> &#123;</span><br><span class="line">	console.<span class="built_in">log</span>(<span class="keyword">data</span>);</span><br><span class="line">	···</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span></span> <span class="keyword">type</span>(d) &#123;</span><br><span class="line">	d.population =+ d.population;</span><br><span class="line">	<span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://img.blog.csdn.net/20170111213600310?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="饼状图表"><a href="#饼状图表" class="headerlink" title="饼状图表"></a>饼状图表</h2><p><img src="http://img.blog.csdn.net/20170111213949499?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>饼状图表的要点就是：第一我们要用<code>d3.svg.arc()</code> 画圆的函数；第二就是起始角度的设置：<br>HTML还是像线性图表一样定义一个container容器即可</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>饼状图表<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/style.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://d3js.org/d3.v3.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>数据文件<code>data.csv</code></p>
+</blockquote>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">education,population</span><br><span class="line">大专及以上,<span class="number">11964</span></span><br><span class="line">高中和中专,<span class="number">18799</span></span><br><span class="line">初中,<span class="number">51966</span></span><br><span class="line">小学,<span class="number">35876</span></span><br><span class="line">文盲人口,<span class="number">5466</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>index.js</p>
+</blockquote>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">d3.csv(<span class="string">"data.csv"</span>,type,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">var</span> width = <span class="number">400</span>,</span><br><span class="line">	height = <span class="number">400</span>;</span><br><span class="line">	<span class="comment">// 添加svg画布</span></span><br><span class="line">	<span class="keyword">var</span> svg = d3.select(<span class="string">"#container"</span>)</span><br><span class="line">	.append(<span class="string">"svg"</span>)</span><br><span class="line">	.attr(<span class="string">"width"</span>,width)</span><br><span class="line">	.attr(<span class="string">"height"</span>,height);</span><br><span class="line">	<span class="comment">// 添加g元素</span></span><br><span class="line">	<span class="keyword">var</span> g = svg.append(<span class="string">"g"</span>)</span><br><span class="line">	.attr(<span class="string">"transform"</span>,<span class="string">"translate(200,200)"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 定义一个饼状图</span></span><br><span class="line">	<span class="keyword">var</span> arc_generator = d3.svg.arc()</span><br><span class="line">	.innerRadius(<span class="number">0</span>)</span><br><span class="line">	.outerRadius(<span class="number">200</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 起始角度</span></span><br><span class="line">	<span class="keyword">var</span> angle_data = d3.layout.pie()</span><br><span class="line">	.value(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;<span class="keyword">return</span> d.population;&#125;);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 颜色</span></span><br><span class="line">	<span class="keyword">var</span> <span class="built_in">color</span> = d3.scale.category10();</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 绑定数据</span></span><br><span class="line">	g.selectAll(<span class="string">"path"</span>)</span><br><span class="line">	.data(angle_data(data))</span><br><span class="line">	.enter()</span><br><span class="line">	<span class="comment">// 添加path元素</span></span><br><span class="line">	.append(<span class="string">"path"</span>)</span><br><span class="line">	.attr(<span class="string">"d"</span>,arc_generator)</span><br><span class="line">	.style(<span class="string">"fill"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">d,i</span>)</span>&#123;<span class="keyword">return</span> <span class="built_in">color</span>(i);&#125;);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 添加文字标签</span></span><br><span class="line">	g.selectAll(<span class="string">"text"</span>)</span><br><span class="line">	.data(angle_data(data))</span><br><span class="line">	.enter()</span><br><span class="line">	<span class="comment">// 添加text元素</span></span><br><span class="line">	.append(<span class="string">"text"</span>)</span><br><span class="line">	.text(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;<span class="keyword">return</span> d.data.education;&#125;)</span><br><span class="line">	.attr(<span class="string">"transform"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>)</span>&#123;<span class="keyword">return</span> <span class="string">"translate("</span>+arc_generator.centroid(d)+<span class="string">")"</span>;&#125;)</span><br><span class="line">	.attr(<span class="string">"text-anchor"</span>,<span class="string">"middle"</span>);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">type</span>(<span class="params">d</span>) </span>&#123;</span><br><span class="line">	d.population = +d.population;</span><br><span class="line">	<span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/D3/" rel="tag"># D3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/09/hexo+github搭建博客折腾记/" rel="next" title="hexo+github搭建博客折腾记">
+                <i class="fa fa-chevron-left"></i> hexo+github搭建博客折腾记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/13/理解update-enter-exit三个函数的用法/" rel="prev" title="理解update-enter-exit三个函数的用法">
+                理解update-enter-exit三个函数的用法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">qxiaomay</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性图表"><span class="nav-number">1.</span> <span class="nav-text">线性图表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面积图表"><span class="nav-number">2.</span> <span class="nav-text">面积图表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#柱状图表"><span class="nav-number">3.</span> <span class="nav-text">柱状图表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外部数据文件的读取"><span class="nav-number">4.</span> <span class="nav-text">外部数据文件的读取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#饼状图表"><span class="nav-number">5.</span> <span class="nav-text">饼状图表</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">qxiaomay</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

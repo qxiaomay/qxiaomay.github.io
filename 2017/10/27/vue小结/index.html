@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="vue," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="new 一个vue对象时可以设置他的属性，其中重要的三个是data，method和watch data代表vue的数据 method代表vue对象的方法 watch设置了对象监听的方法  vue里面的设置通过HTML指令进行关联其中：* v-text 渲染数据 * v-if 控制显示 * v-for 循环渲染 * v-on 绑定事件  index.html 项目入口1234567891011&amp;l">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/04/13/hello-world/index.html">
+<meta property="og:title" content="Vue小结">
+<meta property="og:url" content="http://yoursite.com/2017/10/27/vue小结/index.html">
 <meta property="og:site_name" content="qxiaomay">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="new 一个vue对象时可以设置他的属性，其中重要的三个是data，method和watch data代表vue的数据 method代表vue对象的方法 watch设置了对象监听的方法  vue里面的设置通过HTML指令进行关联其中：* v-text 渲染数据 * v-if 控制显示 * v-for 循环渲染 * v-on 绑定事件  index.html 项目入口1234567891011&amp;l">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-13T08:19:37.738Z">
+<meta property="og:updated_time" content="2017-10-27T02:15:24.531Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Vue小结">
+<meta name="twitter:description" content="new 一个vue对象时可以设置他的属性，其中重要的三个是data，method和watch data代表vue的数据 method代表vue对象的方法 watch设置了对象监听的方法  vue里面的设置通过HTML指令进行关联其中：* v-text 渲染数据 * v-if 控制显示 * v-for 循环渲染 * v-on 绑定事件  index.html 项目入口1234567891011&amp;l">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/13/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/27/vue小结/"/>
 
 
 
 
 
-  <title>Hello World | qxiaomay</title>
+  <title>Vue小结 | qxiaomay</title>
   
 
 
@@ -232,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/vue小结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qxiaomay">
@@ -249,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Vue小结</h1>
         
 
         <div class="post-meta">
@@ -261,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T16:19:37+08:00">
-                2018-04-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T10:01:01+08:00">
+                2017-10-27
               </time>
             
 
@@ -299,15 +300,18 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <ul>
+<li>new 一个vue对象时可以设置他的属性，其中重要的三个是data，method和watch</li>
+<li>data代表vue的数据</li>
+<li>method代表vue对象的方法</li>
+<li>watch设置了对象监听的方法</li>
+</ul>
+<h2 id="vue里面的设置通过HTML指令进行关联"><a href="#vue里面的设置通过HTML指令进行关联" class="headerlink" title="vue里面的设置通过HTML指令进行关联"></a>vue里面的设置通过HTML指令进行关联</h2><p>其中：* v-text 渲染数据</p>
+<pre><code>* v-if 控制显示
+* v-for 循环渲染
+* v-on 绑定事件
+</code></pre><p> <code>index.html</code> 项目入口<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>my-first-project<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- built files will be auto injected --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>v-text=’title’ 相当于 Vue小结</p>
 
       
     </div>
@@ -323,6 +327,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+        </div>
+      
 
       
       
@@ -332,8 +342,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/01/express/" rel="next" title="express+mongoose搭建简易的web数据接口">
-                <i class="fa fa-chevron-left"></i> express+mongoose搭建简易的web数据接口
+              <a href="/2017/05/22/PHP分页+Elasticsearch查询/" rel="next" title="PHP分页+Elasticsearch查询">
+                <i class="fa fa-chevron-left"></i> PHP分页+Elasticsearch查询
               </a>
             
           </div>
@@ -342,8 +352,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/13/math/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/01/express/" rel="prev" title="express+mongoose搭建简易的web数据接口">
+                express+mongoose搭建简易的web数据接口 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -467,7 +477,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue里面的设置通过HTML指令进行关联"><span class="nav-number">1.</span> <span class="nav-text">vue里面的设置通过HTML指令进行关联</span></a></li></ol></div>
             
 
           </div>
