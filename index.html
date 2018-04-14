@@ -249,151 +249,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="qxiaomay">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="qxiaomay">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/13/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T16:19:37+08:00">
-                2018-04-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/13/hello-world/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/01/express/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -498,7 +353,7 @@ install```1* ```node bin/www```或者```npm start
 
 更换jade模板引擎为html
 
-
+安装ejs install ejs --save```1* ```app.js```引入```ejs
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -651,7 +506,9 @@ watch设置了对象监听的方法
 
 vue里面的设置通过HTML指令进行关联其中：* v-text 渲染数据
 * v-if 控制显示
-* v-fo
+* v-for 循环渲染
+* v-on 绑定事件
+ index.html 项目入口1234567891011&l
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -799,7 +656,7 @@ vue里面的设置通过HTML指令进行关联其中：* v-text 渲染数据
           PHP分页+Elasticsearch查询
 分页，本质上就是根据给定的页码和偏移量从服务器端请求数据。原理很easy，实践起来却有诸多问题，这里总结一下目前使用的分页demo，通过es请求数据，前端自己构建页码。
 
-html的页码显示，有4个参数,$page-具体页码，$pagenum-页数总数，$
+html的页码显示，有4个参数,$page-具体页码，$pagenum-页数总数，$s-起始页，$e-结束页，点击页码通过触发pageChange()函数进行分页跳转至指定页码的功能，
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -944,7 +801,8 @@ html的页码显示，有4个参数,$page-具体页码，$pagenum-页数总数�
       
         
           
-          123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798
+          代码：
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485&lt;!DOCTYPE html&gt;&lt;html lang=
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1089,7 +947,8 @@ html的页码显示，有4个参数,$page-具体页码，$pagenum-页数总数�
       
         
           
-          elasticsearch是什么elasticsearch,简称es，是一个开源的搜索引擎，es的作用非常强大，普通的从数据库读取数据的方式已经不能满足我们形形色色的搜索要求，es就可以。就比如我们想要在茫茫人海中找到那些身高一米八、年龄在30岁到35岁之间、喜欢狗不喜欢猫的程序员，es不仅能满足所
+          elasticsearch是什么elasticsearch,简称es，是一个开源的搜索引擎，es的作用非常强大，普通的从数据库读取数据的方式已经不能满足我们形形色色的搜索要求，es就可以。就比如我们想要在茫茫人海中找到那些身高一米八、年龄在30岁到35岁之间、喜欢狗不喜欢猫的程序员，es不仅能满足所有的需求，而且能快速的帮你找到。在使用es之前，建议先看看极客学院的es权威指南
+es使用环境在使用
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1236,7 +1095,7 @@ html的页码显示，有4个参数,$page-具体页码，$pagenum-页数总数�
           
           自定义输出结果我的需求：我们都知道datatable查询数据后都是按照列一列一列的返回的，但是有时候我们虽然用到了datatable的表，却不需要按列展示数据，我所要实现的是在查询数据的时候按列从数据库中查询多个列的数据，但是展示在页面上的时候把很多列的数据显示在一列中，像下面图片这样：
 
-我需要做
+我需要做的就是按列从数据库中查询标题、作者、URL、正文等内容，再自己组装成上面的样式。下面是代码，我修改了
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1382,7 +1241,7 @@ html的页码显示，有4个参数,$page-具体页码，$pagenum-页数总数�
         
           
           闲来无事，写点杂记
-因为毕业论文要分析知乎人物关系，所以开始接触大数据可视化。我也不知道自己怎么想的，去年年末就挑了最难学的d3.js，那时搜集了很多关于D3的学习教程等着开年了来系统的学学，但是最近在百度前端学院上了解了echarts这个可视化工具，发现它相比于D3入门要简单很多，浏览了官网示例和
+因为毕业论文要分析知乎人物关系，所以开始接触大数据可视化。我也不知道自己怎么想的，去年年末就挑了最难学的d3.js，那时搜集了很多关于D3的学习教程等着开年了来系统的学学，但是最近在百度前端学院上了解了echarts这个可视化工具，发现它相比于D3入门要简单很多，浏览了官网示例和官网的发布的配置手册就基本会用它实现一些图表了，而且生成的图表都挺美观，还可以给图表配置主题等等，总
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1534,7 +1393,7 @@ html的页码显示，有4个参数,$page-具体页码，$pagenum-页数总数�
 
 
 
-123456789&lt;?ph
+123456789&lt;?php	//未定义变量	// 解决方案：使用前定义	echo $var;	//未定义常量 	echo P
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1681,11 +1540,164 @@ html的页码显示，有4个参数,$page-具体页码，$pagenum-页数总数�
           
           datatable是一款基于jQuery表格插件，在目前做的项目中用到了它，所以也了解了一点点。虽然它功能强大，但是对于菜鸟来说也折腾了不少时间。
 datatable是一款基于jQuery表格插件，在目前做的项目中用到了它，所以也了解了一点点。虽然它功能强大，但是对于菜鸟来说也折腾了不少时间。
-在正
+在正式讲它之前先放两个链接：
+
+datatable jQuery官网datatable中文网
+
+我在具体
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/02/16/datatable初体验/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/14/D3画force导向图/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qxiaomay">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="qxiaomay">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/14/D3画force导向图/" itemprop="url">D3画force导向图</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-14T12:01:01+08:00">
+                2017-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+           学习资源整理
+
+极客学院的force力导向图教程csdn博客D3+mysql 画Force图十二月的咖啡馆，力导向图 D3.js 进阶系列 — 2.2力学图的参数 D3.js 进阶系列 — 2.1力学图的事件 + 顶点的固定 D3.js 进阶系列 — 2.0力学图 + 人物关系图
+
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/14/D3画force导向图/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1777,7 +1789,7 @@ datatable是一款基于jQuery表格插件，在目前做的项目中用到了�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
