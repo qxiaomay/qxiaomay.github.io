@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -56,10 +56,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/panda-32x32.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/panda-16x16.png?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
@@ -93,7 +93,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -187,6 +187,26 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -234,7 +254,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qxiaomay">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -282,6 +302,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -300,9 +339,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="换个主题换个心情"><a href="#换个主题换个心情" class="headerlink" title="换个主题换个心情"></a>换个主题换个心情</h2>
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/13/hello-world/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -354,7 +399,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qxiaomay">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -402,6 +447,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -420,46 +484,29 @@
       
         
           
-            <h2 id="搭建node-js服务和express框架"><a href="#搭建node-js服务和express框架" class="headerlink" title="搭建node.js服务和express框架"></a>搭建node.js服务和express框架</h2><p><strong>开始：</strong></p>
-<ul>
-<li><figure class="highlight plain"><figcaption><span>install express --save```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* ```express server</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>done</p>
-</li>
-</ul>
-<p><strong>启动：</strong></p>
-<ul>
-<li><figure class="highlight plain"><figcaption><span>install```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* ```node bin/www```或者```npm start</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>更换jade模板引擎为html</strong></p>
-<ul>
-<li><p>安装ejs <figure class="highlight plain"><figcaption><span>install ejs --save```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* ```app.js```引入```ejs``` : ```var ejs = require(&apos;ejs&apos;)</span><br></pre></td></tr></table></figure></p>
-</li>
-<li><p>配置view engine :</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```app.set(&apos;view engine&apos;, &apos;html&apos;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>安装mongoose</strong></p>
-<ul>
-<li><figure class="highlight plain"><figcaption><span>install mongoose --save```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**构建模型models**</span><br><span class="line">在server目录下建立```models```目录,新建文件```movie.js```用来存放movie数据模型</span><br><span class="line">注意模型在输出的时候的名称与数据库中集合名的对应问题</span><br><span class="line">比如我们数据库的集合名称是```users```那么输出```User```这里不用加s，数据库中的集合名称一定要加s，否则拿不到数据</span><br><span class="line"></span><br><span class="line">```javascript</span><br><span class="line">const mongoose = require(&apos;mongoose&apos;)</span><br><span class="line"></span><br><span class="line">const movieSchema = mongoose.Schema(&#123;</span><br><span class="line">  title: &#123;type: String, required: true&#125;,</span><br><span class="line">  poster: String,</span><br><span class="line">  rating: String,</span><br><span class="line">  introduction: String,</span><br><span class="line">  created_at: &#123; type: Date, default: Date.now&#125;,</span><br><span class="line">  updated_at: &#123; type: Date, default: Date.now&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//输出</span><br><span class="line">module.exports = mongoose.model(&apos;Movie&apos;, movieSchema)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>构建路由routes</strong><br>在routes目录下新建<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```javascript</span><br><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var router = express.Router();</span><br><span class="line">var mongoose = require(&apos;mongoose&apos;);</span><br><span class="line">// 引入数据模型</span><br><span class="line">var Movie = require(&apos;./../models/movie&apos;);</span><br><span class="line"></span><br><span class="line">// 连接数据库</span><br><span class="line">mongoose.connect(&apos;mongodb://127.0.0.1:27017/movie&apos;);</span><br><span class="line"></span><br><span class="line">router.get(&apos;/&apos;,function(req, res, next) &#123;</span><br><span class="line">  Movie.find(&#123;&#125;, (err,doc)=&gt;&#123;</span><br><span class="line">    if (err) &#123;</span><br><span class="line">      res.json(&#123;</span><br><span class="line">        status: &apos;1&apos;,</span><br><span class="line">        msg: err.message</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      res.json(&#123;</span><br><span class="line">        status: &apos;0&apos;,</span><br><span class="line">        msg: &apos;&apos;,</span><br><span class="line">        result: &#123;</span><br><span class="line">          count: doc.length,</span><br><span class="line">          list: doc</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">module.exports = router</span><br></pre></td></tr></table></figure></p>
-<p><strong>访问数据</strong><br>在完成数据模型和路由后，启动server服务，这里推荐用pm2工具<br>安装：<figure class="highlight plain"><figcaption><span>install pm2 -g```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用：```pm2 start server/bin/www</span><br></pre></td></tr></table></figure></p>
-<p>当然也可以用node直接启动<figure class="highlight plain"><figcaption><span>server/bin/www```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">启动之后访问```localhost:3000/movie```，就能访问到数据库中movie集合的数据了</span><br><span class="line"></span><br><span class="line">## 跨域问题</span><br><span class="line"></span><br><span class="line">跨域问题使用webpack反向代理，webpack配置```config/index.js</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">proxyTable:</span> <span class="string">&#123;</span></span><br><span class="line">  <span class="string">'/users/*'</span><span class="string">:</span> <span class="string">&#123;</span></span><br><span class="line"><span class="attr">    target:</span> <span class="string">'http://localhost:3500'</span><span class="string">,</span></span><br><span class="line"><span class="attr">    changeOrigin:</span> <span class="literal">true</span></span><br><span class="line">  <span class="string">&#125;,</span></span><br><span class="line">  <span class="string">'/table/*'</span><span class="string">:</span> <span class="string">&#123;</span></span><br><span class="line"><span class="attr">    target:</span> <span class="string">'http://localhost:3500'</span><span class="string">,</span></span><br><span class="line"><span class="attr">    changeOrigin:</span> <span class="literal">true</span></span><br><span class="line">  <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;,</span></span><br></pre></td></tr></table></figure>
-<p>axios创建的时候配置<br><figure class="highlight thrift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> BASE_API = '/'</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建axios实例</span></span><br><span class="line"><span class="keyword">const</span> <span class="class"><span class="keyword">service</span> = <span class="title">axios</span>.create(</span>&#123;</span><br><span class="line">  baseURL: BASE_API, <span class="comment">// api的base_url</span></span><br><span class="line">  timeout: <span class="number">15000</span> <span class="comment">// 请求超时时间</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>##创建一个用户管理实例</p>
-<ul>
-<li>配置客户端获取用户列表的api</li>
-<li>去服务端写数据接口，获取全部用户信息</li>
-<li>写页面，创建钩子函数，去调用用户列表的api<br>··· ···</li>
-<li>完善添加用户、编辑用户、删除用户功能</li>
-</ul>
-<p>##根据权限动态配置路由<br><a href="https://segmentfault.com/a/1190000009506097" target="_blank" rel="noopener">登录&amp;权限看这里</a></p>
+          搭建node.js服务和express框架开始：
 
-          
+install express --save```1* ```express server
+
+done
+
+
+启动：
+
+install```1* ```node bin/www```或者```npm start
+
+
+更换jade模板引擎为html
+
+
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/01/express/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -511,7 +558,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qxiaomay">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -559,6 +606,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -577,20 +643,23 @@
       
         
           
-            <ul>
-<li>new 一个vue对象时可以设置他的属性，其中重要的三个是data，method和watch</li>
-<li>data代表vue的数据</li>
-<li>method代表vue对象的方法</li>
-<li>watch设置了对象监听的方法</li>
-</ul>
-<h2 id="vue里面的设置通过HTML指令进行关联"><a href="#vue里面的设置通过HTML指令进行关联" class="headerlink" title="vue里面的设置通过HTML指令进行关联"></a>vue里面的设置通过HTML指令进行关联</h2><p>其中：* v-text 渲染数据</p>
-<pre><code>* v-if 控制显示
-* v-for 循环渲染
-* v-on 绑定事件
-</code></pre><p> <code>index.html</code> 项目入口<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>my-first-project<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- built files will be auto injected --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>v-text=’title’ 相当于 Vue小结</p>
-
           
+new 一个vue对象时可以设置他的属性，其中重要的三个是data，method和watch
+data代表vue的数据
+method代表vue对象的方法
+watch设置了对象监听的方法
+
+vue里面的设置通过HTML指令进行关联其中：* v-text 渲染数据
+* v-if 控制显示
+* v-fo
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/27/vue小结/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -642,7 +711,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qxiaomay">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -690,6 +759,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -708,18 +796,18 @@
       
         
           
-            <h1 id="PHP分页-Elasticsearch查询"><a href="#PHP分页-Elasticsearch查询" class="headerlink" title="PHP分页+Elasticsearch查询"></a>PHP分页+Elasticsearch查询</h1><hr>
-<p>分页，本质上就是根据给定的页码和偏移量从服务器端请求数据。原理很easy，实践起来却有诸多问题，这里总结一下目前使用的分页demo，通过es请求数据，前端自己构建页码。</p>
-<p><img src="http://img.blog.csdn.net/20170522220940921?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p><code>html</code>的页码显示，有4个参数,<code>$page</code>-具体页码，<code>$pagenum</code>-页数总数，<code>$s</code>-起始页，<code>$e</code>-结束页，点击页码通过触发<code>pageChange()</code>函数进行分页<br>跳转至指定页码的功能，通过<code>id=&quot;jump&quot;</code>获取页码参数，通过跳转按钮触发<code>pageJump()</code>函数请求数据<br>页码布局上使用<code>bootstrap</code><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="row" style="margin:-15px"&gt;</span><br><span class="line">	&lt;div class="col-xs-10 col-xs-offset-1"&gt;</span><br><span class="line">		&lt;div class="row"&gt;</span><br><span class="line">			&lt;div class="col-xs-7 remove-padding-r"&gt;</span><br><span class="line">				&lt;div class="dataTables_paginate paging_simple_numbers pull-right" style="float:left"&gt;</span><br><span class="line">					&lt;ul class="pagination"&gt;</span><br><span class="line">						&lt;li <span class="meta">&lt;?php</span> <span class="keyword">if</span>($page==<span class="number">1</span>) <span class="keyword">echo</span> <span class="string">'class="disabled"'</span><span class="meta">?&gt;</span>&gt;&lt;a href=<span class="string">"javascript:pageChange(1);"</span>&gt;首页&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">						<span class="meta">&lt;?php</span></span><br><span class="line">						  <span class="keyword">if</span>($pagenum&lt;=<span class="number">7</span>)</span><br><span class="line">						  &#123;</span><br><span class="line">						    $s=<span class="number">1</span>;</span><br><span class="line">						    $e=$pagenum;</span><br><span class="line">						  &#125;</span><br><span class="line">						  <span class="keyword">elseif</span> ($page&lt;=<span class="number">3</span>) </span><br><span class="line">						  &#123;</span><br><span class="line">						    $s=<span class="number">1</span>;</span><br><span class="line">						    $e=<span class="number">7</span>;</span><br><span class="line">						  &#125;</span><br><span class="line">						  <span class="keyword">elseif</span> ($page&gt;=($pagenum<span class="number">-3</span>)) </span><br><span class="line">						  &#123;</span><br><span class="line">						    $s=$pagenum<span class="number">-6</span>;</span><br><span class="line">						    $e=$pagenum;</span><br><span class="line">						  &#125;</span><br><span class="line">						  <span class="keyword">else</span></span><br><span class="line">						  &#123;</span><br><span class="line">						    $s=$page<span class="number">-3</span>;</span><br><span class="line">						    $e=$page+<span class="number">3</span>;</span><br><span class="line">						  &#125;</span><br><span class="line">						    <span class="keyword">for</span> ($i=$s; $i &lt;=$e ; $i++) </span><br><span class="line">						    &#123; </span><br><span class="line">						<span class="meta">?&gt;</span>							</span><br><span class="line">						&lt;li <span class="meta">&lt;?php</span> <span class="keyword">if</span>($i==$page) <span class="keyword">echo</span> <span class="string">'class="active"'</span>;<span class="meta">?&gt;</span>&gt;</span><br><span class="line">							&lt;a href=<span class="string">"javascript:pageChange(&lt;?=$i?&gt;);"</span>&gt;<span class="meta">&lt;?</span>=$i<span class="meta">?&gt;</span>&lt;/a&gt;</span><br><span class="line">						&lt;/li&gt;</span><br><span class="line">						<span class="meta">&lt;?php</span></span><br><span class="line">						    &#125;</span><br><span class="line">						<span class="meta">?&gt;</span>							</span><br><span class="line">						&lt;li <span class="meta">&lt;?php</span> <span class="keyword">if</span>($page==$pagenum) <span class="keyword">echo</span> <span class="string">'class="disabled"'</span><span class="meta">?&gt;</span>&gt;&lt;a href=<span class="string">"javascript:pageChange(&lt;?=$pagenum?&gt;);"</span>&gt;末页&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">					&lt;/ul&gt;</span><br><span class="line">				&lt;/div&gt;	</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;div class="col-xs-5 remove-padding-l" style="padding-top:20px"&gt;</span><br><span class="line">				&lt;span&gt;共<span class="meta">&lt;?</span>=$pagenum<span class="meta">?&gt;</span>页&lt;/span&gt;</span><br><span class="line">				&lt;input type="text" class="form-control form-focus-blue" id="jump" style="width:70px;display: inline-block;" placeholder="页数" &gt;</span><br><span class="line">				&lt;button class="btn btn-blue btn-sm" onclick="javascript:pageJump();" style="margin-bottom:3px;display: inline-block;"&gt;跳转&lt;/button&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;	</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p><code>html</code>控制每页显示数据条数，默认选中5条，下拉菜单可以选择其他选项，<code>id=&quot;pageItem&quot;</code>获取每页的数据量，选中后触发<code>pageItem()</code>函数请求数据<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"block-content"</span>&gt;</span></span><br><span class="line">	共 <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"itemNum"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> 条，每页显示条数：</span><br><span class="line">	<span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"form-focus-blue"</span> <span class="attr">style</span>=<span class="string">"width:48px; display: inline-block;"</span> <span class="attr">onchange</span>=<span class="string">"javascript:pageItem();"</span> <span class="attr">id</span>=<span class="string">"pageItem"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"5"</span>&gt;</span>5<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"10"</span>&gt;</span>10<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"25"</span>&gt;</span>25<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"50"</span>&gt;</span>50<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"100"</span>&gt;</span>100<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p><code>html</code>表单，便于提交到服务器请求数据<code>pagesize</code>是每页的数据量大小，这里默认为5，<code>page</code>是请求的页码，默认为1<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">"variable"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"pagesize"</span> <span class="attr">value</span>=<span class="string">"5"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"page"</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p><code>javascript</code>上面<code>html</code>中涉及到的三个函数，以及es查询<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="comment">// 控制页面显示的数据量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pageItem</span> (<span class="params"></span>) </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">var</span> pagesize = $(<span class="string">"#pageItem"</span>).val();</span><br><span class="line">	$(<span class="string">"input[name='pagesize']"</span>).val(pagesize);</span><br><span class="line">	$(<span class="string">"input[name='page']"</span>).val(<span class="string">"1"</span>);</span><br><span class="line">	Elasticsearch();</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 跳转至指定页面</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pageJump</span> (<span class="params"></span>) </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">var</span> jump = $(<span class="string">"#jump"</span>).val();</span><br><span class="line">	<span class="keyword">var</span> itemNum = <span class="number">10000</span>;<span class="comment">// 数据总量，此处假定为10000</span></span><br><span class="line">	<span class="keyword">var</span> pagesize = $(<span class="string">"#pageItem"</span>).val();</span><br><span class="line">	<span class="keyword">var</span> pagenum = <span class="built_in">Math</span>.ceil(itemNum/pagesize);</span><br><span class="line">	<span class="keyword">if</span> (<span class="number">1</span> &lt;= jump &amp;&amp; jump &lt;= pagenum) </span><br><span class="line">		pageChange(jump);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(jump &lt; <span class="number">1</span>)</span><br><span class="line">		alert(<span class="string">"请输入跳转页数╰(￣▽￣)╭ "</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		alert(<span class="string">"跳转内容超出范围啦(ಥ_ಥ) "</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 跳转函数在这里</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pageChange</span> (<span class="params">p</span>) </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 将要跳转的页码存到HTML表单中</span></span><br><span class="line">	$(<span class="string">"input[name='page']"</span>).val(p);</span><br><span class="line">	<span class="comment">// es查询</span></span><br><span class="line">	Elasticsearch();</span><br><span class="line">	scrollTo(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 重点来了，es查询</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Elasticsearch</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	$.ajax(&#123;</span><br><span class="line">		type:<span class="string">"POST"</span>,</span><br><span class="line">		url:<span class="string">"xxx/Elasticsearch"</span>,</span><br><span class="line">		data:$(<span class="string">"#variable"</span>).serialize(),</span><br><span class="line">		success:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(data);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>服务器端把传经来的两个参数，<code>pagesize</code>和<code>page</code>丢给es去查询<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">... ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">Elasticsearch</span><span class="params">()</span></span>&#123;</span><br><span class="line">	$pagesize = $_POST[<span class="string">"pagesize"</span>];</span><br><span class="line">    $page = $_POST[<span class="string">"page"</span>];</span><br><span class="line">    $input = <span class="keyword">array</span>(</span><br><span class="line">      	<span class="string">"page"</span> =&gt; $page,</span><br><span class="line">     	<span class="string">"pagesize"</span> =&gt; $pagesize</span><br><span class="line">     ); </span><br><span class="line">     $es_connection_info = <span class="keyword">$this</span>-&gt;my_elasticsearch-&gt;es_get_connection_info(<span class="string">"host"</span>, <span class="string">"port"</span>, <span class="string">"index"</span>, <span class="string">"type"</span>);</span><br><span class="line">    $es_search = <span class="keyword">$this</span>-&gt;my_elasticsearch-&gt;es_search($es_connection_info, $input);</span><br><span class="line">    $result = json_decode($es_search, <span class="keyword">True</span>);</span><br><span class="line">    ... ...</span><br><span class="line">&#125;</span><br><span class="line">... ...</span><br></pre></td></tr></table></figure></p>
-<p>es查询函数<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">... ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">es_search</span> <span class="params">($es_connection_info, $input)</span> </span>&#123;</span><br><span class="line">	$host  = $es_connection_info[<span class="string">'host'</span>];</span><br><span class="line">	$port  = $es_connection_info[<span class="string">'port'</span>];</span><br><span class="line">	$index = $es_connection_info[<span class="string">'index'</span>];</span><br><span class="line">	$type  = $es_connection_info[<span class="string">'type'</span>];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(is_array($input))&#123;</span><br><span class="line">		<span class="keyword">if</span>(array_key_exists(<span class="string">"page"</span>,$input))&#123;</span><br><span class="line">			$page = $input[<span class="string">"page"</span>]; <span class="comment">//page for offset(es_from);</span></span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			$page = <span class="string">""</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(array_key_exists(<span class="string">"pagesize"</span>,$input))&#123;</span><br><span class="line">			$pagesize = $input[<span class="string">"pagesize"</span>];	<span class="comment">//es_size;</span></span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			$pagesize = <span class="string">""</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	$arr = <span class="string">"123123"</span>;</span><br><span class="line">	$data = <span class="keyword">array</span>(</span><br><span class="line">		<span class="string">"query"</span> =&gt;</span><br><span class="line">		<span class="keyword">array</span>(<span class="string">"bool"</span> =&gt;</span><br><span class="line">			<span class="keyword">array</span>(<span class="string">"must"</span>=&gt;</span><br><span class="line">				<span class="keyword">array</span>(<span class="string">"match_all"</span> =&gt; $arr)</span><br><span class="line">				)</span><br><span class="line">			)</span><br><span class="line">		);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// pagesize/from</span></span><br><span class="line">	$data[<span class="string">"size"</span>] = $pagesize;</span><br><span class="line">	$data[<span class="string">"from"</span>] = ($page<span class="number">-1</span>)*$pagesize;</span><br><span class="line"></span><br><span class="line">	$url = <span class="string">'http://'</span> . $host . <span class="string">':'</span> . $port . <span class="string">'/'</span> . $index . <span class="string">'/'</span>.$type.<span class="string">'/_search'</span>;</span><br><span class="line">	$json_data = json_encode($data);</span><br><span class="line">	$json_data = str_replace(<span class="string">'"123123"'</span>,<span class="string">"&#123;&#125;"</span>,$json_data);		</span><br><span class="line">	$data = <span class="keyword">$this</span>-&gt;curl($url, $json_data, $port);</span><br><span class="line">	<span class="keyword">return</span> $data;</span><br><span class="line">&#125;</span><br><span class="line">... ...</span><br></pre></td></tr></table></figure></p>
-<p>请求回来的数据返回到前端再进行必要的展示就OK了</p>
+          PHP分页+Elasticsearch查询
+分页，本质上就是根据给定的页码和偏移量从服务器端请求数据。原理很easy，实践起来却有诸多问题，这里总结一下目前使用的分页demo，通过es请求数据，前端自己构建页码。
 
-          
+html的页码显示，有4个参数,$page-具体页码，$pagenum-页数总数，$
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/22/PHP分页+Elasticsearch查询/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -771,7 +859,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qxiaomay">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -819,6 +907,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -837,8 +944,15 @@
       
         
           
-            <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"dateFrom"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"dateTo"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">	<span class="comment">// getDate("thisDay");</span></span></span><br><span class="line"><span class="actionscript">	<span class="comment">// getDate("thisWeek");</span></span></span><br><span class="line"><span class="actionscript">	<span class="comment">// getDate("thisMonth");</span></span></span><br><span class="line"><span class="actionscript">	getDate(<span class="string">"thisYear"</span>);</span></span><br><span class="line"><span class="undefined">&#125;   </span></span><br><span class="line"><span class="actionscript">	<span class="comment">//获取推送时间段  </span></span></span><br><span class="line"><span class="actionscript">	<span class="function"><span class="keyword">function</span> <span class="title">getDate</span><span class="params">(type)</span></span>&#123; </span></span><br><span class="line"><span class="actionscript">		<span class="keyword">var</span> kssj,jssj; </span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> today = <span class="keyword">new</span> <span class="built_in">Date</span>();          </span></span><br><span class="line"><span class="actionscript">		<span class="keyword">var</span> DAY = <span class="number">1000</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">24</span>;   </span></span><br><span class="line"><span class="actionscript">	    <span class="keyword">if</span>(type ==<span class="string">"thisDay"</span>) &#123; <span class="comment">//当天</span></span></span><br><span class="line"><span class="javascript">	    	kssj = <span class="keyword">new</span> <span class="built_in">Date</span>();   </span></span><br><span class="line"><span class="javascript">	    	jssj = <span class="keyword">new</span> <span class="built_in">Date</span>();   </span></span><br><span class="line"><span class="undefined">		&#125;   </span></span><br><span class="line"><span class="actionscript">	    <span class="keyword">if</span>(type == <span class="string">"thisWeek"</span>) &#123; <span class="comment">//本周周</span></span></span><br><span class="line"><span class="actionscript">	    	kssj = getThisWeekFirstDay();<span class="comment">//本周第一天 </span></span></span><br><span class="line"><span class="javascript">	    	jssj = <span class="keyword">new</span> <span class="built_in">Date</span>();  </span></span><br><span class="line"><span class="undefined">	  	&#125;  </span></span><br><span class="line"><span class="actionscript">	    <span class="keyword">if</span>(type == <span class="string">"thisMonth"</span>) &#123; <span class="comment">//本月  </span></span></span><br><span class="line"><span class="actionscript">	       	kssj = getThisMonthFirstDay();<span class="comment">//本月第一天  </span></span></span><br><span class="line"><span class="javascript">	       	jssj = <span class="keyword">new</span> <span class="built_in">Date</span>(); </span></span><br><span class="line"><span class="undefined">	    &#125; </span></span><br><span class="line"><span class="actionscript">	    <span class="keyword">if</span>(type == <span class="string">"thisYear"</span>) &#123; <span class="comment">//本年</span></span></span><br><span class="line"><span class="actionscript">	    	kssj = getThisYearFirstDay();<span class="comment">//本年第一天</span></span></span><br><span class="line"><span class="javascript">	    	jssj = <span class="keyword">new</span> <span class="built_in">Date</span>();</span></span><br><span class="line"><span class="undefined">	    &#125;</span></span><br><span class="line"><span class="actionscript">	    <span class="keyword">var</span> dateFrom = kssj.format(<span class="string">'yyyy-MM-dd'</span>);</span></span><br><span class="line"><span class="actionscript">	   	<span class="keyword">var</span> dateTo = jssj.format(<span class="string">'yyyy-MM-dd'</span>);</span></span><br><span class="line"><span class="javascript">	   	<span class="built_in">document</span>.getElementById(<span class="string">"dateFrom"</span>).value=dateFrom;</span></span><br><span class="line"><span class="javascript">	   	<span class="built_in">document</span>.getElementById(<span class="string">"dateTo"</span>).value=dateTo;</span></span><br><span class="line"><span class="undefined">	&#125;  </span></span><br><span class="line"><span class="actionscript">	<span class="function"><span class="keyword">function</span> <span class="title">getThisWeekFirstDay</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">	  	<span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span></span><br><span class="line"><span class="actionscript">	   	<span class="keyword">var</span> day = now.getDay();</span></span><br><span class="line"><span class="actionscript">	    <span class="keyword">var</span> week = <span class="string">"1234567"</span>;</span></span><br><span class="line"><span class="actionscript">	    <span class="keyword">var</span> first = <span class="number">0</span> - week.indexOf(day);</span></span><br><span class="line"><span class="javascript">	    <span class="keyword">var</span> thisWeekfirstDay = <span class="keyword">new</span> <span class="built_in">Date</span>;</span></span><br><span class="line"><span class="undefined">	    thisWeekfirstDay.setDate (thisWeekfirstDay.getDate () + first);</span></span><br><span class="line"><span class="actionscript">	    <span class="keyword">return</span> thisWeekfirstDay;</span></span><br><span class="line"><span class="undefined">	&#125;  </span></span><br><span class="line"><span class="actionscript">	<span class="function"><span class="keyword">function</span> <span class="title">getThisMonthFirstDay</span><span class="params">()</span></span>&#123;  </span></span><br><span class="line"><span class="javascript">	  	<span class="keyword">var</span> date=<span class="keyword">new</span> <span class="built_in">Date</span>();</span></span><br><span class="line"><span class="undefined">	 	date.setDate(1);</span></span><br><span class="line"><span class="actionscript">	 	<span class="keyword">return</span> date; </span></span><br><span class="line"><span class="undefined">	&#125;  </span></span><br><span class="line"><span class="actionscript">	<span class="function"><span class="keyword">function</span> <span class="title">getThisYearFirstDay</span><span class="params">()</span> </span>&#123; </span></span><br><span class="line"><span class="javascript">	    <span class="keyword">var</span> currentDate=<span class="keyword">new</span> <span class="built_in">Date</span>();  </span></span><br><span class="line"><span class="actionscript">	    <span class="keyword">var</span> currentYear=currentDate.getFullYear(); </span></span><br><span class="line"><span class="javascript">	    <span class="keyword">var</span> currentYearFirstDate=<span class="keyword">new</span> <span class="built_in">Date</span>(currentYear,<span class="number">0</span>,<span class="number">1</span>);</span></span><br><span class="line"><span class="actionscript">	    <span class="keyword">return</span> currentYearFirstDate;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="actionscript">	<span class="comment">//data类型转string  </span></span></span><br><span class="line"><span class="javascript">	<span class="built_in">Date</span>.prototype.format = <span class="function"><span class="keyword">function</span>(<span class="params">format</span>)  </span></span></span><br><span class="line"><span class="undefined">	&#123;  </span></span><br><span class="line"><span class="actionscript">	 	<span class="keyword">var</span> o = &#123;  </span></span><br><span class="line"><span class="actionscript">	 		<span class="string">"M+"</span> : <span class="keyword">this</span>.getMonth()+<span class="number">1</span>, <span class="comment">//month  </span></span></span><br><span class="line"><span class="actionscript">			<span class="string">"d+"</span> : <span class="keyword">this</span>.getDate(),    <span class="comment">//day  </span></span></span><br><span class="line"><span class="actionscript">	 		<span class="string">"h+"</span> : <span class="keyword">this</span>.getHours(),   <span class="comment">//hour  </span></span></span><br><span class="line"><span class="actionscript">	 		<span class="string">"m+"</span> : <span class="keyword">this</span>.getMinutes(), <span class="comment">//minute  </span></span></span><br><span class="line"><span class="actionscript">	 		<span class="string">"s+"</span> : <span class="keyword">this</span>.getSeconds(), <span class="comment">//second  </span></span></span><br><span class="line"><span class="javascript">	 		<span class="string">"q+"</span> : <span class="built_in">Math</span>.floor((<span class="keyword">this</span>.getMonth()+<span class="number">3</span>)/<span class="number">3</span>),  <span class="comment">//quarter  </span></span></span><br><span class="line"><span class="actionscript">	 		<span class="string">"S"</span> : <span class="keyword">this</span>.getMilliseconds() <span class="comment">//millisecond  </span></span></span><br><span class="line"><span class="undefined">		&#125;  </span></span><br><span class="line"><span class="javascript">		<span class="keyword">if</span>(<span class="regexp">/(y+)/</span>.test(format)) format=format.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>,  </span></span><br><span class="line"><span class="javascript">		(<span class="keyword">this</span>.getFullYear()+<span class="string">""</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$<span class="number">1.</span>length));  </span></span><br><span class="line"><span class="javascript">		<span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> o)<span class="keyword">if</span>(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"("</span>+ k +<span class="string">")"</span>).test(format))  </span></span><br><span class="line"><span class="javascript">			format = format.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>,  </span></span><br><span class="line"><span class="javascript">				<span class="built_in">RegExp</span>.$<span class="number">1.</span>length==<span class="number">1</span> ? o[k] :  </span></span><br><span class="line"><span class="actionscript">				(<span class="string">"00"</span>+ o[k]).substr((<span class="string">""</span>+ o[k]).length));  </span></span><br><span class="line"><span class="actionscript">		<span class="keyword">return</span> format;  </span></span><br><span class="line"><span class="undefined">	&#125;  </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-          
+          123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/08/JS获取今日、本周、本月、本年的时间范围/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -890,7 +1004,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qxiaomay">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -938,6 +1052,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -956,30 +1089,15 @@
       
         
           
-            <h2 id="elasticsearch是什么"><a href="#elasticsearch是什么" class="headerlink" title="elasticsearch是什么"></a>elasticsearch是什么</h2><p>elasticsearch,简称es，是一个开源的搜索引擎，es的作用非常强大，普通的从数据库读取数据的方式已经不能满足我们形形色色的搜索要求，es就可以。就比如我们想要在茫茫人海中找到那些身高一米八、年龄在30岁到35岁之间、喜欢狗不喜欢猫的程序员，es不仅能满足所有的需求，而且能快速的帮你找到。<br>在使用es之前，建议先看看极客学院的<a href="http://wiki.jikexueyuan.com/project/elasticsearch-definitive-guide-cn/010_Intro/05_What_is_it.html" target="_blank" rel="noopener">es权威指南</a></p>
-<h2 id="es使用环境"><a href="#es使用环境" class="headerlink" title="es使用环境"></a>es使用环境</h2><p>在使用es之前，要在服务器端搭建一个es的集群，因为我是做前端的，所以具体怎么搭建集群我不是很懂，然后把我们需要的数据库的数据导到es环境里就可以用了。我们前端大都是构建es的DSL查询语句，去查询我们需要的东西。</p>
-<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><h4 id="查询全部"><a href="#查询全部" class="headerlink" title="查询全部"></a>查询全部</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"query"</span>:&#123;</span><br><span class="line">		<span class="attr">"match_all"</span>:&#123;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="查询名字中有小明的"><a href="#查询名字中有小明的" class="headerlink" title="查询名字中有小明的"></a>查询名字中有小明的</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"query"</span>:&#123;</span><br><span class="line">		<span class="attr">"match"</span>:&#123;</span><br><span class="line">			<span class="attr">"name"</span>:<span class="string">"小明"</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="查询名字中有完整“小明”的-match是模糊匹配，他会对关键词进行分词查询"><a href="#查询名字中有完整“小明”的-match是模糊匹配，他会对关键词进行分词查询" class="headerlink" title="查询名字中有完整“小明”的,match是模糊匹配，他会对关键词进行分词查询"></a>查询名字中有完整“小明”的,match是模糊匹配，他会对关键词进行分词查询</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"match_phrase"</span>: &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"小明"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="查询名字是“小明”，年龄“10”岁的-···-···"><a href="#查询名字是“小明”，年龄“10”岁的-···-···" class="headerlink" title="查询名字是“小明”，年龄“10”岁的 ··· ···"></a>查询名字是“小明”，年龄“10”岁的 ··· ···</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"bool"</span>: &#123;</span><br><span class="line">      <span class="attr">"must"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"match_phrase"</span>: &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"小明"</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"match_phrase"</span>: &#123;</span><br><span class="line">            <span class="attr">"age"</span>: <span class="string">"10"</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="从第一条数据开始查询5条数据"><a href="#从第一条数据开始查询5条数据" class="headerlink" title="从第一条数据开始查询5条数据"></a>从第一条数据开始查询5条数据</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"from"</span>:<span class="number">0</span>,</span><br><span class="line">  <span class="attr">"size"</span>:<span class="number">5</span>,</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"match_phrase"</span>: &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"小明"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="使查询结果的关键词即“小明”高亮的技巧"><a href="#使查询结果的关键词即“小明”高亮的技巧" class="headerlink" title="使查询结果的关键词即“小明”高亮的技巧"></a>使查询结果的关键词即“小明”高亮的技巧</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"from"</span>:<span class="number">0</span>,</span><br><span class="line">  <span class="attr">"size"</span>:<span class="number">5</span>,</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"match_phrase"</span>: &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"小明"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"highlight"</span>: &#123;</span><br><span class="line">    <span class="attr">"pre_tags"</span>: [</span><br><span class="line">      <span class="string">"&lt;font color=red&gt;&lt;b&gt;"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"post_tags"</span>: [</span><br><span class="line">      <span class="string">"&lt;/b&gt;&lt;/font&gt;"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"fields"</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">"name"</span>: &#123;&#125;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="对小明的查询结果排序-默认是针对匹配分数”-score”排序"><a href="#对小明的查询结果排序-默认是针对匹配分数”-score”排序" class="headerlink" title="对小明的查询结果排序,默认是针对匹配分数”_score”排序"></a>对小明的查询结果排序,默认是针对匹配分数”_score”排序</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"from"</span>:<span class="number">0</span>,</span><br><span class="line">  <span class="attr">"size"</span>:<span class="number">5</span>,</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"match_phrase"</span>: &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"小明"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"sort"</span>: &#123;</span><br><span class="line">    <span class="attr">"_score"</span>: &#123;</span><br><span class="line">      <span class="attr">"order"</span>: <span class="string">"desc"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"time"</span>: &#123;</span><br><span class="line">      <span class="attr">"order"</span>: <span class="string">"desc"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="对小明的查询结果聚类"><a href="#对小明的查询结果聚类" class="headerlink" title="对小明的查询结果聚类"></a>对小明的查询结果聚类</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"from"</span>:<span class="number">0</span>,</span><br><span class="line">  <span class="attr">"size"</span>:<span class="number">5</span>,</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"match_phrase"</span>: &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"小明"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"aggs"</span>: &#123;</span><br><span class="line">    <span class="attr">"type"</span>: &#123;</span><br><span class="line">      <span class="attr">"terms"</span>: &#123;</span><br><span class="line">        <span class="attr">"field"</span>: <span class="string">"_type"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="查询出生日期在2000年到2005年之间的"><a href="#查询出生日期在2000年到2005年之间的" class="headerlink" title="查询出生日期在2000年到2005年之间的"></a>查询出生日期在2000年到2005年之间的</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"from"</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">"size"</span>: <span class="string">"10"</span>,</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"bool"</span>: &#123;</span><br><span class="line">      <span class="attr">"must"</span>: &#123;</span><br><span class="line">        <span class="attr">"match_all"</span>: &#123;&#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">"filter"</span>: &#123;</span><br><span class="line">        <span class="attr">"range"</span>: &#123;</span><br><span class="line">          <span class="attr">"time_pub"</span>: &#123;</span><br><span class="line">            <span class="attr">"gte"</span>: <span class="string">"2000-01-01"</span>,</span><br><span class="line">            <span class="attr">"lte"</span>: <span class="string">"2005-12-31"</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>将上面的所有功能结合起来就可以完成查询多个段的关键词，高亮显示，排序，聚类，范围的复合查询</p>
-<h2 id="查询结果的遍历"><a href="#查询结果的遍历" class="headerlink" title="查询结果的遍历"></a>查询结果的遍历</h2><p>假设我们在这里构建了一条复杂的查询语句</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"bool"</span>: &#123;</span><br><span class="line">      <span class="attr">"must"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"match_phrase"</span>: &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"小明"</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"highlight"</span>: &#123;</span><br><span class="line">    <span class="attr">"pre_tags"</span>: [</span><br><span class="line">      <span class="string">"&lt;font color=red&gt;&lt;b&gt;"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"post_tags"</span>: [</span><br><span class="line">      <span class="string">"&lt;/b&gt;&lt;/font&gt;"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"fields"</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">"name"</span>: &#123;&#125;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"sort"</span>: &#123;</span><br><span class="line">    <span class="attr">"_score"</span>: &#123;</span><br><span class="line">      <span class="attr">"order"</span>: <span class="string">"desc"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"time_pub"</span>: &#123;</span><br><span class="line">      <span class="attr">"order"</span>: <span class="string">"desc"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"size"</span>: <span class="string">"5"</span>,</span><br><span class="line">  <span class="attr">"from"</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">"aggs"</span>: &#123;</span><br><span class="line">    <span class="attr">"type"</span>: &#123;</span><br><span class="line">      <span class="attr">"terms"</span>: &#123;</span><br><span class="line">        <span class="attr">"field"</span>: <span class="string">"_type"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们查出了所有name字段中的小明的结果，并做了高亮显示,按照类型聚类查询结果</p>
-<p>结果的结构是这样的，”hits”是查询的结果，”total”是结果的总条目，”aggregations”是聚类的结果</p>
-<p><img src="http://img.blog.csdn.net/20170308213753260?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>“hits”结果部分，”highlight”就是高亮显示了的字段，”sort”是排序的分值</p>
-<p><img src="http://img.blog.csdn.net/20170308213812588?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>“aggregations”聚类部分，”buckets”是聚类结果，关联数组的形式</p>
-<p><img src="http://img.blog.csdn.net/20170308213826057?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>只要清楚了它的结构，遍历是很简单的。</p>
-
-          
+          elasticsearch是什么elasticsearch,简称es，是一个开源的搜索引擎，es的作用非常强大，普通的从数据库读取数据的方式已经不能满足我们形形色色的搜索要求，es就可以。就比如我们想要在茫茫人海中找到那些身高一米八、年龄在30岁到35岁之间、喜欢狗不喜欢猫的程序员，es不仅能满足所
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/07/Elasticsearch使用指南--查询/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1031,7 +1149,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qxiaomay">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1079,6 +1197,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -1097,18 +1234,17 @@
       
         
           
-            <h2 id="自定义输出结果"><a href="#自定义输出结果" class="headerlink" title="自定义输出结果"></a>自定义输出结果</h2><h4 id="我的需求："><a href="#我的需求：" class="headerlink" title="我的需求："></a>我的需求：</h4><p>我们都知道datatable查询数据后都是按照列一列一列的返回的，但是有时候我们虽然用到了datatable的表，却不需要按列展示数据，我所要实现的是在查询数据的时候按列从数据库中查询多个列的数据，但是展示在页面上的时候把很多列的数据显示在一列中，像下面图片这样：</p>
-<p><img src="http://img.blog.csdn.net/20170303105401318?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>我需要做的就是按列从数据库中查询标题、作者、URL、正文等内容，再自己组装成上面的样式。<br>下面是代码，我修改了ssp.class.php的输出结果</p>
-<h4 id="实现代码："><a href="#实现代码：" class="headerlink" title="实现代码："></a>实现代码：</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Create the data output array for the DataTables rows</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  <span class="doctag">@param</span>  array $columns Column information array</span></span><br><span class="line"><span class="comment"> *  <span class="doctag">@param</span>  array $data    Data from the SQL get</span></span><br><span class="line"><span class="comment"> *  <span class="doctag">@return</span> array          Formatted data in a row based format</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">data_output</span><span class="params">( $columns, $data )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	$out = <span class="keyword">array</span>();</span><br><span class="line">	$space = <span class="string">'&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'</span>;</span><br><span class="line">	$br = <span class="string">'&lt;br&gt;'</span>;</span><br><span class="line">	<span class="comment">//遍历从服务器取回来的数据</span></span><br><span class="line">	<span class="keyword">for</span> ( $i=<span class="number">0</span>, $ien=count($data) ; $i&lt;$ien ; $i++ ) &#123;</span><br><span class="line">		$row = <span class="keyword">array</span>();</span><br><span class="line">		<span class="comment">//遍历列</span></span><br><span class="line">		<span class="keyword">for</span> ( $j=<span class="number">0</span>, $jen=count($columns) ; $j&lt;$jen ; $j++ ) &#123;</span><br><span class="line">			$column = $columns[$j];</span><br><span class="line"></span><br><span class="line">			<span class="comment">// Is there a formatter?</span></span><br><span class="line">			<span class="keyword">if</span> ( <span class="keyword">isset</span>( $column[<span class="string">'formatter'</span>] ) ) &#123;</span><br><span class="line">				$row[ $column[<span class="string">'dt'</span>] ] = $column[<span class="string">'formatter'</span>]( $data[$i][ $column[<span class="string">'db'</span>] ], $data[$i] );</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//$row[ $columns[0]['dt'] ]表示第一列，后面以此类推</span></span><br><span class="line">			<span class="comment">//$data[$i][ $columns[0]['db'] ]表示取回来的第一列的数据，后面以此类推</span></span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				$row[ $columns[<span class="number">0</span>][<span class="string">'dt'</span>] ] = <span class="string">"&lt;tr&gt;&lt;td&gt;&lt;h3 class='h5 font-w600 push-10'&gt;&lt;a class='link-effect' href='javascript:showDetail("</span>.$data[$i][ $columns[<span class="number">0</span>][<span class="string">'db'</span>] ].<span class="string">");'&gt;"</span>.$data[$i][ $columns[<span class="number">1</span>][<span class="string">'db'</span>] ].<span class="string">"&lt;/a&gt;&lt;/h3&gt;"</span>.<span class="string">"&lt;div class='result_info article_info font-s12'&gt;发布时间 : "</span>.$data[$i][ $columns[<span class="number">2</span>][<span class="string">'db'</span>] ].$space.<span class="string">"作者 : &lt;a href='' target='_blank'&gt;"</span>.$data[$i][ $columns[<span class="number">3</span>][<span class="string">'db'</span>] ].$space.<span class="string">"来源 : "</span>.$data[$i][ $columns[<span class="number">4</span>][<span class="string">'db'</span>] ].$space.<span class="string">"&lt;a href='"</span>.$data[$i][ $columns[<span class="number">5</span>][<span class="string">'db'</span>] ].<span class="string">"'  target='_blank'&gt;查看原网页&lt;/a&gt;&lt;/div&gt;&lt;br&gt;&lt;div id='txt_num' class='font-s13 text-muted hidden-xs' style='width: 100%; display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;'&gt;"</span>.$data[$i][ $columns[<span class="number">6</span>][<span class="string">'db'</span>] ].<span class="string">"&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;"</span>.$br;</span><br><span class="line">				<span class="comment">//我只需要第一列，所以后面的设置不显示即可</span></span><br><span class="line">				$row[ $columns[<span class="number">1</span>][<span class="string">'dt'</span>] ] = <span class="string">"&lt;td style='display:none'&gt;&lt;/td&gt;"</span>;</span><br><span class="line">				$row[ $columns[<span class="number">2</span>][<span class="string">'dt'</span>] ] = <span class="string">"&lt;td style='display:none'&gt;&lt;/td&gt;"</span>;</span><br><span class="line">				$row[ $columns[<span class="number">3</span>][<span class="string">'dt'</span>] ] = <span class="string">"&lt;td style='display:none'&gt;&lt;/td&gt;"</span>;</span><br><span class="line">				$row[ $columns[<span class="number">4</span>][<span class="string">'dt'</span>] ] = <span class="string">"&lt;td style='display:none'&gt;&lt;/td&gt;"</span>;</span><br><span class="line">				$row[ $columns[<span class="number">5</span>][<span class="string">'dt'</span>] ] = <span class="string">"&lt;td style='display:none'&gt;&lt;/td&gt;"</span>;</span><br><span class="line">				$row[ $columns[<span class="number">6</span>][<span class="string">'dt'</span>] ] = <span class="string">"&lt;td style='display:none'&gt;&lt;/td&gt;"</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		$out[] = $row;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> $out;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="排序-amp-跳转至指定页面"><a href="#排序-amp-跳转至指定页面" class="headerlink" title="排序&amp;跳转至指定页面"></a>排序&amp;跳转至指定页面</h2><h4 id="我的需求：-1"><a href="#我的需求：-1" class="headerlink" title="我的需求："></a>我的需求：</h4><p>datatable数据表本身就自带了排序功能的，只要点击相应的列的列头就可以对该列排序，但是我早已破坏了它该有的列结构，改成了我想要的只显示一列的样子。所以我在table外面添加几个排序的按钮，像下面图片这样：</p>
-<p><img src="http://img.blog.csdn.net/20170303105541133?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTWF5TWF5Sm4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>点击相应的链接就会返回相应的排序结果。</p>
-<p>实现原理就是给排序按钮绑定一个点击事件，再传入排序的参数。为什么可以这样呢？我只有一列数据了还是可以根据列排序？因为我在输出的结果是多个列的拼接，所以那些列的数据都是存在的，服务器在查询数据的时候发布时间的数据是在第1列，评论数量的数据是在第2列，所以我根据列的编号就能对该列的数据排序。</p>
-<p>列的参数传入后，在datatable初始化的时候一定要配置”sort”参数，他有两个参数，一是要排序的列号即我用<code>sort()</code>函数传的；二就是倒序还是正序的选项。</p>
-<h4 id="实现代码：-1"><a href="#实现代码：-1" class="headerlink" title="实现代码："></a>实现代码：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//sort函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortBy</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> s = s;</span><br><span class="line">	getAlldata(tableToUse,sort=s,order=<span class="string">'desc'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//.</span></span><br><span class="line"><span class="comment">//.</span></span><br><span class="line"><span class="comment">//.</span></span><br><span class="line"><span class="comment">//datatable的初始化函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAlldata</span>(<span class="params">table,sort=<span class="number">0</span>,order=<span class="string">'desc'</span></span>) </span>&#123;</span><br><span class="line">	$(<span class="string">"#example"</span>).dataTable().fnDestroy();</span><br><span class="line">	$(<span class="string">'#example'</span>).DataTable( &#123;</span><br><span class="line">		<span class="string">"searchHighlight"</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="string">"deferRender"</span>: <span class="literal">true</span>, <span class="comment">//当处理大数据时，延迟渲染数据，有效提高Datatables处理能力   </span></span><br><span class="line">		<span class="string">"processing"</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="string">"serverSide"</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="string">"iDisplayLength"</span>: <span class="number">5</span>,<span class="comment">//单页显示条数</span></span><br><span class="line">		<span class="string">"lengthMenu"</span>: [<span class="number">5</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">50</span>],<span class="comment">//每页显示的条数选项</span></span><br><span class="line">		<span class="string">"ajax"</span>: &#123;</span><br><span class="line">       		url: <span class="string">'info/ajax_server/'</span>+table,</span><br><span class="line">   		&#125;,</span><br><span class="line">   		<span class="string">"order"</span>:[[sort,order]],<span class="comment">//排序</span></span><br><span class="line">   		<span class="comment">//添加跳转至指定页面的功能</span></span><br><span class="line">   		<span class="string">'fnDrawCallback'</span>: <span class="function"><span class="keyword">function</span>(<span class="params">table</span>) </span>&#123;    </span><br><span class="line">		    $(<span class="string">"#example_paginate"</span>).append(<span class="string">"&lt;div style='display:inline-block;float:right;margin-top:15px;'&gt;  跳转到第 &lt;input type='text' id='changePage' class='input-text' style='width:40px;height:22px'&gt; 页 &lt;a class='btn btn-default shiny btn-sm' href='javascript:void(0);' id='dataTable-btn' style='text-align:center'&gt;确认&lt;/a&gt;&lt;/div&gt;"</span>);   </span><br><span class="line">		    <span class="keyword">var</span> oTable = $(<span class="string">"#example"</span>).dataTable();    </span><br><span class="line">		    $(<span class="string">'#dataTable-btn'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;    </span><br><span class="line">		        <span class="keyword">if</span>($(<span class="string">"#changePage"</span>).val() &amp;&amp; $(<span class="string">"#changePage"</span>).val() &gt; <span class="number">0</span>) &#123;    </span><br><span class="line">		            <span class="keyword">var</span> redirectpage = $(<span class="string">"#changePage"</span>).val() - <span class="number">1</span>;    </span><br><span class="line">		        &#125; <span class="keyword">else</span> &#123;    </span><br><span class="line">		            <span class="keyword">var</span> redirectpage = <span class="number">0</span>;    </span><br><span class="line">		        &#125;    </span><br><span class="line">		        oTable.fnPageChange(redirectpage);    </span><br><span class="line">		    &#125;); </span><br><span class="line">		&#125;</span><br><span class="line">	&#125; );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          自定义输出结果我的需求：我们都知道datatable查询数据后都是按照列一列一列的返回的，但是有时候我们虽然用到了datatable的表，却不需要按列展示数据，我所要实现的是在查询数据的时候按列从数据库中查询多个列的数据，但是展示在页面上的时候把很多列的数据显示在一列中，像下面图片这样：
 
-          
+我需要做
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/28/datatable的一些自定义配置/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1160,7 +1296,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qxiaomay">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1208,6 +1344,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -1226,12 +1381,16 @@
       
         
           
-            <p>闲来无事，写点杂记</p>
-<p>因为毕业论文要分析知乎人物关系，所以开始接触大数据可视化。我也不知道自己怎么想的，去年年末就挑了最难学的<a href="https://d3js.org/" target="_blank" rel="noopener">d3.js</a>，那时搜集了很多关于D3的学习教程等着开年了来系统的学学，但是最近在百度前端学院上了解了<a href="http://echarts.baidu.com/index.html" target="_blank" rel="noopener">echarts</a>这个可视化工具，发现它相比于D3入门要简单很多，浏览了官网示例和官网的发布的配置手册就基本会用它实现一些图表了，而且生成的图表都挺美观，还可以给图表配置主题等等，总之，功能够用就行。然后昨天我在查询用什么生成关系图的时候，看到有人推荐<a href="https://gephi.org/" target="_blank" rel="noopener">gephi</a>，今天又花了半天的时间了解了一下gephi，gephi就更简单了，它自称是数据可视化中的PS，我下载下来跟着一个教程试用了一下，功能确实蛮多的，感觉这个软件主打就是关系图或者网络图，你想要什么样的图都可以做相应的设置，输入就是数据，数据形式可以是excel的csv数据、MySQL数据库的数据或者是自己在里面设置的数据，有了数据再做相应的配置，然后输出就是一张图表，可以是png/pdf…</p>
-<p>在这3个工具都了解一遍之后，我觉得作为一个大数据可视化的程序员，首选还是D3.js和echarts，一些简单的图表就用echarts，稍微复杂一点的就用D3吧！对于简单的图表，echarts官方示例的那么多就够了，而且如果是只要做一个线图或者柱形图，用d3和echarts都很简单，但是实现出来的样式来看的话echarts略胜一筹，因为echarts图表绑定了一些dom元素，如果用D3就要自己去绑定dom操作，懒到极致···<br>对于稍微复杂点的图表，如force力导向图，用D3官网上的例子就很好实现啦,之前有一篇文章列了很多<a href="https://qxiaomay.github.io/2017/01/14/D3%E7%94%BBforce%E5%AF%BC%E5%90%91%E5%9B%BE/" target="_blank" rel="noopener">学习资源</a>；echarts的force图详见<a href="http://echarts.baidu.com/echarts2/doc/example.html" target="_blank" rel="noopener">echarts2.0版本</a>；再懒的话就直接去gephi生成图表吧，图形化界面操作都很简明，还能实时预览效果。</p>
-<p>D3也学了一点，echarts也学了一点，gephi也学了一点，但是我究竟学会了什么？。。。既然入坑了，还是还好学吧！下次写一个详细的总结出来~</p>
-
-          
+          闲来无事，写点杂记
+因为毕业论文要分析知乎人物关系，所以开始接触大数据可视化。我也不知道自己怎么想的，去年年末就挑了最难学的d3.js，那时搜集了很多关于D3的学习教程等着开年了来系统的学学，但是最近在百度前端学院上了解了echarts这个可视化工具，发现它相比于D3入门要简单很多，浏览了官网示例和
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/28/从D3到echarts到gephi,我到底经历了什么/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1283,7 +1442,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qxiaomay">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1331,6 +1490,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -1349,65 +1527,22 @@
       
         
           
-            <p><strong>1、PHP常见错误等级</strong>：Notice，Warning，Strict，Parse Error，Fatal Error<br><strong>2、错误原理:</strong></p>
-<ul>
-<li>通知级别(Notice)：未定义，重复使用等(不会影响代码执行)<blockquote>
-<p>常见的Notice：未定义变量(常量),表单元素未定义(下标)</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	<span class="regexp">//</span>未定义变量</span><br><span class="line">	<span class="regexp">//</span> 解决方案：使用前定义</span><br><span class="line">	echo <span class="variable">$var</span>;</span><br><span class="line">	<span class="regexp">//</span>未定义常量 </span><br><span class="line">	echo PI;</span><br><span class="line">	<span class="regexp">//</span>数组元素下标未定义</span><br><span class="line">	<span class="regexp">//</span> 解决方案：在使用前进行判断，保证代码安全，增加代码容错性 <span class="keyword">if</span> (isset(<span class="variable">$_POST</span>[<span class="string">'name'</span>])) echo <span class="variable">$_POST</span>[<span class="string">'name'</span>];  </span><br><span class="line">	echo <span class="variable">$_POST</span>[<span class="string">'name'</span>];</span><br></pre></td></tr></table></figure>
-<ul>
-<li>警告级别(warning)：系统找不到<blockquote>
-<p>常见的warning：包含文件不存在，默认时区，函数参数没有传入值</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?php</span></span></span><br><span class="line"><span class="php">	<span class="comment">// 包含文件,不影响后面输出hello world</span></span></span><br><span class="line"><span class="php">	<span class="keyword">include_once</span> <span class="string">'fatalerror.php'</span>;</span></span><br><span class="line"><span class="php">	<span class="keyword">echo</span> <span class="string">"hello world"</span>;</span></span><br><span class="line"><span class="php">	<span class="comment">// 使用默认时区</span></span></span><br><span class="line"><span class="php">	<span class="comment">// 解决方案：修改默认时区为'PRC'</span></span></span><br><span class="line"><span class="php">	<span class="keyword">echo</span> data(<span class="string">'Y-m-d'</span>,time());</span></span><br><span class="line"><span class="php">	<span class="comment">// 实参没有传值</span></span></span><br><span class="line"><span class="php">	<span class="function"><span class="keyword">function</span> <span class="title">display</span><span class="params">($value)</span></span></span></span><br><span class="line"><span class="php">	&#123;</span></span><br><span class="line"><span class="php">		<span class="keyword">echo</span> $name;</span></span><br><span class="line"><span class="php">	&#125;</span></span><br><span class="line"><span class="php">	<span class="comment">// 调用函数</span></span></span><br><span class="line"><span class="php">	display();</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>严格级别(strict)：版本兼容(软件升级过程中不可避免的出现了迭代产品)</li>
-</ul>
-<blockquote>
-<p>常见的strict：构造方法，类访问非静态方法</p>
-</blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?php</span></span></span><br><span class="line"><span class="php">	<span class="comment">// 解决方案：1，将老款放下面；2，不做兼容</span></span></span><br><span class="line"><span class="php">	<span class="class"><span class="keyword">class</span> <span class="title">GirlFriend</span></span>&#123;</span></span><br><span class="line"><span class="php">	<span class="comment">// 结构中所有的内容都是类成员</span></span></span><br><span class="line"><span class="php">	<span class="function"><span class="keyword">function</span> <span class="title">GirlFriend</span><span class="params">()</span></span></span></span><br><span class="line"><span class="php">	&#123;</span></span><br><span class="line"><span class="php">		<span class="keyword">echo</span> <span class="keyword">__METHOD__</span>,<span class="string">'&lt;br&gt;'</span>;</span></span><br><span class="line"><span class="php">	&#125;</span></span><br><span class="line"><span class="php">	<span class="comment">// 构造方法</span></span></span><br><span class="line"><span class="php">	<span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span></span></span><br><span class="line"><span class="php">	&#123;</span></span><br><span class="line"><span class="php">		<span class="comment">// 资源初始化</span></span></span><br><span class="line"><span class="php">		<span class="keyword">echo</span> <span class="keyword">__METHOD__</span>,<span class="string">'&lt;br&gt;'</span>;</span></span><br><span class="line"><span class="php">	&#125;</span></span><br><span class="line"><span class="php">				</span></span><br><span class="line"><span class="php">	<span class="comment">// 实例化，构造方法兼容错误</span></span></span><br><span class="line"><span class="php">	$g = <span class="keyword">new</span> GirlFriend();</span></span><br><span class="line"><span class="php"></span></span><br><span class="line"><span class="php">	<span class="comment">// 类是可以访问类成员的：一般访问静态成员（static关键字修饰）和类常量（const）</span></span></span><br><span class="line"><span class="php">	GirlFriend::display();</span></span><br><span class="line"><span class="php"></span></span><br><span class="line"><span class="php">	<span class="comment">// 解决方案：分清楚角色，静态成员和类常量都归类访问，普通的方法和属性都归对象访问</span></span></span><br><span class="line"><span class="php">	$g::display();</span></span><br><span class="line"><span class="php">&#125;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>编译级别(parse error)：语法错误<blockquote>
-<p>常见的parse:结构不完整，缺少语句结束符，关键字学错，定界符</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?php</span> </span></span><br><span class="line"><span class="php">	<span class="comment">// 结构不完整</span></span></span><br><span class="line"><span class="php">	<span class="comment">// 解决方案：注意代码的结构规范</span></span></span><br><span class="line"><span class="php">	<span class="keyword">if</span> (<span class="keyword">true</span>)) &#123;</span></span><br><span class="line"><span class="php">		<span class="keyword">echo</span> <span class="string">'true'</span>;</span></span><br><span class="line"><span class="php">	&#125;</span></span><br><span class="line"><span class="php">	<span class="function"><span class="keyword">function</span> <span class="title">FunctionName</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="php">				</span></span><br><span class="line"><span class="php">	&#125;&#125;</span></span><br><span class="line"><span class="php"></span></span><br><span class="line"><span class="php">	<span class="comment">// 缺少语句结束符</span></span></span><br><span class="line"><span class="php">	<span class="comment">// 缺少分号</span></span></span><br><span class="line"><span class="php">	<span class="keyword">echo</span> <span class="string">"helloworld"</span></span></span><br><span class="line"><span class="php"></span></span><br><span class="line"><span class="php">	<span class="comment">// 定界符,结束内容必须顶格</span></span></span><br><span class="line"><span class="php">	<span class="comment">// 第一个符号后面不能有任何内容，包括空格和注释</span></span></span><br><span class="line"><span class="php">	$str=<span class="string">&lt;&lt;&lt;END</span></span></span><br><span class="line"><span class="php">		hello world</span></span><br><span class="line"><span class="php">	END;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>致命级别(fotal error)：结构错误(直接导致出错代码后面的代码不在执行)<blockquote>
-<p>常见的fotal：文件包含，使用未定义的结构（函数和类），访问私有成员，内存超出，时间过长（超过30s）</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?php</span></span></span><br><span class="line"><span class="php">	<span class="comment">// 文件包含,require，后面的hello不能输出</span></span></span><br><span class="line"><span class="php">	<span class="comment">// 解决方案，加载前进行文件判断if(file_exit('fatalerror.php'))&#123;require 'fatalerror.php';&#125;</span></span></span><br><span class="line"><span class="php">	<span class="keyword">require</span> <span class="string">'fatalerror.php'</span>;</span></span><br><span class="line"><span class="php">	<span class="keyword">echo</span> <span class="string">"hello"</span>;</span></span><br><span class="line"><span class="php"></span></span><br><span class="line"><span class="php">	<span class="comment">// 使用未定义结构</span></span></span><br><span class="line"><span class="php">	<span class="comment">// 解决方案：1确定定义的函数2自动加载</span></span></span><br><span class="line"><span class="php">	display(); <span class="comment">//直接调用未定义的函数</span></span></span><br><span class="line"><span class="php"></span></span><br><span class="line"><span class="php">	$g = <span class="keyword">new</span> GirlFriend();<span class="comment">//未定义类</span></span></span><br><span class="line"><span class="php"></span></span><br><span class="line"><span class="php">	<span class="comment">// 私有成员访问</span></span></span><br><span class="line"><span class="php">	<span class="comment">// 解决方案：PHP重载</span></span></span><br><span class="line"><span class="php">	<span class="class"><span class="keyword">class</span> <span class="title">ClassName</span></span>&#123;</span></span><br><span class="line"><span class="php">		<span class="keyword">private</span> $age = <span class="number">10</span>;</span></span><br><span class="line"><span class="php">		<span class="keyword">public</span> $name = <span class="string">"hhh"</span>;</span></span><br><span class="line"><span class="php">	&#125;</span></span><br><span class="line"><span class="php">	$g = <span class="keyword">new</span> ClassName();</span></span><br><span class="line"><span class="php">	<span class="keyword">echo</span> $g-&gt;name;<span class="comment">//公有可以访问</span></span></span><br><span class="line"><span class="php">	<span class="keyword">echo</span> $g-&gt;age;<span class="comment">//fatal error </span></span></span><br><span class="line"><span class="php"></span></span><br><span class="line"><span class="php">	<span class="comment">// 内存超出:服务器内存不够</span></span></span><br><span class="line"><span class="php">	<span class="comment">// 解决方案：优先查递归，有没有递归出口</span></span></span><br><span class="line"><span class="php">	<span class="comment">// 递归：必须有递归点和递归出口</span></span></span><br><span class="line"><span class="php">	<span class="function"><span class="keyword">function</span> <span class="title">dg</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="php">		<span class="keyword">echo</span> <span class="string">"a"</span>;</span></span><br><span class="line"><span class="php">		dg();</span></span><br><span class="line"><span class="php">	&#125;</span></span><br><span class="line"><span class="php">	dg();</span></span><br><span class="line"><span class="php"></span></span><br><span class="line"><span class="php">	<span class="comment">// 执行时间过长,时间超过30S</span></span></span><br><span class="line"><span class="php">	<span class="comment">// 解决方案：加长PHP解决 set_time_limie(0);</span></span></span><br><span class="line"><span class="php">	$arr = <span class="keyword">array</span>();</span></span><br><span class="line"><span class="php">	<span class="keyword">for</span> ($i=<span class="number">0</span>; $i &lt; <span class="number">100000</span>; $i++) &#123; </span></span><br><span class="line"><span class="php">		$arr[$i] = mt_rand(<span class="number">1</span>,<span class="number">100000</span>);</span></span><br><span class="line"><span class="php">	&#125;</span></span><br><span class="line"><span class="php">	<span class="comment">// 定义冒泡函数</span></span></span><br><span class="line"><span class="php">	<span class="function"><span class="keyword">function</span> <span class="title">bubble_sort</span><span class="params">($arr)</span></span></span></span><br><span class="line"><span class="php">	&#123;</span></span><br><span class="line"><span class="php">		<span class="keyword">for</span> ($i=<span class="number">0</span>,$len = count($arr); $i &lt; $len; $i++) &#123; </span></span><br><span class="line"><span class="php">			<span class="keyword">for</span> ($j=<span class="number">0</span>; $j &lt; $len<span class="number">-1</span>; $j++) &#123; </span></span><br><span class="line"><span class="php">				<span class="keyword">if</span> ($arr[$i]&gt;$arr[$j]) &#123;</span></span><br><span class="line"><span class="php">					$temp = $arr[$i];</span></span><br><span class="line"><span class="php">					$arr[$i] = $arr[$j];</span></span><br><span class="line"><span class="php">					$arr[$j] = $temp;</span></span><br><span class="line"><span class="php">				&#125;</span></span><br><span class="line"><span class="php">			&#125;</span></span><br><span class="line"><span class="php">		&#125;</span></span><br><span class="line"><span class="php">		<span class="keyword">return</span> $arr;</span></span><br><span class="line"><span class="php">	&#125;</span></span><br><span class="line"><span class="php">	bubble_sort($arr);</span></span><br></pre></td></tr></table></figure>
-<p><strong>3、错误解决方案</strong></p>
-<pre><code>a)主动解决问题
-b)抑制问题
-c)关闭问题
-</code></pre><ul>
-<li>parse error(编译错误)：<br>  在书写代码的过程中，保证代码的格式正确，注意书写格式</li>
-<li><p>runtime error(运行错误):<br>1,忽略式：notice warning strict 可以直接忽略<br> 2,解决bug<br> 3,错误抑制符@，不让错误出现<br> 4,开发阶段（解决所有错误），生成阶段（抑制所有错误）</p>
-<pre><code>4.1为单独项目进行错误控制
-  ini_set(&apos;error_reporting&apos;,E_ALL);//显示错有级别的错误
-  ini_set(&apos;display_errors&apos;,1);//开发，把错误显示出来
-  生产环境
-   ini_set(&apos;error_reporting&apos;,E_ALL &amp; ~E_NOTICE &amp; E_STRICT &amp; E_WARNING);
+          1、PHP常见错误等级：Notice，Warning，Strict，Parse Error，Fatal Error2、错误原理:
 
-4.2整个服务器错误控制：在php.ini中进行配置：
-   error_reporting
-   display_errors
-</code></pre></li>
-</ul>
-<ul>
-<li>高性能的代码实现：<br>1，结构简约<br>2，利用短路运算（出现概率高的放前面）<br>3，算法实现</li>
-</ul>
+通知级别(Notice)：未定义，重复使用等(不会影响代码执行)
+常见的Notice：未定义变量(常量),表单元素未定义(下标)
 
-          
+
+
+123456789&lt;?ph
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/21/PHP中常见的错误和解决办法/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1459,7 +1594,7 @@ c)关闭问题
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qxiaomay">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1507,6 +1642,25 @@ c)关闭问题
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -1525,35 +1679,17 @@ c)关闭问题
       
         
           
-            <p>datatable是一款基于jQuery表格插件，在目前做的项目中用到了它，所以也了解了一点点。虽然它功能强大，但是对于菜鸟来说也折腾了不少时间。</p>
-<p>datatable是一款基于jQuery表格插件，在目前做的项目中用到了它，所以也了解了一点点。虽然它功能强大，但是对于菜鸟来说也折腾了不少时间。</p>
-<p>在正式讲它之前先放两个链接：</p>
-<blockquote>
-<p><a href="https://datatables.net/" target="_blank" rel="noopener">datatable jQuery官网</a><br><a href="http://datatables.club/" target="_blank" rel="noopener">datatable中文网</a></p>
-</blockquote>
-<p>我在具体实践中用到的datatable的功能主要是分页和全局搜索。<br>分页分为客户端分页和服务器端分页。</p>
-<p><strong>客户端分页</strong></p>
-<p>客户端分页即将数据全部从服务器请求回来之后客户端再用js将其分页展示的情况。这种客户端分页显示的方式适用于数据量小的时候，一旦数据量过大，在服务端请求数据的过程就非常之慢，我一开始尝试用客户端分页的方式时，从数据库请求上千条数据至少要用3秒。他的实现方法倒是很简单。再用它之前先填入两个js库，一个是jQuery的库，一个是datatable的库。</p>
-<blockquote>
-<p>//code.jquery.com/jquery-1.12.4.js<br><a href="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js" target="_blank" rel="noopener">https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js</a><br>使用的时候只需要调用构造函数： <code>$().DataTable();</code>。<br>我的项目之中连调用函数的功夫都省了，我用的模板已经封装好了一些功能，用的时候在table里添加相应的类名就可以了。但是我的模板优点蠢的一点是table的列数必须大于等于5列才能实现分页搜索，我也不明白为什么，可能是封装的时候改了一些设置？</p>
-</blockquote>
-<p><strong>服务器端分页</strong></p>
-<p>服务器端分页适用于数据量大的情况。稍微要复杂一些，一言难尽。<br>多看几遍官网上这个<a href="https://datatables.net/examples/server_side/object_data.html" target="_blank" rel="noopener">例子</a>就懂了。我这里解释一下例子里的代码：</p>
-<blockquote>
-<p>HTML</p>
-</blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//既然是一个table，在HTML文档里首先声明这样的一个表格，id="example"</span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">id</span>=<span class="string">"example"</span> <span class="attr">class</span>=<span class="string">"display"</span> <span class="attr">cellspacing</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">"100%"</span>&gt;</span></span><br><span class="line">	//只用注明表头就行，表头一定要有，如果没有表头的需求的话，设置css属性style="display:none"不显示即可</span><br><span class="line">   <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>First name<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>Last name<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>Position<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>Office<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>Start date<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>Salary<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>javascript </p>
-</blockquote>
-<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//调用$().DataTable();初始化表格，如果有两张表都要初始化的话，在初始化第二张表之前先把前一张表的初始化消除掉：$(<span class="string">"#example"</span>).dataTable().fnDestroy();</span><br><span class="line">//服务器端处理一定要设置<span class="string">"serverSide"</span>: <span class="literal">true</span></span><br><span class="line">//objects.php是服务器端的处理程序，通过ajax加载到服务器端的</span><br><span class="line">//<span class="string">"columns"</span>列数据点，告诉它在哪里获取该行中每个单元格的数据</span><br><span class="line">$(document).ready(<span class="keyword">function</span>() &#123;</span><br><span class="line">    $(<span class="string">'#example'</span>).DataTable( &#123;</span><br><span class="line">        <span class="string">"processing"</span>: true,</span><br><span class="line">        <span class="string">"serverSide"</span>: true,</span><br><span class="line">        <span class="string">"ajax"</span>: <span class="string">"scripts/objects.php"</span>,</span><br><span class="line">        <span class="string">"columns"</span>: [</span><br><span class="line">            &#123; <span class="string">"data"</span>: <span class="string">"first_name"</span> &#125;,</span><br><span class="line">            &#123; <span class="string">"data"</span>: <span class="string">"last_name"</span> &#125;,</span><br><span class="line">            &#123; <span class="string">"data"</span>: <span class="string">"position"</span> &#125;,</span><br><span class="line">            &#123; <span class="string">"data"</span>: <span class="string">"office"</span> &#125;,</span><br><span class="line">            &#123; <span class="string">"data"</span>: <span class="string">"start_date"</span> &#125;,</span><br><span class="line">            &#123; <span class="string">"data"</span>: <span class="string">"salary"</span> &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125; );</span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>服务器端处理程序，假设是objects.php</p>
-</blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?php</span></span></span><br><span class="line"><span class="php"> </span></span><br><span class="line">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</span><br><span class="line"> * Easy set variables</span><br><span class="line"><span class="php"> */</span></span><br><span class="line"><span class="php"> </span></span><br><span class="line"><span class="php"><span class="comment">// DB table to use</span></span></span><br><span class="line"><span class="php"><span class="comment">//datatables_demo你要查询的数据表的名字</span></span></span><br><span class="line"><span class="php">$table = <span class="string">'datatables_demo'</span>;</span></span><br><span class="line"><span class="php"> </span></span><br><span class="line"><span class="php"><span class="comment">// Table's primary key 主键</span></span></span><br><span class="line"><span class="php">$primaryKey = <span class="string">'id'</span>;</span></span><br><span class="line"><span class="php"> </span></span><br><span class="line"><span class="php"><span class="comment">// Array of database columns which should be read and sent back to DataTables.</span></span></span><br><span class="line"><span class="php"><span class="comment">// The `db` parameter represents the column name in the database, while the `dt`</span></span></span><br><span class="line"><span class="php"><span class="comment">// parameter represents the DataTables column identifier. In this case object</span></span></span><br><span class="line"><span class="php"><span class="comment">// parameter names</span></span></span><br><span class="line"><span class="php"><span class="comment">//上面英文都说了'db'参数代表数据表的列名，'dt'参数代表datatable中的table的列名</span></span></span><br><span class="line"><span class="php">$columns = <span class="keyword">array</span>(</span></span><br><span class="line"><span class="php">    <span class="keyword">array</span>( <span class="string">'db'</span> =&gt; <span class="string">'first_name'</span>, <span class="string">'dt'</span> =&gt; <span class="string">'first_name'</span> ),</span></span><br><span class="line"><span class="php">    <span class="keyword">array</span>( <span class="string">'db'</span> =&gt; <span class="string">'last_name'</span>,  <span class="string">'dt'</span> =&gt; <span class="string">'last_name'</span> ),</span></span><br><span class="line"><span class="php">    <span class="keyword">array</span>( <span class="string">'db'</span> =&gt; <span class="string">'position'</span>,   <span class="string">'dt'</span> =&gt; <span class="string">'position'</span> ),</span></span><br><span class="line"><span class="php">    <span class="keyword">array</span>( <span class="string">'db'</span> =&gt; <span class="string">'office'</span>,     <span class="string">'dt'</span> =&gt; <span class="string">'office'</span> ),</span></span><br><span class="line"><span class="php">    <span class="keyword">array</span>(</span></span><br><span class="line"><span class="php">        <span class="string">'db'</span>        =&gt; <span class="string">'start_date'</span>,</span></span><br><span class="line"><span class="php">        <span class="string">'dt'</span>        =&gt; <span class="string">'start_date'</span>,</span></span><br><span class="line"><span class="php">        <span class="string">'formatter'</span> =&gt; <span class="function"><span class="keyword">function</span><span class="params">( $d, $row )</span> </span>&#123;</span></span><br><span class="line"><span class="php">            <span class="keyword">return</span> date( <span class="string">'jS M y'</span>, strtotime($d));</span></span><br><span class="line"><span class="php">        &#125;</span></span><br><span class="line"><span class="php">    ),</span></span><br><span class="line"><span class="php">    <span class="keyword">array</span>(</span></span><br><span class="line"><span class="php">        <span class="string">'db'</span>        =&gt; <span class="string">'salary'</span>,</span></span><br><span class="line"><span class="php">        <span class="string">'dt'</span>        =&gt; <span class="string">'salary'</span>,</span></span><br><span class="line"><span class="php">        <span class="string">'formatter'</span> =&gt; <span class="function"><span class="keyword">function</span><span class="params">( $d, $row )</span> </span>&#123;</span></span><br><span class="line"><span class="php">            <span class="keyword">return</span> <span class="string">'$'</span>.number_format($d);</span></span><br><span class="line"><span class="php">        &#125;</span></span><br><span class="line"><span class="php">    )</span></span><br><span class="line"><span class="php">);</span></span><br><span class="line"><span class="php"> </span></span><br><span class="line"><span class="php"><span class="comment">// SQL server connection information</span></span></span><br><span class="line"><span class="php"><span class="comment">//数据库的连接信息，不给他数据库它怎么查询数据呢</span></span></span><br><span class="line"><span class="php">$sql_details = <span class="keyword">array</span>(</span></span><br><span class="line"><span class="php">    <span class="string">'user'</span> =&gt; <span class="string">''</span>,</span></span><br><span class="line"><span class="php">    <span class="string">'pass'</span> =&gt; <span class="string">''</span>,</span></span><br><span class="line"><span class="php">    <span class="string">'db'</span>   =&gt; <span class="string">''</span>,</span></span><br><span class="line"><span class="php">    <span class="string">'host'</span> =&gt; <span class="string">''</span></span></span><br><span class="line"><span class="php">);</span></span><br><span class="line"><span class="php"> </span></span><br><span class="line"><span class="php"> </span></span><br><span class="line">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</span><br><span class="line"> * If you just want to use the basic configuration for DataTables with PHP</span><br><span class="line"> * server-side, there is no need to edit below this line.</span><br><span class="line"><span class="php"> */</span></span><br><span class="line"><span class="php"></span></span><br><span class="line"><span class="php"><span class="comment">//这里引入的 ssp.class.php 是核心的服务器处理程序，如果没有特殊的返回结果的样式要求的话就可以不用修改它，直接引入用就可以了。</span></span></span><br><span class="line"><span class="php"><span class="comment">//如果想要修改返回结果进这个程序里根据自己的要求修改输出即可</span></span></span><br><span class="line"><span class="php"><span class="keyword">require</span>( <span class="string">'ssp.class.php'</span> );</span></span><br><span class="line"><span class="php"> </span></span><br><span class="line"><span class="php"><span class="comment">//返回数据</span></span></span><br><span class="line"><span class="php"><span class="keyword">echo</span> json_encode(</span></span><br><span class="line"><span class="php">    SSP::simple( $_GET, $sql_details, $table, $primaryKey, $columns )</span></span><br><span class="line"><span class="php">);</span></span><br></pre></td></tr></table></figure>
-<p>大体这样子datatable就可以为你工作了。分页异步加载数据，搜索功能都没问题，但是数据量太大了的话可能还是有点慢。<br>datatable是一个很强大的插件，更多更强大的功能还有待我去挖掘探索。</p>
-
-          
+          datatable是一款基于jQuery表格插件，在目前做的项目中用到了它，所以也了解了一点点。虽然它功能强大，但是对于菜鸟来说也折腾了不少时间。
+datatable是一款基于jQuery表格插件，在目前做的项目中用到了它，所以也了解了一点点。虽然它功能强大，但是对于菜鸟来说也折腾了不少时间。
+在正
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/16/datatable初体验/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1626,6 +1762,10 @@ c)关闭问题
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="qxiaomay" />
+            
               <p class="site-author-name" itemprop="name">qxiaomay</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -1661,11 +1801,41 @@ c)关闭问题
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/qxiaomay" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/5108162161" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+            </div>
+          
 
           
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/maymayjn" title="CSDN" target="_blank">CSDN</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -1687,7 +1857,7 @@ c)关闭问题
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -1705,7 +1875,7 @@ c)关闭问题
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -1752,6 +1922,8 @@ c)关闭问题
   
 
 
+  
+
 
 
 
@@ -1790,6 +1962,11 @@ c)关闭问题
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
