@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="js," />
+  <meta name="keywords" content="vue,xlsx,element," />
 
 
 
@@ -79,22 +79,18 @@
 
 
 
-<meta name="description" content="MDN排序  数组从小到大排序  字母从a-z、z-a排序  二维数组按照第二个元素排序">
-<meta name="keywords" content="js">
+<meta name="description" content="安装xlsx插件 12345// 安装插件npm install xlsx --save// 在vue中导入XLSXimport XLSX from &apos;xlsx&apos;  这里使用 element-ui 的上传组件关闭默认上传的操作，在on-change事件上绑定importExcel上传函数如果用传统的input上传组件也可以&amp;lt;input type=&amp;quot;file&amp;quot; @chan">
+<meta name="keywords" content="vue,xlsx,element">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js排序练习">
-<meta property="og:url" content="http://yoursite.com/2018/06/07/js排序/index.html">
+<meta property="og:title" content="vue中使用xlsx导入excel文件并解析json数据">
+<meta property="og:url" content="http://yoursite.com/2018/07/13/vue前端导入并解析excel表格操作指南/index.html">
 <meta property="og:site_name" content="MAYMAY">
-<meta property="og:description" content="MDN排序  数组从小到大排序  字母从a-z、z-a排序  二维数组按照第二个元素排序">
+<meta property="og:description" content="安装xlsx插件 12345// 安装插件npm install xlsx --save// 在vue中导入XLSXimport XLSX from &apos;xlsx&apos;  这里使用 element-ui 的上传组件关闭默认上传的操作，在on-change事件上绑定importExcel上传函数如果用传统的input上传组件也可以&amp;lt;input type=&amp;quot;file&amp;quot; @chan">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com/qxiaomay/images/blob/master/671.jpg?raw=true">
-<meta property="og:image" content="https://github.com/qxiaomay/images/blob/master/672.jpg?raw=true">
-<meta property="og:image" content="https://github.com/qxiaomay/images/blob/master/673.jpg?raw=true">
-<meta property="og:updated_time" content="2018-06-07T02:53:53.859Z">
+<meta property="og:updated_time" content="2018-07-13T08:13:51.922Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js排序练习">
-<meta name="twitter:description" content="MDN排序  数组从小到大排序  字母从a-z、z-a排序  二维数组按照第二个元素排序">
-<meta name="twitter:image" content="https://github.com/qxiaomay/images/blob/master/671.jpg?raw=true">
+<meta name="twitter:title" content="vue中使用xlsx导入excel文件并解析json数据">
+<meta name="twitter:description" content="安装xlsx插件 12345// 安装插件npm install xlsx --save// 在vue中导入XLSXimport XLSX from &apos;xlsx&apos;  这里使用 element-ui 的上传组件关闭默认上传的操作，在on-change事件上绑定importExcel上传函数如果用传统的input上传组件也可以&amp;lt;input type=&amp;quot;file&amp;quot; @chan">
 
 
 
@@ -124,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/07/js排序/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/13/vue前端导入并解析excel表格操作指南/"/>
 
 
 
 
 
-  <title>js排序练习 | MAYMAY</title>
+  <title>vue中使用xlsx导入excel文件并解析json数据 | MAYMAY</title>
   
 
 
@@ -267,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/07/js排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/vue前端导入并解析excel表格操作指南/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MAYMAY">
@@ -284,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js排序练习</h1>
+          <h1 class="post-title" itemprop="name headline">vue中使用xlsx导入excel文件并解析json数据</h1>
         
 
         <div class="post-meta">
@@ -296,8 +292,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-07T10:50:15+08:00">
-                2018-06-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-13T16:13:00+08:00">
+                2018-07-13
               </time>
             
 
@@ -334,13 +330,15 @@
       
 
       
-        <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank" rel="noopener">MDN排序</a></p>
-<ul>
-<li><p>数组从小到大排序<br><img src="https://github.com/qxiaomay/images/blob/master/671.jpg?raw=true" alt="sort"></p>
+        <ul>
+<li><p>安装<code>xlsx</code>插件</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 安装插件</span></span><br><span class="line">npm install xlsx --save</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在vue中导入XLSX</span></span><br><span class="line"><span class="keyword">import</span> XLSX <span class="keyword">from</span> <span class="string">'xlsx'</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>字母从a-z、z-a排序<br><img src="https://github.com/qxiaomay/images/blob/master/672.jpg?raw=true" alt="sort"></p>
+<li><p>这里使用 <code>element-ui</code> 的上传组件<br>关闭默认上传的操作，在<code>on-change</code>事件上绑定<code>importExcel</code>上传函数<br>如果用传统的input上传组件也可以<code>&lt;input type=&quot;file&quot; @change=&quot;importExcel($event.target)&quot; /&gt;</code></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">el</span>-upload</span><br><span class="line">    ref=<span class="string">"upload"</span></span><br><span class="line">    action=<span class="string">"/"</span></span><br><span class="line">    :show-<span class="keyword">file</span>-<span class="keyword">list</span>=<span class="string">"false"</span></span><br><span class="line">    :<span class="keyword">on</span>-<span class="keyword">change</span>=<span class="string">"importExcel"</span></span><br><span class="line">    :auto-upload=<span class="string">"false"</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">el</span>-button</span><br><span class="line">      slot=<span class="string">"trigger"</span></span><br><span class="line">      icon=<span class="string">"el-icon-upload"</span></span><br><span class="line">      size=<span class="string">"small"</span></span><br><span class="line">      <span class="built_in">type</span>=<span class="string">"primary"</span>&gt;</span><br><span class="line">      上传文件</span><br><span class="line">    &lt;/<span class="keyword">el</span>-button&gt;</span><br><span class="line">&lt;/<span class="keyword">el</span>-upload&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>二维数组按照第二个元素排序<br><img src="https://github.com/qxiaomay/images/blob/master/673.jpg?raw=true" alt="sort"></p>
+<li><p>上传文件的方法<code>importExcel</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">importExcel(file) &#123;</span><br><span class="line">  <span class="comment">// let file = file.files[0] // 使用传统的input方法需要加上这一步</span></span><br><span class="line">  <span class="keyword">const</span> types = file.name.split(<span class="string">'.'</span>)[<span class="number">1</span>]</span><br><span class="line">  <span class="keyword">const</span> fileType = [<span class="string">'xlsx'</span>, <span class="string">'xlc'</span>, <span class="string">'xlm'</span>, <span class="string">'xls'</span>, <span class="string">'xlt'</span>, <span class="string">'xlw'</span>, <span class="string">'csv'</span>].some(<span class="function"><span class="params">item</span> =&gt;</span> item === types)</span><br><span class="line">  <span class="keyword">if</span> (!fileType) &#123;</span><br><span class="line">    alert(<span class="string">'格式错误！请重新选择'</span>)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.file2Xce(file).then(<span class="function"><span class="params">tabJson</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (tabJson &amp;&amp; tabJson.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.xlsxJson = tabJson</span><br><span class="line">      <span class="comment">// xlsxJson就是解析出来的json数据,数据格式如下</span></span><br><span class="line">      <span class="comment">// [</span></span><br><span class="line">      <span class="comment">//   &#123;</span></span><br><span class="line">      <span class="comment">//     sheetName: sheet1</span></span><br><span class="line">      <span class="comment">//     sheet: sheetData</span></span><br><span class="line">      <span class="comment">//   &#125;</span></span><br><span class="line">      <span class="comment">// ]</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br><span class="line">file2Xce(file) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> reader = <span class="keyword">new</span> FileReader()</span><br><span class="line">    reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">const</span> data = e.target.result</span><br><span class="line">      <span class="keyword">this</span>.wb = XLSX.read(data, &#123;</span><br><span class="line">        type: <span class="string">'binary'</span></span><br><span class="line">      &#125;)</span><br><span class="line">      <span class="keyword">const</span> result = []</span><br><span class="line">      <span class="keyword">this</span>.wb.SheetNames.forEach(<span class="function">(<span class="params">sheetName</span>) =&gt;</span> &#123;</span><br><span class="line">        result.push(&#123;</span><br><span class="line">          sheetName: sheetName,</span><br><span class="line">          sheet: XLSX.utils.sheet_to_json(<span class="keyword">this</span>.wb.Sheets[sheetName])</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">      resolve(result)</span><br><span class="line">    &#125;</span><br><span class="line">    reader.readAsBinaryString(file.raw)</span><br><span class="line">    <span class="comment">// reader.readAsBinaryString(file) // 传统input方法</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -360,7 +358,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"># js</a>
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+            <a href="/tags/xlsx/" rel="tag"># xlsx</a>
+          
+            <a href="/tags/element/" rel="tag"># element</a>
           
         </div>
       
@@ -373,8 +375,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/07/二叉树的遍历/" rel="next" title="二叉树遍历">
-                <i class="fa fa-chevron-left"></i> 二叉树遍历
+              <a href="/2018/07/12/mongoose增删改查基础操作/" rel="next" title="mongoose增删改查基础操作指南">
+                <i class="fa fa-chevron-left"></i> mongoose增删改查基础操作指南
               </a>
             
           </div>
@@ -382,10 +384,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/12/mongoose增删改查基础操作/" rel="prev" title="mongoose增删改查基础操作指南">
-                mongoose增删改查基础操作指南 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
