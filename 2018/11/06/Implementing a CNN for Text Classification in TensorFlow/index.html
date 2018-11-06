@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/panda-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/panda-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,nlp,tensorflow," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="#在TensorFlow中实现CNN进行文本分类  Implementing a CNN for Text Classification in TensorFlow原文链接：http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/github代码：https://github.co">
+<meta name="keywords" content="python,nlp,tensorflow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="译：Implementing a CNN for Text Classification in TensorFlow">
+<meta property="og:url" content="http://yoursite.com/2018/11/06/Implementing a CNN for Text Classification in TensorFlow/index.html">
+<meta property="og:site_name" content="MAYMAY">
+<meta property="og:description" content="#在TensorFlow中实现CNN进行文本分类  Implementing a CNN for Text Classification in TensorFlow原文链接：http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/github代码：https://github.co">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.wildml.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-06-at-8.03.47-AM-1024x413.png">
+<meta property="og:updated_time" content="2018-11-06T13:08:03.596Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="译：Implementing a CNN for Text Classification in TensorFlow">
+<meta name="twitter:description" content="#在TensorFlow中实现CNN进行文本分类  Implementing a CNN for Text Classification in TensorFlow原文链接：http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/github代码：https://github.co">
+<meta name="twitter:image" content="http://www.wildml.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-06-at-8.03.47-AM-1024x413.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/06/Implementing a CNN for Text Classification in TensorFlow/"/>
+
+
+
+
+
+  <title>译：Implementing a CNN for Text Classification in TensorFlow | MAYMAY</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?adac0cfdd7db0b78085430d109c7e2db";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MAYMAY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人生已经如此的艰难，有些事情就不要拆穿</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/06/Implementing a CNN for Text Classification in TensorFlow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MAYMAY">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAYMAY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">译：Implementing a CNN for Text Classification in TensorFlow</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-06T21:06:18+08:00">
+                2018-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/磕盐/" itemprop="url" rel="index">
+                    <span itemprop="name">磕盐</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#在TensorFlow中实现CNN进行文本分类</p>
+<blockquote>
+<p><strong>Implementing a CNN for Text Classification in TensorFlow</strong><br><strong>原文链接：<a href="http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/" target="_blank" rel="noopener">http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/</a></strong><br><strong>github代码：<a href="https://github.com/dennybritz/cnn-text-classification-tf" target="_blank" rel="noopener">https://github.com/dennybritz/cnn-text-classification-tf</a></strong></p>
+</blockquote>
+<p>##Implementing a CNN for Text Classification in TensorFlow</p>
+<p>在这篇文章中，我们将实现一个类似于Kim Yoon的<a href="http://arxiv.org/abs/1408.5882" target="_blank" rel="noopener">用于句子分类的卷积神经网络的模型</a>。本文提出的模型在一系列文本分类任务（如情感分析）中实现了良好的分类性能，并已成为新文本分类体系结构的标准基线。</p>
+<p>我假设您已经熟悉应用于NLP的卷积神经网络的基础知识。如果没有，我建议首先阅读了解<a href="http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/" target="_blank" rel="noopener">NLP的卷积神经网络</a>，以获得必要的背景知识。</p>
+<p>###Data and Preprocessing<br>我们将在这篇文章中使用的数据集是来自<a href="http://www.cs.cornell.edu/people/pabo/movie-review-data/" target="_blank" rel="noopener">烂番茄的电影评论数据</a> - 原始论文中也使用的数据集之一。 数据集包含10,662个示例评论句子，一半正例和一半负例。 数据集的大小约为20k。 请注意，由于此数据集非常小，我们可能会过度使用强大的模型。 此外，数据集没有官方训练集和测试集的拆分，因此我们只使用10％的数据作为开发集。 原始论文报告了对数据进行10倍交叉验证的结果。</p>
+<p>我不会在这篇文章中讨论数据预处理代码，但它可以在<a href="https://github.com/dennybritz/cnn-text-classification-tf/blob/master/data_helpers.py" target="_blank" rel="noopener">Github</a>上获得并执行以下操作：</p>
+<ul>
+<li><strong>加载数据</strong>：从原始数据集中加载正例和负例的句子</li>
+<li><strong>数据清洗</strong>使用源论文的<a href="https://github.com/yoonkim/CNN_sentence" target="_blank" rel="noopener">代码</a>清洗文本数据</li>
+<li><strong>数据填充</strong>将每个句子填充到最大句子长度59.我们将特殊的<pad>标记附加到所有其他句子，使它们成为59个单词。 将句子填充到相同长度是很有必要的，因为它允许我们有效地批量处理我们的数据，因为批处理中的每个示例必须具有相同的长度。</pad></li>
+<li><strong>构建句子向量</strong>构建词汇索引并将每个单词映射到0到18,765之间的整数（词汇量大小）。 使每个句子都成为一个整数的向量。</li>
+</ul>
+<p>###The Model<br>网络的模型如下：<br><img src="http://www.wildml.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-06-at-8.03.47-AM-1024x413.png" alt="model"></p>
+<p>第一层将单词嵌入到低维向量中。下一层使用多个滤波器大小对嵌入的字向量执行卷积。例如，一次滑动3个，4个或5个字。接下来，我们将卷积层的结果最大化为长特征向量，添加dropout正则化，并使用softmax层对结果进行分类。</p>
+<p>因为这是一篇教程性质的文章，所以我决定简化原始论文的模型：</p>
+<ul>
+<li>我们不会使用word2vec预先训练好的词向量，相反，我们会从头开始学习如果训练词向量。</li>
+<li>我们不会对权重向量强制执行L2范数约束。 对<a href="http://arxiv.org/abs/1510.03820" target="_blank" rel="noopener">句子分类的卷积神经网络的敏感性分析</a>发现，约束对最终结果影响不大。</li>
+<li>原始论文用两个输入数据通道进行实验 - 静态和非静态词向量。 我们只使用一个通道。</li>
+</ul>
+<p>向代码中添加上述扩展内容还是挺简单的，大概需要十几行代码完成</p>
+<p>Let’s get started!</p>
+<p>###Implementation<br>为了允许各种超参数配置，我们将代码放入一个TextCNN类中，在init函数中生成模型图。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TextCNN</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    A CNN for text classification.</span></span><br><span class="line"><span class="string">    Uses an embedding layer, followed by a convolutional, max-pooling and softmax layer.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">      self, sequence_length, num_classes, vocab_size,</span></span></span><br><span class="line"><span class="function"><span class="params">      embedding_size, filter_sizes, num_filters)</span>:</span></span><br><span class="line">        <span class="comment"># Implementation...</span></span><br></pre></td></tr></table></figure>
+<p>为了实例化该类，我们传递以下参数：</p>
+<ul>
+<li>sequence_length - 我们句子的长度。请记住，我们将所有句子填充为相同的长度（我们的数据集为59）。</li>
+<li>num_classes - 输出层中的类数，在我们的数据中为两个（正例和负例）。</li>
+<li>vocab_size - 我们词汇量的大小。这需要定义词向量的大小，嵌入层的shape为[vocabulary_size, embedding_size]。</li>
+<li>embedding_size - 词向量的维度。</li>
+<li>filter_sizes - 卷积过滤器覆盖的单词数。</li>
+<li>num_filters - 每个卷积过滤器的数量。</li>
+</ul>
+<p>###Input Placeholders<br>我们首先定义传递给网络的输入数据：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Placeholders for input, output and dropout</span></span><br><span class="line">self.input_x = tf.placeholder(tf.int32, [<span class="keyword">None</span>, sequence_length], name=<span class="string">"input_x"</span>)</span><br><span class="line">self.input_y = tf.placeholder(tf.float32, [<span class="keyword">None</span>, num_classes], name=<span class="string">"input_y"</span>)</span><br><span class="line">self.dropout_keep_prob = tf.placeholder(tf.float32, name=<span class="string">"dropout_keep_prob"</span>)</span><br></pre></td></tr></table></figure>
+<p>tf.placeholder创建一个占位符变量，当我们在训练或测试时执行它时，我们将其提供给网络。第二个参数是输入向量的形状。None意味着该维度的长度可以是任意值。在我们的例子中，第一个维度是批量大小，并且使用None允许网络处理任意大小的批次。</p>
+<p>在dropout层中保留神经元的概率也是网络的输入，因为我们仅在训练期间启用dropout。我们在评估模型时禁用它（稍后会详细介绍）。</p>
+<p>###Embedding Layer<br>我们定义的第一层是embedding 层，它将词汇词索引映射到低维矢量表示。它本质上是一个从数据中学习的查找表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.device(<span class="string">'/cpu:0'</span>), tf.name_scope(<span class="string">"embedding"</span>):</span><br><span class="line">    W = tf.Variable(</span><br><span class="line">        tf.random_uniform([vocab_size, embedding_size], <span class="number">-1.0</span>, <span class="number">1.0</span>),</span><br><span class="line">        name=<span class="string">"W"</span>)</span><br><span class="line">    self.embedded_chars = tf.nn.embedding_lookup(W, self.input_x)</span><br><span class="line">    self.embedded_chars_expanded = tf.expand_dims(self.embedded_chars, <span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<p>我们在这里使用了几个新功能，让我们来看看它们：</p>
+<ul>
+<li>tf.device(“/cpu:0”)强制在CPU上执行操作。默认情况下，如果有可用的话，TensorFlow会尝试将操作放在GPU上，但embedding实现目前没有GPU支持，如果置于GPU上则会引发错误。</li>
+<li>tf.name_scope创建一个名为“embedding” 的新名称范围。范围将所有操作添加到名为“嵌入”的顶级节点中，以便在TensorBoard中可视化网络时获得良好的层次结构。</li>
+</ul>
+<p>W是我们在训练期间学习的嵌入矩阵。我们使用随机均匀分布对其进行初始化。tf.nn.embedding_lookup创建实际的embedding操作。embedding操作的结果是三维张量[None, sequence_length, embedding_size]。</p>
+<p>TensorFlow的卷积转换操作需要一个4维张量，其尺寸对应于batch，width，height和channel。我们嵌入的结果不包含通道尺寸，因此我们手动添加它，最后的shape为[None, sequence_length, embedding_size, 1]。</p>
+<p>###Convolution and Max-Pooling Layers</p>
+<p>现在我们已经准备好构建我们的卷积层，然后是max-pooling。请记住，我们使用不同大小的过滤器。因为每个卷积产生不同形状的张量，我们需要迭代它们，为它们中的每一个创建一个层，然后将结果合并为一个大的特征向量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">pooled_outputs = []</span><br><span class="line"><span class="keyword">for</span> i, filter_size <span class="keyword">in</span> enumerate(filter_sizes):</span><br><span class="line">    <span class="keyword">with</span> tf.name_scope(<span class="string">"conv-maxpool-%s"</span> % filter_size):</span><br><span class="line">        <span class="comment"># Convolution Layer</span></span><br><span class="line">        filter_shape = [filter_size, embedding_size, <span class="number">1</span>, num_filters]</span><br><span class="line">        W = tf.Variable(tf.truncated_normal(filter_shape, stddev=<span class="number">0.1</span>), name=<span class="string">"W"</span>)</span><br><span class="line">        b = tf.Variable(tf.constant(<span class="number">0.1</span>, shape=[num_filters]), name=<span class="string">"b"</span>)</span><br><span class="line">        conv = tf.nn.conv2d(</span><br><span class="line">            self.embedded_chars_expanded,</span><br><span class="line">            W,</span><br><span class="line">            strides=[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">            padding=<span class="string">"VALID"</span>,</span><br><span class="line">            name=<span class="string">"conv"</span>)</span><br><span class="line">        <span class="comment"># Apply nonlinearity</span></span><br><span class="line">        h = tf.nn.relu(tf.nn.bias_add(conv, b), name=<span class="string">"relu"</span>)</span><br><span class="line">        <span class="comment"># Max-pooling over the outputs</span></span><br><span class="line">        pooled = tf.nn.max_pool(</span><br><span class="line">            h,</span><br><span class="line">            ksize=[<span class="number">1</span>, sequence_length - filter_size + <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">            strides=[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">            padding=<span class="string">'VALID'</span>,</span><br><span class="line">            name=<span class="string">"pool"</span>)</span><br><span class="line">        pooled_outputs.append(pooled)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Combine all the pooled features</span></span><br><span class="line">num_filters_total = num_filters * len(filter_sizes)</span><br><span class="line">self.h_pool = tf.concat(<span class="number">3</span>, pooled_outputs)</span><br><span class="line">self.h_pool_flat = tf.reshape(self.h_pool, [<span class="number">-1</span>, num_filters_total])</span><br></pre></td></tr></table></figure>
+<p>这里W是我们的滤波器矩阵，h是将非线性应用于卷积输出的结果。每个过滤器都滑过整个embedding，但它覆盖的单词数量会有所不同。”VALID”padding意味着我们将过滤器滑过句子而不填充边缘，执行一个窄卷积，输出shape指定为[1, sequence_length - filter_size + 1, 1, 1]。在特定过滤器尺寸的输出上执行最大池化使我们具有张量形状[batch_size, 1, 1, num_filters]。这本质上是一个特征向量，其中最后一个维度对应于我们的特征。一旦我们从每个滤波器大小获得所有合并的输出张量，我们将它们组合成一个长形状的特征向量[batch_size, num_filters_total]。使用-1in tf.reshape告诉TensorFlow尽可能展平尺寸。</p>
+<p>###Dropout Layer</p>
+<p>dropout可能是最常用的规则化卷积神经网络的方法。dropout背后的想法很简单。dropout层随机“禁用”其神经元的一部分。这可以防止神经元共同适应并迫使它们学习各自有用的特征。我们保持启用的神经元部分由dropout_keep_prob网络的输入定义。我们在训练期间将其设置为0.5，在评估期间设置为1（禁用dropout）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Add dropout</span></span><br><span class="line"><span class="keyword">with</span> tf.name_scope(<span class="string">"dropout"</span>):</span><br><span class="line">    self.h_drop = tf.nn.dropout(self.h_pool_flat, self.dropout_keep_prob)</span><br></pre></td></tr></table></figure>
+<p>###Scores and Predictions<br>使用max-pooling中的特征向量（应用了dropout），我们可以通过矩阵乘法和选择具有最高分数的类来生成预测。我们还可以应用softmax函数将原始分数转换为标准化概率，但这不会改变我们的最终预测。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.name_scope(<span class="string">"output"</span>):</span><br><span class="line">    W = tf.Variable(tf.truncated_normal([num_filters_total, num_classes], stddev=<span class="number">0.1</span>), name=<span class="string">"W"</span>)</span><br><span class="line">    b = tf.Variable(tf.constant(<span class="number">0.1</span>, shape=[num_classes]), name=<span class="string">"b"</span>)</span><br><span class="line">    self.scores = tf.nn.xw_plus_b(self.h_drop, W, b, name=<span class="string">"scores"</span>)</span><br><span class="line">    self.predictions = tf.argmax(self.scores, <span class="number">1</span>, name=<span class="string">"predictions"</span>)</span><br></pre></td></tr></table></figure>
+<p>这里tf.nn.xw_plus_b执行<code>Wx + b</code>矩阵乘法。</p>
+<p>###Loss and Accuracy<br>使用我们的Scores，我们可以定义损失函数。损失是衡量我们网络错误的指标，我们的目标是最小化它。分类的标准损失函数问题是交叉熵损失。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Calculate mean cross-entropy loss</span></span><br><span class="line"><span class="keyword">with</span> tf.name_scope(<span class="string">"loss"</span>):</span><br><span class="line">    losses = tf.nn.softmax_cross_entropy_with_logits(self.scores, self.input_y)</span><br><span class="line">    self.loss = tf.reduce_mean(losses)</span><br></pre></td></tr></table></figure>
+<p>这里，tf.nn.softmax_cross_entropy_with_logits是一个函数，它根据我们的Scores和正确的输入标签计算每个类的交叉熵损失。然后我们采取损失的平均值。我们也可以使用总和，但这使得比较不同批量大小和训练/开发数据的损失变得更加困难。</p>
+<p>我们还定义了精度的表达式，这是在训练和测试期间跟踪的有用数量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Calculate Accuracy</span></span><br><span class="line"><span class="keyword">with</span> tf.name_scope(<span class="string">"accuracy"</span>):</span><br><span class="line">    correct_predictions = tf.equal(self.predictions, tf.argmax(self.input_y, <span class="number">1</span>))</span><br><span class="line">    self.accuracy = tf.reduce_mean(tf.cast(correct_predictions, <span class="string">"float"</span>), name=<span class="string">"accuracy"</span>)</span><br></pre></td></tr></table></figure>
+<p>###Training Procedure<br>之前我们定义为我们的网络训练过程中，我们需要了解TensorFlow如何使用一些基本的Sessions和Graphs。如果您已经熟悉这些概念，请随意跳过本节。</p>
+<p>在TensorFlow中，a Session是您正在执行图形操作的环境，它包含有关变量和队列的状态。每个会话都在一个图表上运行。如果在创建变量和操作时未显式使用会话，则使用TensorFlow创建的当前默认会话。您可以通过执行session.as_default()块内的命令来更改默认会话（请参阅下文）。</p>
+<p>A Graph包含操作和张量。您可以在程序中使用多个图形，但大多数程序只需要一个图形。您可以在多个会话中使用相同的图形，但不能在一个会话中使用多个图形。TensorFlow始终创建默认图形，但您也可以手动创建图形并将其设置为新默认图形，如下所示。显式创建会话和图表可确保在不再需要资源时正确释放资源。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.Graph().as_default():</span><br><span class="line">    session_conf = tf.ConfigProto(</span><br><span class="line">      allow_soft_placement=FLAGS.allow_soft_placement,</span><br><span class="line">      log_device_placement=FLAGS.log_device_placement)</span><br><span class="line">    sess = tf.Session(config=session_conf)</span><br><span class="line">    <span class="keyword">with</span> sess.as_default():</span><br><span class="line">        <span class="comment"># Code that operates on the default graph and session comes here...</span></span><br></pre></td></tr></table></figure>
+<p>allow_soft_placement设置允许TensorFlow回落的设备上时，优选的设备不存在实现的某些操作。例如，如果我们的代码在GPU上进行操作，并且我们在没有GPU的机器上运行代码，则不使用allow_soft_placement会导致错误。如果设置了log_device_placement，TensorFlow会记录它放置操作的设备（CPU或GPU）。这对调试很有用。FLAGS是我们程序的命令行参数。</p>
+<p>###Instantiating the CNN and minimizing the loss</p>
+<p>当我们实例化我们的TextCNN模型时，所有定义的变量和操作将被放入我们上面创建的默认Graphs和Sessions中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cnn = TextCNN(</span><br><span class="line">    sequence_length=x_train.shape[<span class="number">1</span>],</span><br><span class="line">    num_classes=<span class="number">2</span>,</span><br><span class="line">    vocab_size=len(vocabulary),</span><br><span class="line">    embedding_size=FLAGS.embedding_dim,</span><br><span class="line">    filter_sizes=map(int, FLAGS.filter_sizes.split(<span class="string">","</span>)),</span><br><span class="line">    num_filters=FLAGS.num_filters)</span><br></pre></td></tr></table></figure>
+<p>接下来，我们定义如何优化网络的损耗函数。TensorFlow有几个内置的优化器。我们正在使用的是Adam优化器。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">global_step = tf.Variable(<span class="number">0</span>, name=<span class="string">"global_step"</span>, trainable=<span class="keyword">False</span>)</span><br><span class="line">optimizer = tf.train.AdamOptimizer(<span class="number">1e-4</span>)</span><br><span class="line">grads_and_vars = optimizer.compute_gradients(cnn.loss)</span><br><span class="line">train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)</span><br></pre></td></tr></table></figure>
+<p>这里，train_op这是一个新创建的操作，我们可以运行它来对我们的参数执行渐变更新。每次执行train_op都是一个训练步骤。TensorFlow自动确定哪些变量是“可训练的”并计算其梯度。通过定义global_step变量并将其传递给优化器，我们允许TensorFlow为我们处理训练步骤的计数。每次执行时，train_op全局步骤将自动递增1 。</p>
+<p>###Summaries</p>
+<p>TensorFlow具有Summaries概念，允许您在培训和评估期间跟踪和可视化各种变量。例如，您可能希望跟踪损失和准确度随时间的变化情况。您还可以跟踪更复杂的数量，例如图层激活的直方图。摘要是序列化对象，它们使用SummaryWriter写入磁盘。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Output directory for models and summaries</span></span><br><span class="line">timestamp = str(int(time.time()))</span><br><span class="line">out_dir = os.path.abspath(os.path.join(os.path.curdir, <span class="string">"runs"</span>, timestamp))</span><br><span class="line">print(<span class="string">"Writing to &#123;&#125;\n"</span>.format(out_dir))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Summaries for loss and accuracy</span></span><br><span class="line">loss_summary = tf.scalar_summary(<span class="string">"loss"</span>, cnn.loss)</span><br><span class="line">acc_summary = tf.scalar_summary(<span class="string">"accuracy"</span>, cnn.accuracy)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Train Summaries</span></span><br><span class="line">train_summary_op = tf.merge_summary([loss_summary, acc_summary])</span><br><span class="line">train_summary_dir = os.path.join(out_dir, <span class="string">"summaries"</span>, <span class="string">"train"</span>)</span><br><span class="line">train_summary_writer = tf.train.SummaryWriter(train_summary_dir, sess.graph_def)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Dev summaries</span></span><br><span class="line">dev_summary_op = tf.merge_summary([loss_summary, acc_summary])</span><br><span class="line">dev_summary_dir = os.path.join(out_dir, <span class="string">"summaries"</span>, <span class="string">"dev"</span>)</span><br><span class="line">dev_summary_writer = tf.train.SummaryWriter(dev_summary_dir, sess.graph_def)</span><br></pre></td></tr></table></figure>
+<p>在这里，我们分别跟踪训练和评估的Summaries。tf.merge_summary是一个便捷函数，它将多个汇总操作合并为一个我们可以执行的操作。</p>
+<p>###Checkpointing<br>您通常要使用的另一个TensorFlow功能是Checkpointing - 保存模型的参数以便以后恢复它们。Checkpointing可用于稍后继续训练，或使用提前停止选择最佳参数设置。使用Saver对象创建检查点。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Checkpointing</span></span><br><span class="line">checkpoint_dir = os.path.abspath(os.path.join(out_dir, <span class="string">"checkpoints"</span>))</span><br><span class="line">checkpoint_prefix = os.path.join(checkpoint_dir, <span class="string">"model"</span>)</span><br><span class="line"><span class="comment"># Tensorflow assumes this directory already exists so we need to create it</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(checkpoint_dir):</span><br><span class="line">    os.makedirs(checkpoint_dir)</span><br><span class="line">saver = tf.train.Saver(tf.all_variables())</span><br></pre></td></tr></table></figure>
+<p>###Initializing the variables<br>在我们训练模型之前，我们还需要在图中初始化变量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sess.run(tf.initialize_all_variables())</span><br></pre></td></tr></table></figure>
+<p>该initialize_all_variables功能是一个方便的功能，运行所有我们为我们的变量定义的初始化的。您也可以手动调用变量的初始值设定项。如果您想要使用预先训练的值初始化嵌入，这非常有用。</p>
+<p>###Defining a single training step<br>现在让我们为单个训练步骤定义一个函数，在一批数据上评估模型并更新模型参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train_step</span><span class="params">(x_batch, y_batch)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    A single training step</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    feed_dict = &#123;</span><br><span class="line">      cnn.input_x: x_batch,</span><br><span class="line">      cnn.input_y: y_batch,</span><br><span class="line">      cnn.dropout_keep_prob: FLAGS.dropout_keep_prob</span><br><span class="line">    &#125;</span><br><span class="line">    _, step, summaries, loss, accuracy = sess.run(</span><br><span class="line">        [train_op, global_step, train_summary_op, cnn.loss, cnn.accuracy],</span><br><span class="line">        feed_dict)</span><br><span class="line">    time_str = datetime.datetime.now().isoformat()</span><br><span class="line">    print(<span class="string">"&#123;&#125;: step &#123;&#125;, loss &#123;:g&#125;, acc &#123;:g&#125;"</span>.format(time_str, step, loss, accuracy))</span><br><span class="line">    train_summary_writer.add_summary(summaries, step)</span><br></pre></td></tr></table></figure>
+<p>feed_dict包含我们传递给网络的占位符节点的数据。您必须为所有占位符节点提供值，否则TensorFlow将引发错误。处理输入数据的另一种方法是使用队列，但这超出了本文的范围。</p>
+<p>接下来，我们执行train_opusing session.run，它返回我们要求它评估的所有操作的值。请注意，train_op什么都不返回，它只是更新我们网络的参数。最后，我们打印当前培训批次的丢失和准确性，并将摘要保存到磁盘。请注意，如果批次较小，批次培训批次的损失和准确性可能会有很大差异。由于我们使用的是辍学，因此您的培训指标可能会比评估指标更差。</p>
+<p>我们编写了一个类似的函数来评估任意数据集的损失和准确性，例如验证集或整个训练集。基本上这个功能与上面的功能相同，但没有训练操作。它还会禁用丢失。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dev_step</span><span class="params">(x_batch, y_batch, writer=None)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    Evaluates model on a dev set</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    feed_dict = &#123;</span><br><span class="line">      cnn.input_x: x_batch,</span><br><span class="line">      cnn.input_y: y_batch,</span><br><span class="line">      cnn.dropout_keep_prob: <span class="number">1.0</span></span><br><span class="line">    &#125;</span><br><span class="line">    step, summaries, loss, accuracy = sess.run(</span><br><span class="line">        [global_step, dev_summary_op, cnn.loss, cnn.accuracy],</span><br><span class="line">        feed_dict)</span><br><span class="line">    time_str = datetime.datetime.now().isoformat()</span><br><span class="line">    print(<span class="string">"&#123;&#125;: step &#123;&#125;, loss &#123;:g&#125;, acc &#123;:g&#125;"</span>.format(time_str, step, loss, accuracy))</span><br><span class="line">    <span class="keyword">if</span> writer:</span><br><span class="line">        writer.add_summary(summaries, step)</span><br></pre></td></tr></table></figure>
+<p>###Training loop</p>
+<p>最后，我们准备编写训练循环了。我们迭代批量数据，train_step为每个批次调用函数，不定时评估和检查我们的模型：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Generate batches</span></span><br><span class="line">batches = data_helpers.batch_iter(</span><br><span class="line">    zip(x_train, y_train), FLAGS.batch_size, FLAGS.num_epochs)</span><br><span class="line"><span class="comment"># Training loop. For each batch...</span></span><br><span class="line"><span class="keyword">for</span> batch <span class="keyword">in</span> batches:</span><br><span class="line">    x_batch, y_batch = zip(*batch)</span><br><span class="line">    train_step(x_batch, y_batch)</span><br><span class="line">    current_step = tf.train.global_step(sess, global_step)</span><br><span class="line">    <span class="keyword">if</span> current_step % FLAGS.evaluate_every == <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">"\nEvaluation:"</span>)</span><br><span class="line">        dev_step(x_dev, y_dev, writer=dev_summary_writer)</span><br><span class="line">        print(<span class="string">""</span>)</span><br><span class="line">    <span class="keyword">if</span> current_step % FLAGS.checkpoint_every == <span class="number">0</span>:</span><br><span class="line">        path = saver.save(sess, checkpoint_prefix, global_step=current_step)</span><br><span class="line">        print(<span class="string">"Saved model checkpoint to &#123;&#125;\n"</span>.format(path))</span><br></pre></td></tr></table></figure>
+<p>这里，batch_iter是我编写的批处理数据的辅助函数，tf.train.global_step是返回值的便捷函数global_step。<br><a href="https://github.com/dennybritz/cnn-text-classification-tf/blob/master/train.py" target="_blank" rel="noopener">此处提供完整的训练代码</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/nlp/" rel="tag"># nlp</a>
+          
+            <a href="/tags/tensorflow/" rel="tag"># tensorflow</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/20/gpu666/" rel="next" title="windows连接服务器及一些常用操作">
+                <i class="fa fa-chevron-left"></i> windows连接服务器及一些常用操作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="MAYMAY" />
+            
+              <p class="site-author-name" itemprop="name">MAYMAY</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/qxiaomay" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/5108162161" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/maymayjn" title="CSDN" target="_blank">CSDN</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MAYMAY</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
