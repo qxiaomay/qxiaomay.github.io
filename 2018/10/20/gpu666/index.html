@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="windows端连接服务器  使用putty来连接服务器，下载页面下载之后，打开putty工具，在host中填入服务器地址 点击open进入登录界面，输入用户名密码即可  上传下载文件  上传下载文件需要用到pscp这个工具，在putty的下载页面可以找到 运行psftp.exe,进入服务器，命令：open 192.168.xx.xx 进入linux目标文件夹，如果没有，则mkdir xxx新建">
+<meta name="description" content="windows端连接服务器  使用putty来连接服务器，下载页面下载之后，打开putty工具，在host中填入服务器地址 点击open进入登录界面，输入用户名密码即可运行程序需要切换到root用户sudo su,查看GPU使用情况nvidia-smi  上传下载文件  上传下载文件需要用到pscp这个工具，在putty的下载页面可以找到 运行psftp.exe,进入服务器，命令：open 19">
 <meta name="keywords" content="ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="windows连接服务器及一些常用操作">
 <meta property="og:url" content="http://yoursite.com/2018/10/20/gpu666/index.html">
 <meta property="og:site_name" content="MAYMAY">
-<meta property="og:description" content="windows端连接服务器  使用putty来连接服务器，下载页面下载之后，打开putty工具，在host中填入服务器地址 点击open进入登录界面，输入用户名密码即可  上传下载文件  上传下载文件需要用到pscp这个工具，在putty的下载页面可以找到 运行psftp.exe,进入服务器，命令：open 192.168.xx.xx 进入linux目标文件夹，如果没有，则mkdir xxx新建">
+<meta property="og:description" content="windows端连接服务器  使用putty来连接服务器，下载页面下载之后，打开putty工具，在host中填入服务器地址 点击open进入登录界面，输入用户名密码即可运行程序需要切换到root用户sudo su,查看GPU使用情况nvidia-smi  上传下载文件  上传下载文件需要用到pscp这个工具，在putty的下载页面可以找到 运行psftp.exe,进入服务器，命令：open 19">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdn.net/20140209125149546?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd194dWU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="https://img-blog.csdn.net/20140209125333875?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd194dWU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-10-20T03:37:32.751Z">
+<meta property="og:image" content="https://github.com/qxiaomay/images/blob/master/putty.jpg?raw=true">
+<meta property="og:image" content="https://github.com/qxiaomay/images/blob/master/tar.jpg?raw=true">
+<meta property="og:updated_time" content="2018-11-28T01:49:19.031Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="windows连接服务器及一些常用操作">
-<meta name="twitter:description" content="windows端连接服务器  使用putty来连接服务器，下载页面下载之后，打开putty工具，在host中填入服务器地址 点击open进入登录界面，输入用户名密码即可  上传下载文件  上传下载文件需要用到pscp这个工具，在putty的下载页面可以找到 运行psftp.exe,进入服务器，命令：open 192.168.xx.xx 进入linux目标文件夹，如果没有，则mkdir xxx新建">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20140209125149546?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd194dWU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:description" content="windows端连接服务器  使用putty来连接服务器，下载页面下载之后，打开putty工具，在host中填入服务器地址 点击open进入登录界面，输入用户名密码即可运行程序需要切换到root用户sudo su,查看GPU使用情况nvidia-smi  上传下载文件  上传下载文件需要用到pscp这个工具，在putty的下载页面可以找到 运行psftp.exe,进入服务器，命令：open 19">
+<meta name="twitter:image" content="https://github.com/qxiaomay/images/blob/master/putty.jpg?raw=true">
 
 
 
@@ -358,8 +358,8 @@
         <blockquote>
 <p><strong>windows端连接服务器</strong></p>
 </blockquote>
-<p>使用putty来连接服务器，<a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank" rel="noopener">下载页面</a><br>下载之后，打开putty工具，在host中填入服务器地址<br><img src="https://img-blog.csdn.net/20140209125149546?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd194dWU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="putty"></p>
-<p>点击open进入登录界面，输入用户名密码即可<br><img src="https://img-blog.csdn.net/20140209125333875?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd194dWU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="登录服务器"></p>
+<p>使用putty来连接服务器，<a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank" rel="noopener">下载页面</a><br>下载之后，打开putty工具，在host中填入服务器地址<br><img src="https://github.com/qxiaomay/images/blob/master/putty.jpg?raw=true" alt="putty"></p>
+<p>点击open进入登录界面，输入用户名密码即可<br>运行程序需要切换到root用户<code>sudo su</code>,查看GPU使用情况<code>nvidia-smi</code></p>
 <blockquote>
 <p><strong>上传下载文件</strong></p>
 </blockquote>
@@ -372,6 +372,7 @@
 <p><strong>解压文件夹</strong></p>
 </blockquote>
 <p>在windows上使用了rar压缩文件，ubuntu上使用unrar解压，加压rar文件的命令为：<br><code>unrar e file.rar</code> 把rar压缩包的所有文件加压到当前目录下，没有文件夹<br><code>unrar x file.rar</code> 把rar压缩包的所有文件加压到压缩包目录下，推荐使用</p>
+<p><strong>压缩文件</strong><br><img src="https://github.com/qxiaomay/images/blob/master/tar.jpg?raw=true" alt="tar"></p>
 <blockquote>
 <p><strong>删除文件和文件夹</strong></p>
 </blockquote>
