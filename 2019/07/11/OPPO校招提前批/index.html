@@ -11,7 +11,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
 
 
 
@@ -88,7 +97,7 @@
 <meta property="og:description" content="今天早上，大雨滂沱！我还是冒雨去了相隔十多公里的OPPO面试点，面试官很nice，很多问题答不上来还会一步一步指导我，愧疚…为什么我这么菜！废话不多说了，下面是一面的面试题目及答案。 1.自我介绍面试官看简历中… 2.谈谈js的数据类型包括基本类型和引用类型，基本类型包括undefined,null,String,Boolean,Number，引用类型包括Object,Array,Function">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com/qxiaomay/images/blob/master/arrayType.png?raw=true">
-<meta property="og:updated_time" content="2019-07-11T09:24:13.662Z">
+<meta property="og:updated_time" content="2019-07-11T11:21:04.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OPPO校招提前批前端面试">
 <meta name="twitter:description" content="今天早上，大雨滂沱！我还是冒雨去了相隔十多公里的OPPO面试点，面试官很nice，很多问题答不上来还会一步一步指导我，愧疚…为什么我这么菜！废话不多说了，下面是一面的面试题目及答案。 1.自我介绍面试官看简历中… 2.谈谈js的数据类型包括基本类型和引用类型，基本类型包括undefined,null,String,Boolean,Number，引用类型包括Object,Array,Function">
@@ -242,6 +251,7 @@
 
 
 
+<link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
  </div>
     </header>
 
@@ -338,6 +348,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.3k
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -372,15 +401,15 @@
 <p><strong><code>302</code></strong>暂时重定向。 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</p>
 <h3 id="8-vue数据动态绑定原理"><a href="#8-vue数据动态绑定原理" class="headerlink" title="8.vue数据动态绑定原理"></a>8.vue数据动态绑定原理</h3><p>我回答用Object的defineProperty属性，设置get和set</p>
 <h3 id="9-Object-defineProperty的缺点是啥"><a href="#9-Object-defineProperty的缺点是啥" class="headerlink" title="9.Object.defineProperty的缺点是啥"></a>9.Object.defineProperty的缺点是啥</h3><p>我没有回答出来。<br>《深入浅出Vue.js》书上的讲解：<strong>Vue.js通过Object.defineProperty来将对象的key转换成getter/setter的形式来追踪变化，但是getter/setter只能追踪一个数据是否被修改，无法追踪到新增属性和删除属性</strong></p>
-<h3 id="10-数组元素的变化侦听"><a href="#10-数组元素的变化侦听" class="headerlink" title="10.数组元素的变化侦听"></a>10.数组元素的变化侦听</h3><p>紧接着面试官就问了通过数组下标去改变一个数据的元素，Vue能检测到变化吗？这个概念我在《深入浅出Vue.js》这本书中看过，答案是<strong>不能</strong>的，面试官就是为了说明上一个问题Object.defineProperty的缺点，才这么问的。<br>具体的还要细看《深入浅出Vue.js》这本书的第三章。</p>
+<h3 id="10-数组元素的变化侦听"><a href="#10-数组元素的变化侦听" class="headerlink" title="10.数组元素的变化侦听"></a>10.数组元素的变化侦听</h3><p>紧接着面试官就问了通过数组下标去改变一个数据的元素，Vue能检测到变化吗？这个概念我在《深入浅出Vue.js》这本书中看过，答案是<strong>不能</strong>的，面试官就是为了说明上一个问题Object.defineProperty的缺点，才这么问的。紧接着就问了怎么解决这个问题，我还是不知道，面试官就给我说了<code>$set</code>方法，emmmmmm…<br>具体的还要细看《深入浅出Vue.js》这本书的第三章。</p>
 <blockquote>
-<p><code>Array</code>追踪变化的方式和<code>Object</code>不一样。因为它是通过方法来改变内容的，所以我们通过创建拦截器去覆盖数据原型的方式来追踪变化。<br>除了侦测数组自身的变化外，数组元素的变化也需要侦测。我们在<code>Observer</code>中判断如果当前被侦测的数据是数组，则调用<code>observerArray</code>方法将数组的每一个元素都转换成响应式的并侦测变化。<br>除了侦测已有数据外，当用户使用push等方法像数组中新增数据时，新增数据也要进行变化侦测。我们使用当前操作数据的方法来判断，如果是<code>push</code>,<code>unshift</code>和<code>splive</code>方法，测从参数中将新增元素提取出来，然后使用<code>observerArray</code>对新增数据进行变化侦测。<br>由于在ES6之前，JavaScript没有提供元编程的能力，所以对于数组类型的数据，一些变化无法追踪到，只能拦截原型上的方法，而无法拦截到数据特有的方法，例如使用length清空数组的操作就无法拦截。</p>
+<p><code>Array</code>追踪变化的方式和<code>Object</code>不一样。因为它是通过方法来改变内容的，所以我们通过创建拦截器去覆盖数据原型的方式来追踪变化。<br>除了侦测数组自身的变化外，数组元素的变化也需要侦测。我们在<code>Observer</code>中判断如果当前被侦测的数据是数组，则调用<code>observerArray</code>方法将数组的每一个元素都转换成响应式的并侦测变化。<br>除了侦测已有数据外，当用户使用push等方法像数组中新增数据时，新增数据也要进行变化侦测。我们使用当前操作数据的方法来判断，如果是<code>push</code>,<code>unshift</code>和<code>splice</code>方法，测从参数中将新增元素提取出来，然后使用<code>observerArray</code>对新增数据进行变化侦测。<br>由于在ES6之前，JavaScript没有提供元编程的能力，所以对于数组类型的数据，一些变化无法追踪到，只能拦截原型上的方法，而无法拦截到数据特有的方法，例如使用length清空数组的操作就无法拦截。</p>
 </blockquote>
 <h3 id="11-给定一个对象a-b-c，如果改变了c，vue能监听到变化吗"><a href="#11-给定一个对象a-b-c，如果改变了c，vue能监听到变化吗" class="headerlink" title="11.给定一个对象a.b.c，如果改变了c，vue能监听到变化吗"></a>11.给定一个对象a.b.c，如果改变了c，vue能监听到变化吗</h3><p>答案应该是<strong>能</strong>的，具体可以参考《深入浅出Vue.js》一书 2.7 递归侦测所有key</p>
 <h3 id="12-会用React吗？"><a href="#12-会用React吗？" class="headerlink" title="12.会用React吗？"></a>12.会用React吗？</h3><p>不会。。。</p>
-<h3 id="12-还有什么问题吗"><a href="#12-还有什么问题吗" class="headerlink" title="12.还有什么问题吗"></a>12.还有什么问题吗</h3><p>问：贵公司前端岗位需要什么样的人？需要掌握哪些知识？</p>
+<h3 id="13-还有什么问题吗"><a href="#13-还有什么问题吗" class="headerlink" title="13.还有什么问题吗"></a>13.还有什么问题吗</h3><p>问：贵公司前端岗位需要什么样的人？需要掌握哪些知识？</p>
 <p>答：基础知识扎实，对于某项技术的原理了解的很透彻，而不是单纯限于会用。。。</p>
-<p><del>~</del><del>~</del><del>~</del><del>~</del><del>~</del><del>~</del>~<br>一首凉凉送给自己，我就是那种基础知识全忘光，技术只会用没有深入理解的人，OPPO再见</p>
+<p><del>~</del><del>~</del>~~<br>一首凉凉送给自己，我就是那种基础知识全忘光，技术只会用没有深入理解的人，OPPO再见!</p>
 
       
     </div>
@@ -585,7 +614,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-自我介绍"><span class="nav-number">1.</span> <span class="nav-text">1.自我介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-谈谈js的数据类型"><span class="nav-number">2.</span> <span class="nav-text">2.谈谈js的数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Array数组的判断方法"><span class="nav-number">3.</span> <span class="nav-text">3.Array数组的判断方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-call-apply的区别"><span class="nav-number">4.</span> <span class="nav-text">4.call,apply的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-js阻塞的问题（问的比较细，基本上没回答出来）"><span class="nav-number">5.</span> <span class="nav-text">5.js阻塞的问题（问的比较细，基本上没回答出来）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-cookie和session的区别"><span class="nav-number">6.</span> <span class="nav-text">6.cookie和session的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-http状态码，304代表什么？301-302呢？？？"><span class="nav-number">7.</span> <span class="nav-text">7.http状态码，304代表什么？301,302呢？？？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-vue数据动态绑定原理"><span class="nav-number">8.</span> <span class="nav-text">8.vue数据动态绑定原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Object-defineProperty的缺点是啥"><span class="nav-number">9.</span> <span class="nav-text">9.Object.defineProperty的缺点是啥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-数组元素的变化侦听"><span class="nav-number">10.</span> <span class="nav-text">10.数组元素的变化侦听</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-给定一个对象a-b-c，如果改变了c，vue能监听到变化吗"><span class="nav-number">11.</span> <span class="nav-text">11.给定一个对象a.b.c，如果改变了c，vue能监听到变化吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-会用React吗？"><span class="nav-number">12.</span> <span class="nav-text">12.会用React吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-还有什么问题吗"><span class="nav-number">13.</span> <span class="nav-text">12.还有什么问题吗</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-自我介绍"><span class="nav-number">1.</span> <span class="nav-text">1.自我介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-谈谈js的数据类型"><span class="nav-number">2.</span> <span class="nav-text">2.谈谈js的数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Array数组的判断方法"><span class="nav-number">3.</span> <span class="nav-text">3.Array数组的判断方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-call-apply的区别"><span class="nav-number">4.</span> <span class="nav-text">4.call,apply的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-js阻塞的问题（问的比较细，基本上没回答出来）"><span class="nav-number">5.</span> <span class="nav-text">5.js阻塞的问题（问的比较细，基本上没回答出来）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-cookie和session的区别"><span class="nav-number">6.</span> <span class="nav-text">6.cookie和session的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-http状态码，304代表什么？301-302呢？？？"><span class="nav-number">7.</span> <span class="nav-text">7.http状态码，304代表什么？301,302呢？？？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-vue数据动态绑定原理"><span class="nav-number">8.</span> <span class="nav-text">8.vue数据动态绑定原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Object-defineProperty的缺点是啥"><span class="nav-number">9.</span> <span class="nav-text">9.Object.defineProperty的缺点是啥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-数组元素的变化侦听"><span class="nav-number">10.</span> <span class="nav-text">10.数组元素的变化侦听</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-给定一个对象a-b-c，如果改变了c，vue能监听到变化吗"><span class="nav-number">11.</span> <span class="nav-text">11.给定一个对象a.b.c，如果改变了c，vue能监听到变化吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-会用React吗？"><span class="nav-number">12.</span> <span class="nav-text">12.会用React吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-还有什么问题吗"><span class="nav-number">13.</span> <span class="nav-text">13.还有什么问题吗</span></a></li></ol></div>
             
 
           </div>
@@ -611,6 +640,15 @@
   </span>
   <span class="author" itemprop="copyrightHolder">MAYMAY</span>
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">23.3k</span>
   
 </div>
 
@@ -789,6 +827,8 @@
   
 
   
+
+  <script type="text/javascript" src="/js/src/love.js"></script>
 
 </body>
 </html>
