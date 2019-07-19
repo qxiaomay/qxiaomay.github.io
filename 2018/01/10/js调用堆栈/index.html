@@ -88,20 +88,18 @@
 
 
 
-<meta name="description" content="看了一篇文章，讲到打造自己的前端品牌，认为以下罗列的知识点很重要。望2019年上半年里能对以下知识点做一个系统的梳理，分享到博客，为下半年找工作做准备~~~~  木易杨大佬总结的已经非常好了，向大佬多多学习！ https://github.com/yygmind/blog    【进阶 1 期】 调用堆栈 【进阶 2 期】 作用域闭包 【进阶 3 期】 this 全面解析 【进阶 4 期】 深浅拷">
+<meta name="description" content="JS调用栈的工作机制简单的说：函数被调用时，就会被加入到调用栈顶部，执行结束之后，就会从调用栈顶部移除该函数，这种数据结构的关键在于后进先出，即大家所熟知的 LIFO。比如，当我们在函数y 内部调用函数x的时候，调用栈从下往上的顺序就是 y -&amp;gt; x 。 简单用代码举个例子。 123456789101112131415function c() &amp;#123;    console.log(&apos;c">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019年打造自己的前端品牌">
-<meta property="og:url" content="http://yoursite.com/2018/12/11/frontEnd/index.html">
+<meta property="og:title" content="【进阶 1 期】 调用堆栈">
+<meta property="og:url" content="http://yoursite.com/2018/01/10/js调用堆栈/index.html">
 <meta property="og:site_name" content="MAYMAY">
-<meta property="og:description" content="看了一篇文章，讲到打造自己的前端品牌，认为以下罗列的知识点很重要。望2019年上半年里能对以下知识点做一个系统的梳理，分享到博客，为下半年找工作做准备~~~~  木易杨大佬总结的已经非常好了，向大佬多多学习！ https://github.com/yygmind/blog    【进阶 1 期】 调用堆栈 【进阶 2 期】 作用域闭包 【进阶 3 期】 this 全面解析 【进阶 4 期】 深浅拷">
+<meta property="og:description" content="JS调用栈的工作机制简单的说：函数被调用时，就会被加入到调用栈顶部，执行结束之后，就会从调用栈顶部移除该函数，这种数据结构的关键在于后进先出，即大家所熟知的 LIFO。比如，当我们在函数y 内部调用函数x的时候，调用栈从下往上的顺序就是 y -&amp;gt; x 。 简单用代码举个例子。 123456789101112131415function c() &amp;#123;    console.log(&apos;c">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com/qxiaomay/images/blob/master/frontEnd.jpg?raw=true">
-<meta property="og:updated_time" content="2019-07-19T09:52:00.397Z">
+<meta property="og:updated_time" content="2019-07-19T04:08:50.686Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2019年打造自己的前端品牌">
-<meta name="twitter:description" content="看了一篇文章，讲到打造自己的前端品牌，认为以下罗列的知识点很重要。望2019年上半年里能对以下知识点做一个系统的梳理，分享到博客，为下半年找工作做准备~~~~  木易杨大佬总结的已经非常好了，向大佬多多学习！ https://github.com/yygmind/blog    【进阶 1 期】 调用堆栈 【进阶 2 期】 作用域闭包 【进阶 3 期】 this 全面解析 【进阶 4 期】 深浅拷">
-<meta name="twitter:image" content="https://github.com/qxiaomay/images/blob/master/frontEnd.jpg?raw=true">
+<meta name="twitter:title" content="【进阶 1 期】 调用堆栈">
+<meta name="twitter:description" content="JS调用栈的工作机制简单的说：函数被调用时，就会被加入到调用栈顶部，执行结束之后，就会从调用栈顶部移除该函数，这种数据结构的关键在于后进先出，即大家所熟知的 LIFO。比如，当我们在函数y 内部调用函数x的时候，调用栈从下往上的顺序就是 y -&amp;gt; x 。 简单用代码举个例子。 123456789101112131415function c() &amp;#123;    console.log(&apos;c">
 
 
 
@@ -131,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/11/frontEnd/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/10/js调用堆栈/"/>
 
 
 
 
 
-  <title>2019年打造自己的前端品牌 | MAYMAY</title>
+  <title>【进阶 1 期】 调用堆栈 | MAYMAY</title>
   
 
 
@@ -275,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/frontEnd/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/10/js调用堆栈/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MAYMAY">
@@ -292,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2019年打造自己的前端品牌</h1>
+          <h1 class="post-title" itemprop="name headline">【进阶 1 期】 调用堆栈</h1>
         
 
         <div class="post-meta">
@@ -304,8 +302,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-11T10:09:55+08:00">
-                2018-12-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-10T10:09:55+08:00">
+                2018-01-10
               </time>
             
 
@@ -358,7 +356,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  326
+                  427
                 </span>
               
 
@@ -383,41 +381,17 @@
       
 
       
-        <p>看了一篇文章，讲到打造自己的前端品牌，认为以下罗列的知识点很重要。望2019年上半年里能对以下知识点做一个系统的梳理，分享到博客，为下半年找工作做准备~~~~</p>
-<hr>
-<p>木易杨大佬总结的已经非常好了，向大佬多多学习！ <a href="https://github.com/yygmind/blog" target="_blank" rel="noopener">https://github.com/yygmind/blog</a></p>
-<p><img src="https://github.com/qxiaomay/images/blob/master/frontEnd.jpg?raw=true" alt="frontEnd"></p>
-<hr>
-<ul>
-<li>【进阶 1 期】 调用堆栈</li>
-<li>【进阶 2 期】 作用域闭包</li>
-<li>【进阶 3 期】 this 全面解析</li>
-<li>【进阶 4 期】 深浅拷贝原理</li>
-<li>【进阶 5 期】 原型 Prototype</li>
-<li>【进阶 6 期】 高阶函数</li>
-<li>【进阶 7 期】 事件机制</li>
-<li>【进阶 8 期】 Event Loop 原理</li>
-<li>【进阶 9 期】 Promise 原理</li>
-<li>【进阶 10 期】Async/Await 原理</li>
-<li>【进阶 11 期】防抖/节流原理</li>
-<li>【进阶 12 期】模块化详解</li>
-<li>【进阶 13 期】ES6 重难点</li>
-<li>【进阶 14 期】计算机网络概述</li>
-<li>【进阶 15 期】浏览器渲染原理</li>
-<li>【进阶 16 期】webpack 配置</li>
-<li>【进阶 17 期】webpack 原理</li>
-<li>【进阶 18 期】前端监控</li>
-<li>【进阶 19 期】跨域和安全</li>
-<li>【进阶 20 期】性能优化</li>
-<li>【进阶 21 期】VirtualDom 原理</li>
-<li>【进阶 22 期】Diff 算法</li>
-<li>【进阶 23 期】MVVM 双向绑定</li>
-<li>【进阶 24 期】Vuex 原理</li>
-<li>【进阶 25 期】Redux 原理</li>
-<li>【进阶 26 期】路由原理</li>
-<li>【进阶 27 期】VueRouter 源码解析</li>
-<li>【进阶 28 期】ReactRouter 源码解析</li>
-</ul>
+        <h2 id="JS调用栈的工作机制"><a href="#JS调用栈的工作机制" class="headerlink" title="JS调用栈的工作机制"></a>JS调用栈的工作机制</h2><p>简单的说：<strong>函数被调用时，就会被加入到调用栈顶部，执行结束之后，就会从调用栈顶部移除该函数</strong>，这种数据结构的关键在于后进先出，即大家所熟知的 <code>LIFO</code>。比如，当我们在函数<code>y</code> 内部调用函数<code>x</code>的时候，调用栈从下往上的顺序就是 <code>y -&gt; x</code> 。</p>
+<p>简单用代码举个例子。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'c'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'b'</span>);</span><br><span class="line">    c();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a'</span>);</span><br><span class="line">    b();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a();</span><br></pre></td></tr></table></figure>
+<p>这段代码再运行时，<strong>首先<code>a</code>会被加入到调用栈的顶部</strong>，<code>a</code>内部调用了<code>b</code>，紧接着<strong><code>b</code>被加入到调用栈的顶部</strong>，<code>b</code>内部调用了<code>c</code>，<strong><code>c</code>也被加入了调用栈的顶部</strong>。<br>此时，调用栈从下到上的顺序是这样的，<strong><code>a-&gt;b-&gt;c</code></strong>。在<code>c</code>执行完毕之后，<code>c</code>从调用栈中移除，依次执行<code>b</code>,<code>a</code>，直到全部从调用栈中移除。</p>
+<p>为了更好的说明调用栈的运行机制，使用<code>console.trace</code>来把当前调用栈输出到<code>console</code>中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'c'</span>);</span><br><span class="line">    <span class="built_in">console</span>.trace();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'b'</span>);</span><br><span class="line">    c();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a'</span>);</span><br><span class="line">    b();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a();</span><br></pre></td></tr></table></figure>
+<p>在浏览器<code>console</code>运行此代码，会得到如下结果。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">console.trace</span><br><span class="line">c</span><br><span class="line">b</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+<p>显然，调用栈从下往上执行的结构是：<code>a-&gt;b-&gt;c</code></p>
+<p>最后总结下调用栈的工作机制：<strong>调用函数的时候，会被推到调用栈的顶部，而执行完毕之后，就会从调用栈移除</strong>。</p>
+<p>参考链接<br>浅析javascript调用栈 <a href="https://segmentfault.com/a/1190000010360316" target="_blank" rel="noopener">https://segmentfault.com/a/1190000010360316</a><br>你不知道的 JS 错误和调用栈常识 <a href="https://segmentfault.com/a/1190000008621990" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008621990</a></p>
 
       
     </div>
@@ -448,8 +422,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/06/Implementing a CNN for Text Classification in TensorFlow/" rel="next" title="译：Implementing a CNN for Text Classification in TensorFlow">
-                <i class="fa fa-chevron-left"></i> 译：Implementing a CNN for Text Classification in TensorFlow
+              <a href="/2017/10/27/vue小结/" rel="next" title="Vue小结">
+                <i class="fa fa-chevron-left"></i> Vue小结
               </a>
             
           </div>
@@ -458,8 +432,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/06/steganalysis/" rel="prev" title="隐写分析（from zhangqizky/awesome-Steganalysis-project）">
-                隐写分析（from zhangqizky/awesome-Steganalysis-project） <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/01/express/" rel="prev" title="express+mongoose搭建简易的web数据接口">
+                express+mongoose搭建简易的web数据接口 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -512,8 +486,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -607,6 +590,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS调用栈的工作机制"><span class="nav-number">1.</span> <span class="nav-text">JS调用栈的工作机制</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
