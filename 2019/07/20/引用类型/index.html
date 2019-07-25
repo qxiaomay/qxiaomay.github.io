@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="对JS高级程序设计第五章引用类型的内容做一个梳理~ Object类型创建Object实例的方式：  使用new操作符后跟object构造函数 使用对象字面量表示法   Array类型创建数组的基本方式：  使用Array构造函数 使用数组字面量表示法  检测数组的方法  instanceof操作符 Array.isArray()方法  操作方法操作方法包括concat(),slice(),spli">
+<meta name="description" content="对JS高级程序设计第五章引用类型的内容做一个梳理~ Object类型创建Object实例的方式：  使用new操作符后跟object构造函数 使用对象字面量表示法  Object类型数据变化侦测原理 Object可以通过Object.defineProperty将属性转换成getter/setter的形式来追踪变化，读取数据时会触发getter，修改数据时会触发setter.我们需要在getter">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS高程Chapter-5 引用类型">
 <meta property="og:url" content="http://yoursite.com/2019/07/20/引用类型/index.html">
 <meta property="og:site_name" content="MAYMAY">
-<meta property="og:description" content="对JS高级程序设计第五章引用类型的内容做一个梳理~ Object类型创建Object实例的方式：  使用new操作符后跟object构造函数 使用对象字面量表示法   Array类型创建数组的基本方式：  使用Array构造函数 使用数组字面量表示法  检测数组的方法  instanceof操作符 Array.isArray()方法  操作方法操作方法包括concat(),slice(),spli">
+<meta property="og:description" content="对JS高级程序设计第五章引用类型的内容做一个梳理~ Object类型创建Object实例的方式：  使用new操作符后跟object构造函数 使用对象字面量表示法  Object类型数据变化侦测原理 Object可以通过Object.defineProperty将属性转换成getter/setter的形式来追踪变化，读取数据时会触发getter，修改数据时会触发setter.我们需要在getter">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-22T08:30:58.806Z">
+<meta property="og:updated_time" content="2019-07-25T03:50:16.934Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS高程Chapter-5 引用类型">
-<meta name="twitter:description" content="对JS高级程序设计第五章引用类型的内容做一个梳理~ Object类型创建Object实例的方式：  使用new操作符后跟object构造函数 使用对象字面量表示法   Array类型创建数组的基本方式：  使用Array构造函数 使用数组字面量表示法  检测数组的方法  instanceof操作符 Array.isArray()方法  操作方法操作方法包括concat(),slice(),spli">
+<meta name="twitter:description" content="对JS高级程序设计第五章引用类型的内容做一个梳理~ Object类型创建Object实例的方式：  使用new操作符后跟object构造函数 使用对象字面量表示法  Object类型数据变化侦测原理 Object可以通过Object.defineProperty将属性转换成getter/setter的形式来追踪变化，读取数据时会触发getter，修改数据时会触发setter.我们需要在getter">
 
 
 
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.1k
+                  1.6k
                 </span>
               
 
@@ -387,6 +387,8 @@
 <li>使用new操作符后跟object构造函数</li>
 <li>使用<strong>对象字面量</strong>表示法</li>
 </ul>
+<p><strong>Object类型数据变化侦测原理</strong></p>
+<p><code>Object</code>可以通过<code>Object.defineProperty</code>将属性转换成<code>getter/setter</code>的形式来追踪变化，读取数据时会触发<code>getter</code>，修改数据时会触发<code>setter</code>.<br>我们需要在<code>getter</code>中手机有哪些依赖使用了数据。当<code>setter</code>被触发时，去通知<code>getter</code>中收集的依赖数据发生了变化。</p>
 <hr>
 <h2 id="Array类型"><a href="#Array类型" class="headerlink" title="Array类型"></a>Array类型</h2><p>创建数组的基本方式：</p>
 <ul>
@@ -416,8 +418,28 @@
 <p><strong>归并方法</strong><br>迭代数组的所有项，构建一个最终返回的值。接收两个参数：一个在数组每一项上调用的函数和作为归并基础的初始值（可选）。<br>调用的函数可接受四个参数：前一个值、当前值、项的索引和数组对象。</p>
 <ul>
 <li><code>reduce()</code> 从数组第一项开始，逐个遍历到最后。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用reduce模拟map</span></span><br><span class="line"><span class="built_in">Array</span>.prototype._map = <span class="function"><span class="keyword">function</span>(<span class="params">fn, callbackThis</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 最终返回的新数组</span></span><br><span class="line">    <span class="keyword">let</span> res = [];</span><br><span class="line">    <span class="comment">// 定义回调函数的执行环境</span></span><br><span class="line">    <span class="comment">// call第一个参数传入null，则 this指向全局对象，同 map的规则</span></span><br><span class="line">    <span class="keyword">let</span> CBThis = callbackThis || <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.reduce(<span class="function">(<span class="params">brfore, after, idx, arr</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 传入map回调函数拥有的参数</span></span><br><span class="line">        <span class="comment">// 把每一项的执行结果push进res中</span></span><br><span class="line">        res.push(fn.call(CBThis, after, idx, arr));</span><br><span class="line">    &#125;, <span class="literal">null</span>);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
 <li><code>reduceRight()</code> 从数组最后一项开始，向前遍历到第一项。</li>
 </ul>
+<p><strong>一些常用方法</strong></p>
+<ul>
+<li><code>join()</code> 把数组中的所有元素拼凑成一个字符串的形式，返回<strong>字符串</strong>。</li>
+<li><p><code>toString()</code> 把数组转换为字符串，返回数组的字符串形式。</p>
+</li>
+<li><p><code>pop()</code> 移除数组最后一个元素，返回被删除的元素，如果数组为空，返回<code>undefined</code>。</p>
+</li>
+<li><code>push()</code> 向数组末尾添加一个或多个元素，返回新数组的长度。</li>
+<li><code>shift()</code> 移除数组第一个元素，返回第一个元素的值，如果数组为空，返回<code>undefined</code>。</li>
+<li><p><code>unshift()</code> 向数组开头添加一个或多个元素，返回新数组的长度。</p>
+</li>
+<li><p><code>reverse()</code> 颠倒数组中元素的顺序，返回该数组。</p>
+</li>
+<li><code>sort()</code> 对数组元素进行排序，默认按照元素的<code>ascii</code>码排序，返回该数组。</li>
+</ul>
+<p><strong>注意</strong><br><code>pop()</code>、<code>push()</code>、<code>shift()</code>、<code>unshift()</code>、<code>reverse()</code>、<code>sort()</code>和<code>splice()</code>方法都会<strong>改变原数组</strong>。</p>
+<p>其在Vue.js Array的变化侦测中通过<strong>创建拦截器去覆盖数组原型</strong>的方式去追踪变化。</p>
 <hr>
 <h2 id="Date类型"><a href="#Date类型" class="headerlink" title="Date类型"></a>Date类型</h2><p>创建一个日期对象  <code>var now = new Date()</code></p>
 <hr>
@@ -693,7 +715,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">25.4k</span>
+    <span title="Site words total count">25.8k</span>
   
 </div>
 
