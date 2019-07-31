@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="MAYMAY">
 <meta property="og:description" content="对JS高级程序设计第五章引用类型的内容做一个梳理~ Object类型创建Object实例的方式：  使用new操作符后跟object构造函数 使用对象字面量表示法  Object类型数据变化侦测原理 Object可以通过Object.defineProperty将属性转换成getter/setter的形式来追踪变化，读取数据时会触发getter，修改数据时会触发setter.我们需要在getter">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-25T07:36:24.325Z">
+<meta property="og:updated_time" content="2019-07-31T10:12:58.294Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS高程Chapter-5 引用类型">
 <meta name="twitter:description" content="对JS高级程序设计第五章引用类型的内容做一个梳理~ Object类型创建Object实例的方式：  使用new操作符后跟object构造函数 使用对象字面量表示法  Object类型数据变化侦测原理 Object可以通过Object.defineProperty将属性转换成getter/setter的形式来追踪变化，读取数据时会触发getter，修改数据时会触发setter.我们需要在getter">
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.6k
+                  1.8k
                 </span>
               
 
@@ -472,11 +472,16 @@
 <p>每个函数都包含两个非继承而来的方法：<code>apply()</code>和<code>call()</code>。其用途都是<strong>在特定的作用域中调用函数</strong>，等于设置函数体内<code>this</code>对象的值，扩充函数赖以运行的作用域。他们的区别仅在于接收参数的方式不同。</p>
 <ul>
 <li><code>apply()</code>接收两个参数，其一是运行函数的作用域，其二是一个参数数组。</li>
-<li><p><code>call()</code> 第一个参数是this值，其余传递给函数的参数须逐个列举出来。</p>
-</li>
-<li><p><code>bind()</code>该方法创建一个函数的实例，其this值会被绑定到传给<code>bind()</code>函数的值。</p>
-</li>
 </ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myApply = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> context = context || <span class="built_in">window</span></span><br><span class="line">    context.fn = <span class="keyword">this</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> result</span><br><span class="line">    <span class="comment">// 判断是否存在第二个参数</span></span><br><span class="line">    <span class="comment">// 如果存在，则将第二个参数展开</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">arguments</span>[<span class="number">1</span>]) &#123;</span><br><span class="line">        result = context.fn(...arguments[<span class="number">1</span>])</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        result = context.fn()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> context.fn</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>call()</code> 第一个参数是this值，其余传递给函数的参数须逐个列举出来。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myCall = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> context = context || <span class="built_in">window</span></span><br><span class="line">    context.fn = <span class="keyword">this</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> result</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将arguments后面的参数提取出来</span></span><br><span class="line">    <span class="keyword">var</span> args = [...arguments].slice(<span class="number">1</span>)</span><br><span class="line">    result = context.fn(...args)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 删除fn</span></span><br><span class="line">    <span class="keyword">delete</span> context.fn()</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>bind()</code>该方法创建一个函数的实例，其this值会被绑定到传给<code>bind()</code>函数的值。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myBind = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">'function'</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Error'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> _this = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">var</span> args = [...arguments].slice(<span class="number">1</span>)</span><br><span class="line">    <span class="comment">// 返回一个函数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> <span class="keyword">instanceof</span> F) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> _this(...args, ...arguments)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> _this.apply(context, args.concat(...arguments))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -600,7 +605,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -719,7 +724,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">26.9k</span>
+    <span title="Site words total count">27.8k</span>
   
 </div>
 
