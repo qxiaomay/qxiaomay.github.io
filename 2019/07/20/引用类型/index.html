@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="MAYMAY">
 <meta property="og:description" content="对JS高级程序设计第五章引用类型的内容做一个梳理~ Object类型创建Object实例的方式：  使用new操作符后跟object构造函数 使用对象字面量表示法  Object类型数据变化侦测原理 Object可以通过Object.defineProperty将属性转换成getter/setter的形式来追踪变化，读取数据时会触发getter，修改数据时会触发setter.我们需要在getter">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-31T10:12:58.294Z">
+<meta property="og:updated_time" content="2019-08-20T13:15:13.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS高程Chapter-5 引用类型">
 <meta name="twitter:description" content="对JS高级程序设计第五章引用类型的内容做一个梳理~ Object类型创建Object实例的方式：  使用new操作符后跟object构造函数 使用对象字面量表示法  Object类型数据变化侦测原理 Object可以通过Object.defineProperty将属性转换成getter/setter的形式来追踪变化，读取数据时会触发getter，修改数据时会触发setter.我们需要在getter">
@@ -388,7 +388,7 @@
 <li>使用<strong>对象字面量</strong>表示法</li>
 </ul>
 <p><strong>Object类型数据变化侦测原理</strong></p>
-<p><code>Object</code>可以通过<code>Object.defineProperty</code>将属性转换成<code>getter/setter</code>的形式来追踪变化，读取数据时会触发<code>getter</code>，修改数据时会触发<code>setter</code>.<br>我们需要在<code>getter</code>中手机有哪些依赖使用了数据。当<code>setter</code>被触发时，去通知<code>getter</code>中收集的依赖数据发生了变化。</p>
+<p><code>Object</code>可以通过<code>Object.defineProperty</code>将属性转换成<code>getter/setter</code>的形式来追踪变化，读取数据时会触发<code>getter</code>，修改数据时会触发<code>setter</code>.<br>我们需要在<code>getter</code>中收集有哪些依赖使用了数据。当<code>setter</code>被触发时，去通知<code>getter</code>中收集的依赖数据发生了变化。</p>
 <hr>
 <h2 id="Array类型"><a href="#Array类型" class="headerlink" title="Array类型"></a>Array类型</h2><p>创建数组的基本方式：</p>
 <ul>
@@ -906,5 +906,5 @@
 
   <script type="text/javascript" src="/js/src/love.js"></script>
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
