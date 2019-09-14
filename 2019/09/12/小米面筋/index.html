@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/panda-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/panda-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="面试," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一面面试官比较nice，问的比较基础，我不会的地方也会主动给我讲解，给人感觉很棒~ 自我介绍惯例自我介绍~ 常见的http状态码我就从100,20X,30x,40x,50x把常见的讲了一遍。1）100：表示信息正在处理。    100 continue：到目前为止都很正常，客户端持续发送请求。2）20x:成功类状态码。    200 OK：请求成功。3）30x：重定向状态码。    301 Mov">
+<meta name="keywords" content="面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小米面筋">
+<meta property="og:url" content="http://yoursite.com/2019/09/12/小米面筋/index.html">
+<meta property="og:site_name" content="MAYMAY">
+<meta property="og:description" content="一面面试官比较nice，问的比较基础，我不会的地方也会主动给我讲解，给人感觉很棒~ 自我介绍惯例自我介绍~ 常见的http状态码我就从100,20X,30x,40x,50x把常见的讲了一遍。1）100：表示信息正在处理。    100 continue：到目前为止都很正常，客户端持续发送请求。2）20x:成功类状态码。    200 OK：请求成功。3）30x：重定向状态码。    301 Mov">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-14T09:50:55.143Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小米面筋">
+<meta name="twitter:description" content="一面面试官比较nice，问的比较基础，我不会的地方也会主动给我讲解，给人感觉很棒~ 自我介绍惯例自我介绍~ 常见的http状态码我就从100,20X,30x,40x,50x把常见的讲了一遍。1）100：表示信息正在处理。    100 continue：到目前为止都很正常，客户端持续发送请求。2）20x:成功类状态码。    200 OK：请求成功。3）30x：重定向状态码。    301 Mov">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/12/小米面筋/"/>
+
+
+
+
+
+  <title>小米面筋 | MAYMAY</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?adac0cfdd7db0b78085430d109c7e2db";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MAYMAY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">人生已经如此的艰难，有些事情就不要拆穿</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+<link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/12/小米面筋/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MAYMAY">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAYMAY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">小米面筋</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-12T21:08:08+08:00">
+                2019-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.1k
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h2><p>面试官比较nice，问的比较基础，我不会的地方也会主动给我讲解，给人感觉很棒~</p>
+<h3 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h3><p>惯例自我介绍~</p>
+<h3 id="常见的http状态码"><a href="#常见的http状态码" class="headerlink" title="常见的http状态码"></a>常见的http状态码</h3><p>我就从100,20X,30x,40x,50x把常见的讲了一遍。<br>1）100：表示信息正在处理。<br>    100 continue：到目前为止都很正常，客户端持续发送请求。<br>2）20x:成功类状态码。<br>    200 OK：请求成功。<br>3）30x：重定向状态码。<br>    301 Moved Permanently：永久重定向，表示资源已经永久移到了新位置。<br>    302 Found：临时重定向。<br>    304 Not Modified：如果请求报文首部包含一些条件，例如：if-match，if-modified-since，if-none-match，if-UNmodified-since，如果不满足条件，则服务器会返回304状态码。自从上次请求过，请求的网页未修改。<br>    307 Temporary Redirect：临时重定向，与302含义类似，但是307不会强制浏览器把重定向的post请求改为get请求。<br>4）40x：客户端错误，表示客户端请求出错或无法完成请求。<br>    400 Bad Request：请求报文存在语法错误。<br>    401 Unauthorized：表示请求需要有认证信息。<br>    403 Forbidden：请求被拒绝。<br>    404 Not Found：服务端无法根据请求找到资源。<br>5）50x：服务器错误。<br>    500 Internal Server Error：服务器内部错误，无法完成请求。<br>    503 service unavailable：服务器暂时处于超负载状态或停机维护状态，无法处理请求。</p>
+<h3 id="状态码200和304的产生场景"><a href="#状态码200和304的产生场景" class="headerlink" title="状态码200和304的产生场景"></a>状态码200和304的产生场景</h3><p>自然就过渡到了缓存问题，答了浏览器强缓存和协商缓存的机制。</p>
+<h3 id="get请求和post请求的区别"><a href="#get请求和post请求的区别" class="headerlink" title="get请求和post请求的区别"></a>get请求和post请求的区别</h3><p>get请求一般用于想服务器请求数据，请求参数会携带在URL中，因为浏览器URL长度的限制，请求携带的参数大小也有限制，因为在URL中相对不安全。<br>post请求一般用于修改数据或提交表单，请求报文大小无限制，刷新页面会提出重新提交表单，相对要安全。</p>
+<h3 id="百度输入查询信息是什么get还是post"><a href="#百度输入查询信息是什么get还是post" class="headerlink" title="百度输入查询信息是什么get还是post"></a>百度输入查询信息是什么get还是post</h3><p>应该是get请求吧，百度的请求时可以缓存在URL中的。</p>
+<h3 id="浏览器的同源策略"><a href="#浏览器的同源策略" class="headerlink" title="浏览器的同源策略"></a>浏览器的同源策略</h3><p>浏览器同源指域名、协议和端口名均相同。</p>
+<h3 id="常见的跨域方式"><a href="#常见的跨域方式" class="headerlink" title="常见的跨域方式"></a>常见的跨域方式</h3><p>答了jsonp,cors,nginx,domain</p>
+<p>jsonp：最经典的跨域方案。利用<code>&lt;script&gt;</code>标签不受同源策略限制的特性进行跨域操作，实现简单，兼容性好。包含两部分：回调函数和数据。<br>    回调函数是当相应到来时要放在当前页面被调用的函数。<br>    数据就是传入回调函数中的json数据，就是回调函数的参数。</p>
+<p>cors：是目前最主流的跨域方案。跨站资源共享（CORS）是一种机制，他使用<strong>自定义的http头</strong>来告诉浏览器，让运行在同一个<strong>origin（domain）</strong>上的web应用被准许访问来自不同服务器上的指定的资源。</p>
+<p>Nginx:最方便的跨域方案。nginx是一款强大的web服务器，其特点就是轻量级、启动快、高并发。我们用node开发的服务通常都需要经过nginx的反向代理。</p>
+<p>其他跨域方案：<br>    <code>postMessage</code>:允许来自不用域的脚本采用异步方式进行有限的通信，跨域实现跨文本域、多窗口、跨域消息传送。<br>    <code>WebSocket</code>：是一种双向通信协议，在建立连接之后，websocket的server和client都能主动像对方发送和接收数据，连接建立好了之后，client与server之间的双向通信就与http无关了。<br>    <code>document.domain</code>：该方式只能用于二级域名相同的情况下。</p>
+<h3 id="jsonp跨域有什么缺点"><a href="#jsonp跨域有什么缺点" class="headerlink" title="jsonp跨域有什么缺点"></a>jsonp跨域有什么缺点</h3><p>我答了是能发送get请求。面试官还给我讲了jsonp在处理错误时的不足，不能准确的判断错误，学到了。</p>
+<h3 id="前端可能发生的安全问题"><a href="#前端可能发生的安全问题" class="headerlink" title="前端可能发生的安全问题"></a>前端可能发生的安全问题</h3><p>答了XSS(跨站脚本攻击)和CSRF(跨站伪造请求)。</p>
+<p><strong>XSS(跨站脚本攻击)</strong>是指攻击者在 Web 页面中插入恶意脚本包括 HTML 和 JavaScript，当用户浏览页面时，促使脚本执行，从而达到攻击目的。攻击目的是为了获取存储在客户端的cookie信息，一旦获取，就会假冒身份与网站交互。<br>主要防范手段就是不要相信用户的任何输入，过滤其中的特殊字符或对HTML输出进行转义或设置cookie为httponly。</p>
+<p><strong>CSRF(跨站伪造请求)</strong>是攻击者盗用你的身份，以你的名义发送恶意请求。例如以你名义发送邮件，购买商品等。主要是登陆了信任网站，在本地生成了cookie，在不登出A的情况下，访问了危险网站B，由于浏览器曾经认证过，所以被访问的网站会认为是真正的用户操作而去执行。<br>可以通过在后台进行token校验或输入验证码进行防范。<br>XSS 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户浏览器的信任。</p>
+<h3 id="解释一下闭包？"><a href="#解释一下闭包？" class="headerlink" title="解释一下闭包？"></a>解释一下闭包？</h3><p>我回答闭包就是可以访问一个函数内部变量的函数，它的构成一般是函数嵌套。面试官似乎不是很满意，接着给我出了道题~~</p>
+<h3 id="判断下列代码的输出？"><a href="#判断下列代码的输出？" class="headerlink" title="判断下列代码的输出？"></a>判断下列代码的输出？</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'global'</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name:<span class="string">'obj'</span>,</span><br><span class="line">    method:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = <span class="string">'local'</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.method().call(<span class="keyword">this</span>));</span><br></pre></td></tr></table></figure>
+<p>由于这里传入的this指向的是window全局，因此输出应该是 <code>global</code>，我当时脑子有点迷糊，还打错了。</p>
+<p>接下来面试官又修改了最后传入的参数，这时this指向的是obj。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'global'</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name:<span class="string">'obj'</span>,</span><br><span class="line">    method:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = <span class="string">'local'</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.method().call(obj));</span><br></pre></td></tr></table></figure></p>
+<p>若把函数更改为箭头函数，因为箭头函数没有this，这时this指向的还是window。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'global'</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name:<span class="string">'obj'</span>,</span><br><span class="line">    method:<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.name = <span class="string">'local'</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.method().call(obj));</span><br></pre></td></tr></table></figure>
+<h3 id="用过promise吗？"><a href="#用过promise吗？" class="headerlink" title="用过promise吗？"></a>用过promise吗？</h3><p>我回答了解，但是没用过，然后就把promise的三种状态讲了一下。面试官又给了我一道代码题！！</p>
+<h3 id="判断下列代码的输出"><a href="#判断下列代码的输出" class="headerlink" title="判断下列代码的输出"></a>判断下列代码的输出</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.resolve(<span class="number">1</span>)</span><br><span class="line">    .then(<span class="function"><span class="params">x</span>=&gt;</span>x+<span class="number">1</span>)</span><br><span class="line">    .then(<span class="function"><span class="params">x</span>=&gt;</span>&#123;<span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'error'</span>)&#125;)</span><br><span class="line">    .catch(<span class="function"><span class="params">()</span> =&gt;</span> <span class="number">3</span>)</span><br><span class="line">    .then(<span class="function"><span class="params">x</span> =&gt;</span> x+<span class="number">1</span>)</span><br><span class="line">    .then(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x))</span><br><span class="line">    .catch(<span class="built_in">console</span>.error)</span><br></pre></td></tr></table></figure>
+<p>看到这道题的时候我特别懵，最后猜了个3，下去执行了一下代码，才发现结果是4.<br>当promise执行过程中抛出错误后，不管前面是什么结果，就只注重错误态的结果了，盲猜这里捕获带错误后执行了catch()，返回了3，接着then(x=&gt;x+1)，最后结果是4~</p>
+<h3 id="面试官觉得代码题还没够吧，又出了一道数组展平的代码题"><a href="#面试官觉得代码题还没够吧，又出了一道数组展平的代码题" class="headerlink" title="面试官觉得代码题还没够吧，又出了一道数组展平的代码题"></a>面试官觉得代码题还没够吧，又出了一道数组展平的代码题</h3><p>将嵌套的数组转化为扁平的数组。例如：输入[1,2,3,[4,’55’,[6]],[6,8]],输出[1,2,3,4,’55’,6,8]</p>
+<p>当时想用数组的reduce方法来做这个题的，但是当时没有想起来代码，下面是我写的比较暴力的方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> flat = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> ret = [];</span><br><span class="line">    arr.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> item == <span class="string">'object'</span>) &#123;</span><br><span class="line">            ret = ret.concat(flat(item));</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            ret.push(item);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用reduce的方法，两三行代码搞定：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> flat = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span>  arr.reduce(<span class="function">(<span class="params">pre, cur</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> pre.concta(<span class="keyword">typeof</span> cur == <span class="string">'object'</span> ? flat(cur) : cur);</span><br><span class="line">    &#125;, []);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="接着问了项目，问了最出彩的项目及项目中遇到的难点等等。"><a href="#接着问了项目，问了最出彩的项目及项目中遇到的难点等等。" class="headerlink" title="接着问了项目，问了最出彩的项目及项目中遇到的难点等等。"></a>接着问了项目，问了最出彩的项目及项目中遇到的难点等等。</h3><p>我回答我有一个项目用jQuery实现了单页面模式，和实现了一套完整的权限控制等等。</p>
+<h3 id="我简历中项目介绍上写了自己写过分页组件，又问了数据库中控制数据分页的字段是啥。"><a href="#我简历中项目介绍上写了自己写过分页组件，又问了数据库中控制数据分页的字段是啥。" class="headerlink" title="我简历中项目介绍上写了自己写过分页组件，又问了数据库中控制数据分页的字段是啥。"></a>我简历中项目介绍上写了自己写过分页组件，又问了数据库中控制数据分页的字段是啥。</h3><p>MySQL中应该就是limit字段吧，mongo中大概是from(x)-&gt;limit(y)这样。</p>
+<h3 id="你有什么问题要问我的吗？"><a href="#你有什么问题要问我的吗？" class="headerlink" title="你有什么问题要问我的吗？"></a>你有什么问题要问我的吗？</h3><p>我想到面试官全程都没有闻到框架的问题，就问了技术栈，才知道面的面试官是做react的，我是做vue的。。。<br>面完牛客网的面试状态已经变成二面了，希望能进二面吧。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/11/成都农行软开凉筋/" rel="next" title="农行成研面试凉筋">
+                <i class="fa fa-chevron-left"></i> 农行成研面试凉筋
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="MAYMAY" />
+            
+              <p class="site-author-name" itemprop="name">MAYMAY</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/qxiaomay" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/5108162161" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/maymayjn" title="CSDN" target="_blank">CSDN</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一面"><span class="nav-number">1.</span> <span class="nav-text">一面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自我介绍"><span class="nav-number">1.1.</span> <span class="nav-text">自我介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的http状态码"><span class="nav-number">1.2.</span> <span class="nav-text">常见的http状态码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态码200和304的产生场景"><span class="nav-number">1.3.</span> <span class="nav-text">状态码200和304的产生场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get请求和post请求的区别"><span class="nav-number">1.4.</span> <span class="nav-text">get请求和post请求的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#百度输入查询信息是什么get还是post"><span class="nav-number">1.5.</span> <span class="nav-text">百度输入查询信息是什么get还是post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器的同源策略"><span class="nav-number">1.6.</span> <span class="nav-text">浏览器的同源策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的跨域方式"><span class="nav-number">1.7.</span> <span class="nav-text">常见的跨域方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jsonp跨域有什么缺点"><span class="nav-number">1.8.</span> <span class="nav-text">jsonp跨域有什么缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端可能发生的安全问题"><span class="nav-number">1.9.</span> <span class="nav-text">前端可能发生的安全问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释一下闭包？"><span class="nav-number">1.10.</span> <span class="nav-text">解释一下闭包？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断下列代码的输出？"><span class="nav-number">1.11.</span> <span class="nav-text">判断下列代码的输出？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用过promise吗？"><span class="nav-number">1.12.</span> <span class="nav-text">用过promise吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断下列代码的输出"><span class="nav-number">1.13.</span> <span class="nav-text">判断下列代码的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面试官觉得代码题还没够吧，又出了一道数组展平的代码题"><span class="nav-number">1.14.</span> <span class="nav-text">面试官觉得代码题还没够吧，又出了一道数组展平的代码题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接着问了项目，问了最出彩的项目及项目中遇到的难点等等。"><span class="nav-number">1.15.</span> <span class="nav-text">接着问了项目，问了最出彩的项目及项目中遇到的难点等等。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我简历中项目介绍上写了自己写过分页组件，又问了数据库中控制数据分页的字段是啥。"><span class="nav-number">1.16.</span> <span class="nav-text">我简历中项目介绍上写了自己写过分页组件，又问了数据库中控制数据分页的字段是啥。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你有什么问题要问我的吗？"><span class="nav-number">1.17.</span> <span class="nav-text">你有什么问题要问我的吗？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MAYMAY</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">31.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false}});</script></body>
+</html>
